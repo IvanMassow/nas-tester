@@ -1,0 +1,9 @@
+data/
+logs/
+venv/
+.env
+*.pyc
+__pycache__/
+.nas_tester.pid
+*.db-shm
+*.db-wal

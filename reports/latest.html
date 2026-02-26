@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAS Signal Tester</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* === Noah Pink Design System === */
+:root {
+    --ink: #262a33;
+    --paper: #FFF1E5;
+    --blush: #ffe4d6;
+    --accent: #0d7680;
+    --accent-light: #e0f2f1;
+    --gold: #d4a843;
+    --green: #27ae60;
+    --red: #c0392b;
+    --grey: #888;
+    --light-grey: #f5f0eb;
+    --border: #e8ddd4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Lato', -apple-system, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* === Header === */
+.header {
+    background: var(--ink);
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-logo {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+.header-nav {
+    display: flex;
+    gap: 16px;
+}
+.header-nav a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    transition: color 0.2s;
+}
+.header-nav a:hover { color: #fff; }
+.header-meta {
+    color: rgba(255,255,255,0.4);
+    font-size: 11px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* === Hero === */
+.hero {
+    background: var(--ink);
+    padding: 40px 24px 48px;
+    text-align: center;
+}
+.hero-inner {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #fff;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+}
+.hero-subtitle {
+    color: rgba(255,255,255,0.7);
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 28px;
+}
+.stat-grid {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+.stat-item {
+    text-align: center;
+    min-width: 100px;
+}
+.stat-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--accent);
+}
+.stat-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 4px;
+}
+
+/* === Sections === */
+.section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    margin-bottom: 40px;
+}
+.section-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--accent);
+    padding: 12px 16px;
+    margin: 32px 0 16px;
+    background: rgba(13,118,128,0.04);
+    border-radius: 0 6px 6px 0;
+}
+.section-bar h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: var(--ink);
+}
+.section-count {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.bar-active { border-color: var(--accent); }
+.bar-closed { border-color: var(--grey); }
+.bar-cascade { border-color: var(--gold); }
+.bar-proof { border-color: var(--green); }
+.bar-signals { border-color: #6c5ce7; }
+
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: var(--grey);
+    font-style: italic;
+}
+
+/* === Tables === */
+.table-wrap { overflow-x: auto; }
+.trading-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+.trading-table th {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--grey);
+    padding: 8px 10px;
+    border-bottom: 2px solid var(--border);
+    text-align: left;
+    white-space: nowrap;
+}
+.trading-table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+.trading-table tbody tr:hover {
+    background: rgba(13,118,128,0.03);
+}
+.th-horizon {
+    text-align: center;
+    min-width: 40px;
+}
+.hit-cell { text-align: center; }
+
+.cell-ticker { min-width: 120px; }
+.cell-sub {
+    font-size: 11px;
+    color: var(--grey);
+    margin-top: 2px;
+}
+.cell-direction {
+    font-weight: 700;
+    white-space: nowrap;
+}
+.cell-timeline { min-width: 280px; }
+.cell-advantage { white-space: nowrap; }
+
+/* === Status dots === */
+.dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+.state-active { background: var(--accent); }
+.state-reinforced { background: var(--green); }
+.state-closed { background: var(--grey); }
+
+/* === Badges === */
+.strength-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.reinforce-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 9px;
+    background: var(--green);
+    color: #fff;
+    padding: 1px 5px;
+    border-radius: 8px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
+/* === Advantage badges === */
+.adv-badge {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+}
+.adv-ahead {
+    background: rgba(13,118,128,0.12);
+    color: var(--accent);
+    border: 1px solid rgba(13,118,128,0.3);
+}
+.adv-confirmed {
+    background: rgba(39,174,96,0.12);
+    color: var(--green);
+    border: 1px solid rgba(39,174,96,0.3);
+}
+.adv-peaked {
+    background: rgba(212,168,67,0.12);
+    color: #b8860b;
+    border: 1px solid rgba(212,168,67,0.3);
+}
+.adv-expired {
+    background: rgba(136,136,136,0.1);
+    color: var(--grey);
+    border: 1px solid rgba(136,136,136,0.2);
+}
+
+/* === Return colours === */
+.ret-pos { color: var(--green); font-weight: 700; }
+.ret-neg { color: var(--red); font-weight: 700; }
+.ret-flat { color: var(--grey); }
+.ret-pending { color: #ccc; }
+
+/* === Hit indicators === */
+.hit-yes { color: var(--green); font-size: 16px; }
+.hit-no { color: var(--red); font-size: 14px; }
+.hit-pending { color: #ccc; font-size: 14px; }
+
+/* === Cascade Cards === */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+}
+.cascade-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    transition: box-shadow 0.2s;
+}
+.cascade-card:hover {
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.card-top {
+    border-left: 4px solid var(--accent);
+}
+.cascade-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.cascade-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.cascade-rate {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+}
+.rate-good { color: var(--green); }
+.rate-ok { color: var(--gold); }
+.rate-poor { color: var(--red); }
+.cascade-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+}
+.cs-item { text-align: center; }
+.cs-val {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    display: block;
+}
+.cs-label {
+    font-size: 9px;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.cascade-tickers {
+    font-size: 11px;
+    color: var(--grey);
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* === Proof Section === */
+.section-proof { margin-top: 20px; }
+.proof-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+}
+.proof-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+}
+.proof-wide { margin-top: 16px; }
+.proof-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+.proof-desc {
+    font-size: 12px;
+    color: var(--grey);
+    margin-bottom: 14px;
+}
+.proof-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+.proof-table th {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--grey);
+    padding: 6px 8px;
+    border-bottom: 2px solid var(--border);
+    text-align: left;
+}
+.proof-table td {
+    padding: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+/* === Horizon bars === */
+.horizon-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.horizon-label {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    width: 36px;
+}
+.horizon-bar-wrap {
+    flex: 1;
+    height: 20px;
+    background: var(--light-grey);
+    border-radius: 4px;
+    margin: 0 10px;
+    overflow: hidden;
+}
+.horizon-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 4px;
+    transition: width 0.6s ease;
+    opacity: 0.75;
+}
+.bar-best {
+    background: var(--accent);
+    opacity: 1;
+}
+.horizon-val {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    min-width: 90px;
+    text-align: right;
+    color: var(--grey);
+}
+
+/* === Advantage distribution bars === */
+.adv-dist-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+}
+.adv-dist-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    width: 50px;
+    color: var(--grey);
+}
+.adv-dist-bar-wrap {
+    flex: 1;
+    height: 16px;
+    background: var(--light-grey);
+    border-radius: 3px;
+    margin: 0 8px;
+    overflow: hidden;
+}
+.adv-dist-bar {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 3px;
+    opacity: 0.8;
+}
+.adv-dist-val {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    min-width: 30px;
+    text-align: right;
+    font-weight: 600;
+}
+
+/* === Excursion === */
+.exc-grid {
+    display: flex;
+    gap: 24px;
+    margin-top: 12px;
+}
+.exc-item {
+    text-align: center;
+    flex: 1;
+    padding: 12px;
+    border-radius: 8px;
+}
+.exc-fav { background: rgba(39,174,96,0.08); }
+.exc-adv { background: rgba(192,57,43,0.06); }
+.exc-val {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+}
+.exc-fav .exc-val { color: var(--green); }
+.exc-adv .exc-val { color: var(--red); }
+.exc-label {
+    font-size: 11px;
+    color: var(--grey);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+/* === Footer === */
+.footer {
+    background: var(--ink);
+    padding: 32px 24px;
+    margin-top: 60px;
+    text-align: center;
+}
+.footer-links {
+    margin-bottom: 16px;
+}
+.footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+}
+.footer-links a:hover { color: #fff; }
+.footer-disclaimer {
+    color: rgba(255,255,255,0.3);
+    font-size: 10px;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+    .hero-title { font-size: 24px; letter-spacing: 2px; }
+    .stat-grid { gap: 16px; }
+    .stat-value { font-size: 20px; }
+    .proof-grid { grid-template-columns: 1fr; }
+    .card-grid { grid-template-columns: 1fr; }
+    .cell-timeline { min-width: 200px; }
+    .cascade-stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+.closed-row { opacity: 0.7; }
+.closed-row:hover { opacity: 1; }
+</style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-logo">NOAH</div>
+    <nav class="header-nav">
+        <a href="#act-1">Advantage Board</a>
+        <a href="#act-2">Cascades</a>
+        <a href="#act-3">Proof</a>
+    </nav>
+    <div class="header-meta">Updated 2026-02-26 18:44 UTC</div>
+</header>
+
+
+    <section class="hero">
+        <div class="hero-inner">
+            <h1 class="hero-title">NAS SIGNAL TESTER</h1>
+            <p class="hero-subtitle">1 signals tracked</p>
+            <div class="stat-grid">
+        <div class="stat-item">
+            <div class="stat-value">1</div>
+            <div class="stat-label">Total Signals</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">6</div>
+            <div class="stat-label">Active Positions</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">Pending</div>
+            <div class="stat-label">Hit Rate (24h)</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">Pending</div>
+            <div class="stat-label">Avg Advantage</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-value">N/A</div>
+            <div class="stat-label">Best Category</div>
+        </div></div>
+        </div>
+    </section>
+
+<main>
+
+    <div class="section">
+        <div class="section-bar bar-active">
+            <h2>Act I: The Advantage Board</h2>
+            <span class="section-count">6 active positions</span>
+        </div>
+        <div class="table-wrap">
+        <table class="trading-table">
+            <thead>
+                <tr>
+                    <th>Instrument</th>
+                    <th>Direction</th>
+                    <th>Strength</th>
+                    <th>Entry</th>
+                    <th>Return</th>
+                    <th class="th-horizon">6h</th><th class="th-horizon">12h</th><th class="th-horizon">24h</th><th class="th-horizon">72h</th>
+                    <th>Advantage</th>
+                    <th>Timeline</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr class="position-row">
+            <td class="cell-ticker">
+                <span class="dot state-active"></span>
+                <strong>DJP</strong> 
+                <div class="cell-sub">broad commodities</div>
+            </td>
+            <td class="cell-direction" style="color:#c0392b;">&#9660; DOWN</td>
+            <td class="cell-strength"><span class="strength-badge" style="background:#0d7680;">High</span></td>
+            <td class="cell-entry">$41.80</td>
+            <td class="cell-return"><span class="ret-pending">--</span></td>
+            <td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
+            <td class="cell-advantage"><span class="adv-badge adv-ahead">&#9719; Ahead of Market</span></td>
+            <td class="cell-timeline"><svg width="280" height="32" viewBox="0 0 280 32" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="12" width="272" height="8" rx="3" fill="#e8ddd4"/>
+<rect x="4" y="12" width="0" height="8" rx="3" fill="#d5cdc4"/>
+<rect x="4" y="12" width="2" height="8" rx="3" fill="#0d7680" opacity="0.85"/>
+<circle cx="4" cy="16" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>
+<text x="3" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif">T0</text>
+<text x="4" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif" text-anchor="end">0h</text>
+</svg></td>
+        </tr>
+        <tr class="position-row">
+            <td class="cell-ticker">
+                <span class="dot state-active"></span>
+                <strong>IYT</strong> 
+                <div class="cell-sub">transport</div>
+            </td>
+            <td class="cell-direction" style="color:#0d7680;">&#9650; UP</td>
+            <td class="cell-strength"><span class="strength-badge" style="background:#0d7680;">High</span></td>
+            <td class="cell-entry">$82.14</td>
+            <td class="cell-return"><span class="ret-pending">--</span></td>
+            <td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
+            <td class="cell-advantage"><span class="adv-badge adv-ahead">&#9719; Ahead of Market</span></td>
+            <td class="cell-timeline"><svg width="280" height="32" viewBox="0 0 280 32" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="12" width="272" height="8" rx="3" fill="#e8ddd4"/>
+<rect x="4" y="12" width="0" height="8" rx="3" fill="#d5cdc4"/>
+<rect x="4" y="12" width="2" height="8" rx="3" fill="#0d7680" opacity="0.85"/>
+<circle cx="4" cy="16" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>
+<text x="3" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif">T0</text>
+<text x="4" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif" text-anchor="end">0h</text>
+</svg></td>
+        </tr>
+        <tr class="position-row">
+            <td class="cell-ticker">
+                <span class="dot state-active"></span>
+                <strong>XLB</strong> 
+                <div class="cell-sub">chemicals</div>
+            </td>
+            <td class="cell-direction" style="color:#0d7680;">&#9650; UP</td>
+            <td class="cell-strength"><span class="strength-badge" style="background:#0d7680;">High</span></td>
+            <td class="cell-entry">$52.79</td>
+            <td class="cell-return"><span class="ret-pending">--</span></td>
+            <td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
+            <td class="cell-advantage"><span class="adv-badge adv-ahead">&#9719; Ahead of Market</span></td>
+            <td class="cell-timeline"><svg width="280" height="32" viewBox="0 0 280 32" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="12" width="272" height="8" rx="3" fill="#e8ddd4"/>
+<rect x="4" y="12" width="0" height="8" rx="3" fill="#d5cdc4"/>
+<rect x="4" y="12" width="2" height="8" rx="3" fill="#0d7680" opacity="0.85"/>
+<circle cx="4" cy="16" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>
+<text x="3" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif">T0</text>
+<text x="4" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif" text-anchor="end">0h</text>
+</svg></td>
+        </tr>
+        <tr class="position-row">
+            <td class="cell-ticker">
+                <span class="dot state-active"></span>
+                <strong>JETS</strong> 
+                <div class="cell-sub">airlines</div>
+            </td>
+            <td class="cell-direction" style="color:#0d7680;">&#9650; UP</td>
+            <td class="cell-strength"><span class="strength-badge" style="background:#0d7680;">High</span></td>
+            <td class="cell-entry">$29.52</td>
+            <td class="cell-return"><span class="ret-pending">--</span></td>
+            <td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
+            <td class="cell-advantage"><span class="adv-badge adv-ahead">&#9719; Ahead of Market</span></td>
+            <td class="cell-timeline"><svg width="280" height="32" viewBox="0 0 280 32" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="12" width="272" height="8" rx="3" fill="#e8ddd4"/>
+<rect x="4" y="12" width="0" height="8" rx="3" fill="#d5cdc4"/>
+<rect x="4" y="12" width="2" height="8" rx="3" fill="#0d7680" opacity="0.85"/>
+<circle cx="4" cy="16" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>
+<text x="3" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif">T0</text>
+<text x="4" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif" text-anchor="end">0h</text>
+</svg></td>
+        </tr>
+        <tr class="position-row">
+            <td class="cell-ticker">
+                <span class="dot state-active"></span>
+                <strong>XLE</strong> 
+                <div class="cell-sub">energy equities</div>
+            </td>
+            <td class="cell-direction" style="color:#c0392b;">&#9660; DOWN</td>
+            <td class="cell-strength"><span class="strength-badge" style="background:#0d7680;">High</span></td>
+            <td class="cell-entry">$55.25</td>
+            <td class="cell-return"><span class="ret-pending">--</span></td>
+            <td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
+            <td class="cell-advantage"><span class="adv-badge adv-ahead">&#9719; Ahead of Market</span></td>
+            <td class="cell-timeline"><svg width="280" height="32" viewBox="0 0 280 32" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="12" width="272" height="8" rx="3" fill="#e8ddd4"/>
+<rect x="4" y="12" width="0" height="8" rx="3" fill="#d5cdc4"/>
+<rect x="4" y="12" width="2" height="8" rx="3" fill="#0d7680" opacity="0.85"/>
+<circle cx="4" cy="16" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>
+<text x="3" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif">T0</text>
+<text x="4" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif" text-anchor="end">0h</text>
+</svg></td>
+        </tr>
+        <tr class="position-row">
+            <td class="cell-ticker">
+                <span class="dot state-active"></span>
+                <strong>USO</strong> 
+                <div class="cell-sub">crude oil</div>
+            </td>
+            <td class="cell-direction" style="color:#c0392b;">&#9660; DOWN</td>
+            <td class="cell-strength"><span class="strength-badge" style="background:#0d7680;">High</span></td>
+            <td class="cell-entry">$79.70</td>
+            <td class="cell-return"><span class="ret-pending">--</span></td>
+            <td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
+            <td class="cell-advantage"><span class="adv-badge adv-ahead">&#9719; Ahead of Market</span></td>
+            <td class="cell-timeline"><svg width="280" height="32" viewBox="0 0 280 32" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="12" width="272" height="8" rx="3" fill="#e8ddd4"/>
+<rect x="4" y="12" width="0" height="8" rx="3" fill="#d5cdc4"/>
+<rect x="4" y="12" width="2" height="8" rx="3" fill="#0d7680" opacity="0.85"/>
+<circle cx="4" cy="16" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>
+<text x="3" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif">T0</text>
+<text x="4" y="31" font-size="8" fill="#666" font-family="Montserrat,sans-serif" text-anchor="end">0h</text>
+</svg></td>
+        </tr></tbody>
+        </table>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <div class="section-bar bar-cascade">
+            <h2>Act II: Cascade Leaderboard</h2>
+            <span class="section-count">6 categories</span>
+        </div>
+        <div class="card-grid">
+        <div class="cascade-card ">
+            <div class="cascade-header">
+                <h3>broad commodities</h3>
+                <span class="cascade-rate ">Pending</span>
+            </div>
+            <div class="cascade-stats">
+                <div class="cs-item">
+                    <span class="cs-val">1</span>
+                    <span class="cs-label">Positions</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Lead</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Right</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Wrong</span>
+                </div>
+            </div>
+            <div class="cascade-tickers">DJP</div>
+        </div>
+        <div class="cascade-card ">
+            <div class="cascade-header">
+                <h3>transport</h3>
+                <span class="cascade-rate ">Pending</span>
+            </div>
+            <div class="cascade-stats">
+                <div class="cs-item">
+                    <span class="cs-val">1</span>
+                    <span class="cs-label">Positions</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Lead</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Right</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Wrong</span>
+                </div>
+            </div>
+            <div class="cascade-tickers">IYT</div>
+        </div>
+        <div class="cascade-card ">
+            <div class="cascade-header">
+                <h3>chemicals</h3>
+                <span class="cascade-rate ">Pending</span>
+            </div>
+            <div class="cascade-stats">
+                <div class="cs-item">
+                    <span class="cs-val">1</span>
+                    <span class="cs-label">Positions</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Lead</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Right</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Wrong</span>
+                </div>
+            </div>
+            <div class="cascade-tickers">XLB</div>
+        </div>
+        <div class="cascade-card ">
+            <div class="cascade-header">
+                <h3>airlines</h3>
+                <span class="cascade-rate ">Pending</span>
+            </div>
+            <div class="cascade-stats">
+                <div class="cs-item">
+                    <span class="cs-val">1</span>
+                    <span class="cs-label">Positions</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Lead</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Right</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Wrong</span>
+                </div>
+            </div>
+            <div class="cascade-tickers">JETS</div>
+        </div>
+        <div class="cascade-card ">
+            <div class="cascade-header">
+                <h3>energy equities</h3>
+                <span class="cascade-rate ">Pending</span>
+            </div>
+            <div class="cascade-stats">
+                <div class="cs-item">
+                    <span class="cs-val">1</span>
+                    <span class="cs-label">Positions</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Lead</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Right</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Wrong</span>
+                </div>
+            </div>
+            <div class="cascade-tickers">XLE</div>
+        </div>
+        <div class="cascade-card ">
+            <div class="cascade-header">
+                <h3>crude oil</h3>
+                <span class="cascade-rate ">Pending</span>
+            </div>
+            <div class="cascade-stats">
+                <div class="cs-item">
+                    <span class="cs-val">1</span>
+                    <span class="cs-label">Positions</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Lead</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Right</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">--</span>
+                    <span class="cs-label">Avg Wrong</span>
+                </div>
+            </div>
+            <div class="cascade-tickers">USO</div>
+        </div></div>
+    </div>
+
+    <div class="section section-proof">
+        <div class="section-bar bar-proof">
+            <h2>Act III: The Proof</h2>
+        </div>
+
+        <div class="proof-grid">
+            <div class="proof-card">
+                <h3>Horizon Sweet Spot</h3>
+                <p class="proof-desc">Which horizon delivers the best directional accuracy?</p>
+                
+        <div class="horizon-row">
+            <span class="horizon-label">6h</span>
+            <div class="horizon-bar-wrap">
+                <div class="horizon-bar " style="width:0%;"></div>
+            </div>
+            <span class="horizon-val">Pending</span>
+        </div>
+        <div class="horizon-row">
+            <span class="horizon-label">12h</span>
+            <div class="horizon-bar-wrap">
+                <div class="horizon-bar " style="width:0%;"></div>
+            </div>
+            <span class="horizon-val">Pending</span>
+        </div>
+        <div class="horizon-row">
+            <span class="horizon-label">24h</span>
+            <div class="horizon-bar-wrap">
+                <div class="horizon-bar " style="width:0%;"></div>
+            </div>
+            <span class="horizon-val">Pending</span>
+        </div>
+        <div class="horizon-row">
+            <span class="horizon-label">72h</span>
+            <div class="horizon-bar-wrap">
+                <div class="horizon-bar " style="width:0%;"></div>
+            </div>
+            <span class="horizon-val">Pending</span>
+        </div>
+            </div>
+
+            <div class="proof-card">
+                <h3>Advantage Distribution</h3>
+                <p class="proof-desc">How far ahead of the market are our signals?</p>
+                
+        <div class="adv-dist-row">
+            <span class="adv-dist-label">0-2h</span>
+            <div class="adv-dist-bar-wrap">
+                <div class="adv-dist-bar" style="width:0%;"></div>
+            </div>
+            <span class="adv-dist-val">0</span>
+        </div>
+        <div class="adv-dist-row">
+            <span class="adv-dist-label">2-6h</span>
+            <div class="adv-dist-bar-wrap">
+                <div class="adv-dist-bar" style="width:0%;"></div>
+            </div>
+            <span class="adv-dist-val">0</span>
+        </div>
+        <div class="adv-dist-row">
+            <span class="adv-dist-label">6-12h</span>
+            <div class="adv-dist-bar-wrap">
+                <div class="adv-dist-bar" style="width:0%;"></div>
+            </div>
+            <span class="adv-dist-val">0</span>
+        </div>
+        <div class="adv-dist-row">
+            <span class="adv-dist-label">12-24h</span>
+            <div class="adv-dist-bar-wrap">
+                <div class="adv-dist-bar" style="width:0%;"></div>
+            </div>
+            <span class="adv-dist-val">0</span>
+        </div>
+        <div class="adv-dist-row">
+            <span class="adv-dist-label">24h+</span>
+            <div class="adv-dist-bar-wrap">
+                <div class="adv-dist-bar" style="width:0%;"></div>
+            </div>
+            <span class="adv-dist-val">0</span>
+        </div>
+            </div>
+        </div>
+
+        <div class="proof-card proof-wide">
+            <h3>Signal Strength vs Accuracy</h3>
+            <table class="proof-table">
+                <thead>
+                    <tr>
+                        <th>Strength</th>
+                        <th>Count</th>
+                        <th>6h</th><th>12h</th><th>24h</th><th>72h</th>
+                    </tr>
+                </thead>
+                <tbody>
+        <tr>
+            <td><span class="strength-badge" style="background:#0d7680;">High</span></td>
+            <td>6</td>
+            <td>--</td><td>--</td><td>--</td><td>--</td>
+        </tr>
+        <tr>
+            <td><span class="strength-badge" style="background:#d4a843;">Moderate</span></td>
+            <td>0</td>
+            <td>--</td><td>--</td><td>--</td><td>--</td>
+        </tr>
+        <tr>
+            <td><span class="strength-badge" style="background:#888;">Low</span></td>
+            <td>0</td>
+            <td>--</td><td>--</td><td>--</td><td>--</td>
+        </tr></tbody>
+            </table>
+        </div>
+
+        
+        <div class="proof-card">
+            <h3>Excursion Analysis</h3>
+            <div class="exc-grid">
+                <div class="exc-item exc-fav">
+                    <div class="exc-val">+0.00%</div>
+                    <div class="exc-label">Avg Max Favorable</div>
+                </div>
+                <div class="exc-item exc-adv">
+                    <div class="exc-val">0.00%</div>
+                    <div class="exc-label">Avg Max Adverse</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="proof-card proof-wide">
+            <h3>Per-Asset Breakdown</h3>
+            <table class="proof-table">
+                <thead>
+                    <tr>
+                        <th>Asset</th>
+                        <th>Signals</th>
+                        <th>Positions</th>
+                        <th>6h</th><th>12h</th><th>24h</th><th>72h</th>
+                        <th>Avg Lead</th>
+                    </tr>
+                </thead>
+                <tbody>
+        <tr>
+            <td><strong>Crude Oil</strong></td>
+            <td>1</td>
+            <td>6</td>
+            <td>--</td><td>--</td><td>--</td><td>--</td>
+            <td>--</td>
+        </tr></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-bar bar-signals">
+            <h2>Recent Signals</h2>
+            <span class="section-count">1 total</span>
+        </div>
+        <div class="table-wrap">
+        <table class="trading-table signals-table">
+            <thead>
+                <tr>
+                    <th>Signal ID</th>
+                    <th>Asset</th>
+                    <th>Direction</th>
+                    <th>Strength</th>
+                    <th>Pressure</th>
+                    <th>Ingested</th>
+                </tr>
+            </thead>
+            <tbody>
+        <tr>
+            <td><strong>NAS-45CB752E</strong></td>
+            <td>Crude Oil</td>
+            <td style="color:#c0392b;">Bearish Pressure</td>
+            <td><span class="strength-badge" style="background:#0d7680;">High</span></td>
+            <td>7.2</td>
+            <td>2026-02-26T18:43</td>
+        </tr></tbody>
+        </table>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-links">
+        <a href="https://ivanmassow.github.io/hedgefund-tracker/">Hedge Fund Tracker</a>
+        <a href="https://ivanmassow.github.io/nas-tester/">NAS Tester</a>
+    </div>
+    <p class="footer-disclaimer">
+        NAS Signal Tester is a research tool for benchmarking narrative asset signals.
+        No real trades are executed. Paper positions only. Not financial advice.<br>
+        Generated 2026-02-26 18:44:23 UTC
+    </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+{
+  "signal_pack": {
+    "metadata": {
+      "primary_asset_name": "Crude Oil",
+      "ticker": "CL",
+      "report_id": "NAS-TEST-001",
+      "generated_at": "2026-02-26T10:00:00Z",
+      "decay_window_hours": 48
+    },
+    "primary_asset_signal": {
+      "primary_asset_name": "Crude Oil",
+      "direction_bias": "Bearish Pressure",
+      "pressure_index": 7.2,
+      "acceleration_delta": -12.5,
+      "signal_strength": "High",
+      "decay_window_estimate_hours": 48,
+      "top_driver_clusters": [
+        {"cluster": "OPEC+ production policy", "weight": 0.35},
+        {"cluster": "US strategic reserve releases", "weight": 0.25},
+        {"cluster": "China demand slowdown signals", "weight": 0.20},
+        {"cluster": "Renewable energy capex acceleration", "weight": 0.12},
+        {"cluster": "Dollar strength narrative", "weight": 0.08}
+      ]
+    },
+    "cascade_map": [
+      {
+        "exposure_category": "crude oil",
+        "expected_direction": "DOWN",
+        "magnitude": "High",
+        "lag_hours": 0,
+        "mechanism": "Direct price pressure from supply narrative shift"
+      },
+      {
+        "exposure_category": "energy equities",
+        "expected_direction": "DOWN",
+        "magnitude": "Moderate",
+        "lag_hours": 2,
+        "mechanism": "Equity discount follows commodity pressure with 2-4h lag"
+      },
+      {
+        "exposure_category": "airlines",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 6,
+        "mechanism": "Fuel cost relief — inverse cascade from oil weakness"
+      },
+      {
+        "exposure_category": "chemicals",
+        "expected_direction": "UP",
+        "magnitude": "Low",
+        "lag_hours": 12,
+        "mechanism": "Feedstock cost reduction — slow cascade through petrochemicals"
+      },
+      {
+        "exposure_category": "transport",
+        "expected_direction": "UP",
+        "magnitude": "Low",
+        "lag_hours": 12,
+        "mechanism": "Fuel cost benefit for logistics and freight"
+      },
+      {
+        "exposure_category": "broad commodities",
+        "expected_direction": "DOWN",
+        "magnitude": "Low",
+        "lag_hours": 4,
+        "mechanism": "Cross-commodity sentiment drag"
+      }
+    ],
+    "candidate_trades": [
+      {
+        "instrument": "USO",
+        "direction": "SHORT",
+        "trigger_condition": "Break below $68 support level",
+        "invalidation_condition": "Close above $72 resistance"
+      },
+      {
+        "instrument": "JETS",
+        "direction": "LONG",
+        "trigger_condition": "Sustained oil below $70 for 6h+",
+        "invalidation_condition": "Oil reversal above $73"
+      }
+    ]
+  }
+}

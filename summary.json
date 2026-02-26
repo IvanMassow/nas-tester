@@ -1,0 +1,109 @@
+{
+  "updated": "2026-02-26T18:44:23.101514+00:00",
+  "summary": {
+    "total_signals": 1,
+    "total_positions": 6,
+    "active_positions": 6,
+    "closed_positions": 0,
+    "scoreable_positions": 6,
+    "best_category": "N/A"
+  },
+  "hit_rates": {
+    "6": {
+      "rate": null,
+      "hits": 0,
+      "total": 0
+    },
+    "12": {
+      "rate": null,
+      "hits": 0,
+      "total": 0
+    },
+    "24": {
+      "rate": null,
+      "hits": 0,
+      "total": 0
+    },
+    "72": {
+      "rate": null,
+      "hits": 0,
+      "total": 0
+    }
+  },
+  "avg_lead_time_hours": null,
+  "advantage_distribution": {
+    "0-2h": 0,
+    "2-6h": 0,
+    "6-12h": 0,
+    "12-24h": 0,
+    "24h+": 0
+  },
+  "leaderboard": [
+    {
+      "category": "broad commodities",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "DJP"
+      ]
+    },
+    {
+      "category": "transport",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "IYT"
+      ]
+    },
+    {
+      "category": "chemicals",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "XLB"
+      ]
+    },
+    {
+      "category": "airlines",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "JETS"
+      ]
+    },
+    {
+      "category": "energy equities",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "XLE"
+      ]
+    },
+    {
+      "category": "crude oil",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "USO"
+      ]
+    }
+  ]
+}
