@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-27T18:10:33.907962+00:00",
+  "updated": "2026-02-27T19:11:04.248950+00:00",
   "summary": {
     "total_signals": 5,
     "total_positions": 7,
@@ -10,9 +10,9 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 50.0,
+      "rate": 42.9,
       "hits": 3,
-      "total": 6
+      "total": 7
     },
     "12": {
       "rate": null,
@@ -44,7 +44,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 1.8,
       "avg_lead_time_hours": null,
       "tickers": [
         "SMH"
