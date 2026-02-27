@@ -7,6 +7,7 @@ import os
 # RSS feeds for NAS signal reports
 RSS_FEEDS = [
     "https://oilfutures.makes.news/section/69a05b63d35a8f8b7090b8f2/rss.xml",
+    "https://semiconductors.makes.news/rss.xml",
 ]
 RSS_URL = RSS_FEEDS[0] if RSS_FEEDS else ""
 REPORT_TITLE_PREFIX = "NAS"

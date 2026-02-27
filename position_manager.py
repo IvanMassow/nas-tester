@@ -18,10 +18,39 @@ logger = logging.getLogger("nas.position_manager")
 
 
 def open_positions_from_signal(signal_id, cascade_map, candidate_trades=None,
-                                 decay_window_hours=None, signal_strength=None):
+                                 decay_window_hours=None, signal_strength=None,
+                                 primary_asset_signal=None):
     """Process a cascade map and open/reinforce/flip positions.
     Returns count of positions opened or modified.
+
+    When cascade_map is empty (e.g. semiconductor ETFs where the primary asset
+    IS the tradeable instrument), creates a synthetic cascade entry from
+    the primary_asset_signal so we still track the position.
     """
+    if not cascade_map and primary_asset_signal:
+        # No cascade — the primary asset IS the position
+        # Try to extract ticker from asset name e.g. "VanEck Semiconductor ETF (SMH)"
+        import re
+        asset_name = primary_asset_signal.get("primary_asset_name", "")
+        direction = primary_asset_signal.get("direction_bias", "UP")
+        ticker_match = re.search(r'\(([A-Z]{2,5})\)', asset_name)
+        ticker = ticker_match.group(1) if ticker_match else None
+
+        if ticker:
+            cascade_map = [{
+                "exposure_category": "primary_asset",
+                "expected_direction": direction,
+                "magnitude": "Moderate",
+                "lag_hours": 0,
+                "instruments": [ticker],
+            }]
+            logger.info("Signal {}: no cascade — created synthetic entry for {} {}".format(
+                signal_id, ticker, direction))
+        else:
+            logger.info("Signal {}: no cascade and no ticker in asset name '{}'".format(
+                signal_id, asset_name))
+            return 0
+
     if not cascade_map:
         logger.info("Signal {}: empty cascade map, no positions to open".format(signal_id))
         return 0

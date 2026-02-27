@@ -753,13 +753,22 @@ def ingest_signal_pack(signal_pack, rss_guid=None, title=None, report_url=None,
     logger.info("Ingested signal {}: {} {} (pressure={}, strength={})".format(
         signal_id, primary_asset, direction_bias, pressure_index, signal_strength))
 
-    # Open positions from cascade map
+    # Build primary_asset_signal dict for position manager
+    # (used to create synthetic position when no cascade exists)
+    primary_asset_signal_for_pm = dict(pas)
+    if "primary_asset_name" not in primary_asset_signal_for_pm:
+        primary_asset_signal_for_pm["primary_asset_name"] = primary_asset
+    if "direction_bias" not in primary_asset_signal_for_pm:
+        primary_asset_signal_for_pm["direction_bias"] = direction_bias
+
+    # Open positions from cascade map (or primary asset if no cascade)
     positions_opened = open_positions_from_signal(
         signal_id=signal_id,
         cascade_map=cascade_map,
         candidate_trades=candidate_trades,
         decay_window_hours=decay_window,
         signal_strength=signal_strength,
+        primary_asset_signal=primary_asset_signal_for_pm,
     )
 
     # Update position count
