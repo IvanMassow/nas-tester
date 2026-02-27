@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-27T19:11:04.248950+00:00",
+  "updated": "2026-02-27T20:11:38.376815+00:00",
   "summary": {
     "total_signals": 5,
     "total_positions": 7,
@@ -30,11 +30,11 @@
       "total": 0
     }
   },
-  "avg_lead_time_hours": 5.6,
+  "avg_lead_time_hours": 6.2,
   "advantage_distribution": {
     "0-2h": 0,
     "2-6h": 3,
-    "6-12h": 0,
+    "6-12h": 1,
     "12-24h": 0,
     "24h+": 0
   },
@@ -44,7 +44,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 1.8,
+      "avg_return_when_wrong": 1.85,
       "avg_lead_time_hours": null,
       "tickers": [
         "SMH"
@@ -56,7 +56,7 @@
       "hit_rate_24h": null,
       "avg_return_when_right": null,
       "avg_return_when_wrong": 0.35,
-      "avg_lead_time_hours": null,
+      "avg_lead_time_hours": 8.1,
       "tickers": [
         "EEM"
       ]
