@@ -1,5 +1,5 @@
 {
-  "updated": "2026-02-27T15:36:02.667662+00:00",
+  "updated": "2026-02-27T17:10:28.634033+00:00",
   "summary": {
     "total_signals": 5,
     "total_positions": 7,
@@ -10,9 +10,9 @@
   },
   "hit_rates": {
     "6": {
-      "rate": null,
-      "hits": 0,
-      "total": 0
+      "rate": 50.0,
+      "hits": 3,
+      "total": 6
     },
     "12": {
       "rate": null,
@@ -30,10 +30,10 @@
       "total": 0
     }
   },
-  "avg_lead_time_hours": null,
+  "avg_lead_time_hours": 5.6,
   "advantage_distribution": {
     "0-2h": 0,
-    "2-6h": 0,
+    "2-6h": 3,
     "6-12h": 0,
     "12-24h": 0,
     "24h+": 0
@@ -55,7 +55,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.06,
       "avg_lead_time_hours": null,
       "tickers": [
         "EEM"
@@ -65,9 +65,9 @@
       "category": "rates_pressure",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": null,
+      "avg_return_when_right": 0.54,
       "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
+      "avg_lead_time_hours": 5.6,
       "tickers": [
         "TLT"
       ]
@@ -77,7 +77,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.16,
       "avg_lead_time_hours": null,
       "tickers": [
         "TIP"
@@ -88,7 +88,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.32,
       "avg_lead_time_hours": null,
       "tickers": [
         "XLB"
@@ -98,9 +98,9 @@
       "category": "airlines",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": null,
+      "avg_return_when_right": 4.08,
       "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
+      "avg_lead_time_hours": 5.6,
       "tickers": [
         "JETS"
       ]
@@ -109,9 +109,9 @@
       "category": "energy_equities",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": null,
+      "avg_return_when_right": 0.78,
       "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
+      "avg_lead_time_hours": 5.6,
       "tickers": [
         "XLE"
       ]
