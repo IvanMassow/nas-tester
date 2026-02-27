@@ -1,11 +1,15 @@
 """
 NAS Signal Tester - Scanner
-Polls RSS feeds for NAS signal_packs and ingests them.
-Also supports direct JSON file ingestion for development/testing.
+Polls RSS feeds for NAS signal reports and ingests them.
+Supports three ingestion methods:
+1. JSON signal_pack embedded in RSS description
+2. HTML report parsing (fetches report URL, extracts structured data)
+3. Direct JSON file ingestion for development/testing
 """
 import json
 import hashlib
 import logging
+import re
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
 
@@ -100,9 +104,450 @@ def extract_signal_pack(description):
     return None
 
 
+def parse_html_report(url):
+    """Fetch a NAS report page and extract signal data from structured HTML.
+    Returns a signal_pack dict or None.
+
+    Parses:
+    - Section 2: Primary Asset Signal Dashboard (table with Pressure Index, etc.)
+    - Section 5: Cascade Map (bullet list)
+    - Section 6: Candidate Trades (bullet list)
+    """
+    try:
+        resp = requests.get(url, timeout=30)
+        resp.raise_for_status()
+        html = resp.text
+    except Exception as e:
+        logger.error("Failed to fetch report page {}: {}".format(url, e))
+        return None
+
+    # --- Parse Primary Asset Signal Dashboard (Section 2) ---
+    # Look for table rows with Metric/Value pattern
+    pas = {}
+
+    # Extract from HTML tables: find <td>Metric</td><td>Value</td> patterns
+    table_rows = re.findall(
+        r'<td[^>]*>\s*(.*?)\s*</td>\s*<td[^>]*>\s*(.*?)\s*</td>',
+        html, re.DOTALL | re.IGNORECASE
+    )
+    field_map = {
+        "pressure index": "pressure_index",
+        "direction bias": "direction_bias",
+        "acceleration delta": "acceleration_delta",
+        "signal strength": "signal_strength",
+        "decay window": "decay_window_estimate_hours",
+        "estimated decay window": "decay_window_estimate_hours",
+        "decay window estimate": "decay_window_estimate_hours",
+        "entity name": "primary_asset_name",
+        "instrument type": "instrument_type",
+    }
+
+    for metric_raw, value_raw in table_rows:
+        metric = re.sub(r'<[^>]+>', '', metric_raw).strip().lower()
+        value = re.sub(r'<[^>]+>', '', value_raw).strip()
+
+        for key, field in field_map.items():
+            if key in metric:
+                if field in ("pressure_index", "acceleration_delta"):
+                    try:
+                        # Handle "+28" or "-12.5" or "92"
+                        pas[field] = float(value.replace('+', ''))
+                    except ValueError:
+                        pas[field] = value
+                elif field == "decay_window_estimate_hours":
+                    # Extract number from "24 hours" or "24-hour" or just "24"
+                    m = re.search(r'(\d+)', value)
+                    if m:
+                        pas[field] = float(m.group(1))
+                else:
+                    pas[field] = value
+                break
+
+    if not pas.get("direction_bias") and not pas.get("pressure_index"):
+        # Try extracting from body text: "Pressure Index 92, Direction Bias UP"
+        pi_match = re.search(r'Pressure\s+Index\s+(\d+(?:\.\d+)?)', html, re.IGNORECASE)
+        if pi_match:
+            pas["pressure_index"] = float(pi_match.group(1))
+
+        dir_match = re.search(r'Direction\s+Bias\s+(UP|DOWN|Bullish|Bearish)', html, re.IGNORECASE)
+        if dir_match:
+            pas["direction_bias"] = dir_match.group(1)
+
+        accel_match = re.search(r'Acceleration\s+Delta\s+([+-]?\d+(?:\.\d+)?)', html, re.IGNORECASE)
+        if accel_match:
+            pas["acceleration_delta"] = float(accel_match.group(1))
+
+        str_match = re.search(r'signal\s+strength[^.]*?(High|Moderate|Low)', html, re.IGNORECASE)
+        if str_match:
+            pas["signal_strength"] = str_match.group(1).capitalize()
+
+        decay_match = re.search(r'decay\s+window[^.]*?(\d+)[\s-]*hour', html, re.IGNORECASE)
+        if decay_match:
+            pas["decay_window_estimate_hours"] = float(decay_match.group(1))
+
+    if not pas.get("pressure_index"):
+        logger.warning("Could not extract primary asset signal from report")
+        return None
+
+    # --- Extract primary asset name from title or entity name ---
+    title_match = re.search(
+        r'Narrative\s+Asset\s+Signal\s+Brief:\s*(.+?)\s*\|',
+        html, re.IGNORECASE
+    )
+    primary_asset_name = (
+        pas.get("primary_asset_name") or
+        (title_match.group(1).strip() if title_match else None) or
+        "Unknown"
+    )
+
+    # --- Extract report ID from title [XXXX] ---
+    report_id_match = re.search(r'\[([A-Z0-9]{4})\]', html)
+    report_id = report_id_match.group(1) if report_id_match else None
+
+    # --- Parse Cascade Map (Section 5) ---
+    # Pattern: "Category: expected DIRECTION. Instruments: TICKER1, TICKER2."
+    cascade_map = []
+    cascade_section = re.search(
+        r'(?:Section\s+5|Cascade\s+Map)(.*?)(?:Section\s+6|Candidate\s+Trades|Provenance)',
+        html, re.DOTALL | re.IGNORECASE
+    )
+    if cascade_section:
+        cascade_text = cascade_section.group(1)
+        # Match: <li><strong>Category:</strong> expected UP. Instruments: XLE, OIH.</li>
+        entries = re.findall(
+            r'<strong>\s*([^<]+?)\s*:?\s*</strong>\s*:?\s*expected\s+(UP|DOWN)\.'
+            r'\s*Instruments?:\s*([^.<]+)',
+            cascade_text, re.IGNORECASE
+        )
+        for category_raw, direction, instruments_raw in entries:
+            category = re.sub(r'<[^>]+>', '', category_raw).strip().rstrip(':')
+            instruments = []
+            if instruments_raw:
+                instruments = [t.strip() for t in
+                               re.sub(r'<[^>]+>', '', instruments_raw).strip().split(',')
+                               if t.strip()]
+
+            cascade_entry = {
+                "exposure_category": category.lower(),
+                "expected_direction": direction.upper(),
+                "magnitude": "Moderate",
+                "lag_hours": 0,
+            }
+            if instruments:
+                cascade_entry["instruments"] = instruments
+            cascade_map.append(cascade_entry)
+
+    if not cascade_map:
+        # Fallback: simpler pattern without HTML tags
+        cascade_matches = re.findall(
+            r'([A-Za-z][A-Za-z &/]+?):\s*expected\s+(UP|DOWN)\b[^.]*?'
+            r'(?:Instruments?:\s*([^.]+))?',
+            html, re.IGNORECASE
+        )
+        for category, direction, instruments_raw in cascade_matches:
+            category = category.strip().rstrip(':')
+            instruments = []
+            if instruments_raw:
+                instruments = [t.strip() for t in instruments_raw.strip().split(',')
+                               if t.strip() and len(t.strip()) <= 6]
+            cascade_entry = {
+                "exposure_category": category.lower(),
+                "expected_direction": direction.upper(),
+                "magnitude": "Moderate",
+                "lag_hours": 0,
+            }
+            if instruments:
+                cascade_entry["instruments"] = instruments
+            cascade_map.append(cascade_entry)
+
+    # --- Parse Candidate Trades (Section 6) ---
+    candidate_trades = []
+    trades_section = re.search(
+        r'(?:Section\s+6|Candidate\s+Trades)(.*?)(?:Section\s+7|Provenance|Evidence)',
+        html, re.DOTALL | re.IGNORECASE
+    )
+    if trades_section:
+        trades_text = trades_section.group(1)
+        # Look for instrument entries with triggers
+        trade_matches = re.findall(
+            r'(?:<strong>|<b>)?\s*([A-Z][A-Z0-9 ]{1,15})\s*(?:</strong>|</b>)?:?\s*'
+            r'(?:If[^.]+?),?\s*'
+            r'(?:[^.]*?expected to move (up|down)[^.]*?)?'
+            r'(?:Trigger:\s*([^.]+)\.)?'
+            r'[^.]*?(?:Invalidation:\s*([^.]+)\.)?',
+            trades_text, re.IGNORECASE | re.DOTALL
+        )
+        for instr, direction, trigger, invalidation in trade_matches:
+            instr = instr.strip()
+            if len(instr) <= 6:  # Likely a ticker
+                candidate_trades.append({
+                    "instrument": instr,
+                    "direction": direction.upper() if direction else None,
+                    "trigger_condition": trigger.strip() if trigger else None,
+                    "invalidation_condition": invalidation.strip() if invalidation else None,
+                })
+
+    # --- Extract driver clusters ---
+    driver_clusters = []
+    # Look for driver cluster names in bullet lists near "driver" sections
+    driver_section = re.search(
+        r'(?:Section\s+3|[Dd]river\s+[Cc]lusters?)(.*?)(?:Section\s+4|Asset\s+Profile)',
+        html, re.DOTALL | re.IGNORECASE
+    )
+    if driver_section:
+        cluster_matches = re.findall(
+            r'<(?:strong|b)>\s*([^<]+?)\s*(?::</?\s*(?:/strong>|/b>))',
+            driver_section.group(1), re.IGNORECASE
+        )
+        for cluster_name in cluster_matches[:6]:
+            clean_name = re.sub(r'<[^>]+>', '', cluster_name).strip().rstrip(':')
+            if len(clean_name) > 3:
+                driver_clusters.append({"cluster": clean_name, "weight": 0})
+
+    # --- Assemble signal_pack ---
+    signal_pack = {
+        "metadata": {
+            "primary_asset_name": primary_asset_name,
+            "report_id": report_id,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "decay_window_hours": pas.get("decay_window_estimate_hours", 24),
+            "source": "html_parse",
+        },
+        "primary_asset_signal": {
+            "primary_asset_name": primary_asset_name,
+            "direction_bias": pas.get("direction_bias", "Unknown"),
+            "pressure_index": pas.get("pressure_index", 0),
+            "acceleration_delta": pas.get("acceleration_delta", 0),
+            "signal_strength": pas.get("signal_strength", "Moderate"),
+            "decay_window_estimate_hours": pas.get("decay_window_estimate_hours", 24),
+            "top_driver_clusters": driver_clusters,
+        },
+        "cascade_map": cascade_map,
+        "candidate_trades": candidate_trades,
+    }
+
+    logger.info(
+        "Parsed HTML report: {} | PI={} Dir={} Accel={} Str={} | {} cascades, {} trades".format(
+            primary_asset_name,
+            pas.get("pressure_index"),
+            pas.get("direction_bias"),
+            pas.get("acceleration_delta"),
+            pas.get("signal_strength"),
+            len(cascade_map),
+            len(candidate_trades),
+        ))
+
+    return signal_pack
+
+
+def parse_8a_markdown(markdown_text, meta=None):
+    """Parse signal data from 8A workflow output report_markdown.
+
+    The markdown contains structured sections:
+    - Section 2: Primary Asset Signal Dashboard (table with | Metric | Value |)
+    - Section 3: Driver Clusters (bullet list)
+    - Section 5: Cascade Map (bullet list)
+    - Section 6: Candidate Trades (bullet list)
+
+    Returns a signal_pack dict or None.
+    """
+    if not markdown_text:
+        return None
+
+    meta = meta or {}
+    pas = {}
+
+    # --- Parse Primary Asset Signal Dashboard (Section 2 table) ---
+    # Look for markdown table rows: | Metric | Value |
+    table_rows = re.findall(
+        r'\|\s*([^|]+?)\s*\|\s*([^|]+?)\s*\|',
+        markdown_text
+    )
+    field_map = {
+        "pressure index": "pressure_index",
+        "direction bias": "direction_bias",
+        "acceleration delta": "acceleration_delta",
+        "signal strength": "signal_strength",
+        "decay window": "decay_window_estimate_hours",
+        "entity name": "primary_asset_name",
+    }
+
+    for metric_raw, value_raw in table_rows:
+        metric = metric_raw.strip().lower()
+        value = value_raw.strip()
+        # Skip header rows
+        if metric in ("metric", "field", "---", "--------", "-------"):
+            continue
+        if value.startswith("---"):
+            continue
+
+        for key, field in field_map.items():
+            if key in metric:
+                if field in ("pressure_index", "acceleration_delta"):
+                    try:
+                        pas[field] = float(value.replace('+', ''))
+                    except ValueError:
+                        pas[field] = value
+                elif field == "decay_window_estimate_hours":
+                    m = re.search(r'(\d+)', value)
+                    if m:
+                        pas[field] = float(m.group(1))
+                else:
+                    pas[field] = value
+                break
+
+    if not pas.get("pressure_index"):
+        # Fallback: extract from prose text
+        pi_match = re.search(r'Pressure\s+Index\s+(\d+(?:\.\d+)?)', markdown_text)
+        if pi_match:
+            pas["pressure_index"] = float(pi_match.group(1))
+
+        dir_match = re.search(r'Direction\s+Bias\s+(UP|DOWN)', markdown_text, re.IGNORECASE)
+        if dir_match:
+            pas["direction_bias"] = dir_match.group(1)
+
+        accel_match = re.search(r'Acceleration\s+Delta\s+([+-]?\d+(?:\.\d+)?)', markdown_text)
+        if accel_match:
+            pas["acceleration_delta"] = float(accel_match.group(1))
+
+        str_match = re.search(r'[Ss]ignal [Ss]trength[^.]*?(High|Moderate|Low)', markdown_text)
+        if str_match:
+            pas["signal_strength"] = str_match.group(1).capitalize()
+
+        decay_match = re.search(r'decay\s+window[^.]*?(\d+)[\s-]*hour', markdown_text, re.IGNORECASE)
+        if decay_match:
+            pas["decay_window_estimate_hours"] = float(decay_match.group(1))
+
+    if not pas.get("pressure_index"):
+        logger.warning("Could not extract primary asset signal from 8A markdown")
+        return None
+
+    # --- Extract primary asset name from title line or meta ---
+    primary_asset_name = None
+    title_match = re.search(
+        r'NARRATIVE\s+ASSET\s+SIGNAL\s+BRIEF\s*(?::|---|\u2014)\s*(.+?)\s*(?:---|---|\u2014)\s*\d{4}',
+        markdown_text, re.IGNORECASE
+    )
+    if title_match:
+        primary_asset_name = title_match.group(1).strip()
+    if not primary_asset_name:
+        primary_asset_name = (
+            pas.get("primary_asset_name") or
+            meta.get("target_entity") or
+            "Unknown"
+        )
+
+    # --- Extract report code from title [XXXX] ---
+    report_id_match = re.search(r'\[([A-Z0-9]{4})\]', markdown_text)
+    report_id = report_id_match.group(1) if report_id_match else meta.get("report_code")
+
+    # --- Parse Cascade Map (Section 5) ---
+    cascade_map = []
+    cascade_section = re.search(
+        r'(?:##\s*)?Section\s+5\s*(?:---|:|\u2014)?\s*Cascade\s+Map(.*?)(?:(?:##\s*)?Section\s+6|$)',
+        markdown_text, re.DOTALL | re.IGNORECASE
+    )
+    if cascade_section:
+        cascade_text = cascade_section.group(1)
+        # Match: * **Category:** expected DIRECTION. Instruments: XLE, OIH.
+        entries = re.findall(
+            r'\*\*\s*([^*]+?)\s*:?\s*\*\*\s*:?\s*expected\s+(UP|DOWN)\.'
+            r'\s*Instruments?:\s*([^.\n]+)',
+            cascade_text, re.IGNORECASE
+        )
+        for category_raw, direction, instruments_raw in entries:
+            category = category_raw.strip().rstrip(':')
+            instruments = [t.strip() for t in instruments_raw.strip().split(',')
+                           if t.strip()]
+            cascade_entry = {
+                "exposure_category": category.lower(),
+                "expected_direction": direction.upper(),
+                "magnitude": "Moderate",
+                "lag_hours": 0,
+            }
+            if instruments:
+                cascade_entry["instruments"] = instruments
+            cascade_map.append(cascade_entry)
+
+    # --- Parse Candidate Trades (Section 6) ---
+    candidate_trades = []
+    trades_section = re.search(
+        r'(?:##\s*)?Section\s+6\s*(?:---|:|\u2014)?\s*Candidate\s+Trades(.*?)(?:(?:##\s*)?Section\s+7|$)',
+        markdown_text, re.DOTALL | re.IGNORECASE
+    )
+    if trades_section:
+        trades_text = trades_section.group(1)
+        # Match: * **TICKER:** If ... expected to move DIRECTION ...
+        trade_matches = re.findall(
+            r'\*\*\s*([A-Z][A-Z0-9 ]{0,15})\s*:?\s*\*\*\s*:?\s*'
+            r'If[^.]*?expected\s+to\s+move\s+(up|down)',
+            trades_text, re.IGNORECASE
+        )
+        for instr, direction in trade_matches:
+            instr = instr.strip()
+            candidate_trades.append({
+                "instrument": instr,
+                "direction": direction.upper(),
+            })
+
+    # --- Parse Driver Clusters (Section 3) ---
+    driver_clusters = []
+    driver_section = re.search(
+        r'(?:##\s*)?Section\s+3\s*(?:---|:|\u2014)?\s*Driver\s+Clusters(.*?)(?:(?:##\s*)?Section\s+4|$)',
+        markdown_text, re.DOTALL | re.IGNORECASE
+    )
+    if driver_section:
+        cluster_names = re.findall(
+            r'\*\*\s*([^*]+?)\s*:?\s*\*\*\s*:',
+            driver_section.group(1)
+        )
+        for i, name in enumerate(cluster_names[:6]):
+            clean_name = name.strip().rstrip(':')
+            if len(clean_name) > 3:
+                driver_clusters.append({"cluster": clean_name, "weight": 0})
+
+    # --- Assemble signal_pack ---
+    signal_pack = {
+        "metadata": {
+            "primary_asset_name": primary_asset_name,
+            "report_id": report_id,
+            "generated_at": meta.get("analysis_timestamp",
+                                     datetime.now(timezone.utc).isoformat()),
+            "decay_window_hours": pas.get("decay_window_estimate_hours", 24),
+            "source": "8a_markdown",
+        },
+        "primary_asset_signal": {
+            "primary_asset_name": primary_asset_name,
+            "direction_bias": pas.get("direction_bias", "Unknown"),
+            "pressure_index": pas.get("pressure_index", 0),
+            "acceleration_delta": pas.get("acceleration_delta", 0),
+            "signal_strength": pas.get("signal_strength", "Moderate"),
+            "decay_window_estimate_hours": pas.get("decay_window_estimate_hours", 24),
+            "top_driver_clusters": driver_clusters,
+        },
+        "cascade_map": cascade_map,
+        "candidate_trades": candidate_trades,
+    }
+
+    logger.info(
+        "Parsed 8A markdown: {} [{}] | PI={} Dir={} Accel={} Str={} | {} cascades, {} trades".format(
+            primary_asset_name,
+            report_id,
+            pas.get("pressure_index"),
+            pas.get("direction_bias"),
+            pas.get("acceleration_delta"),
+            pas.get("signal_strength"),
+            len(cascade_map),
+            len(candidate_trades),
+        ))
+
+    return signal_pack
+
+
 def normalise_signal_pack(raw):
     """Normalise a signal_pack JSON object into our standard structure.
-    Handles both the full signal_pack wrapper and direct signal objects.
+    Handles both the full signal_pack wrapper and direct signal objects,
+    including 8A workflow output with embedded report_markdown.
     """
     if not raw or not isinstance(raw, dict):
         return None
@@ -115,12 +560,119 @@ def normalise_signal_pack(raw):
     if "signal_pack" in raw:
         return raw["signal_pack"]
 
-    # If it's an 8A output with signal_pack inside
+    # If it's an 8A workflow output — build signal_pack from structured fields
     for key in ["workflow_8A_output", "workflow8a_output"]:
         if key in raw and isinstance(raw[key], dict):
             inner = raw[key]
-            if "signal_pack" in inner:
-                return inner["signal_pack"]
+            meta = inner.get("meta", {})
+
+            # PREFER top-level structured cascade_map (complete) over
+            # the embedded signal_pack.cascade_map (often incomplete)
+            top_cascade = inner.get("cascade_map", [])
+            top_pas = inner.get("primary_asset_signal", {})
+            embedded_sp = inner.get("signal_pack", {}) or {}
+            embedded_pas = embedded_sp.get("primary_asset_signal", {}) or {}
+
+            # Build the best primary_asset_signal from available data
+            # Top-level and embedded use slightly different field names
+            pas = {
+                "primary_asset_name": (
+                    meta.get("target_entity") or
+                    embedded_sp.get("metadata", {}).get("primary_asset_name") or
+                    "Unknown"
+                ),
+                "pressure_index": (
+                    top_pas.get("pressure_index") or
+                    top_pas.get("pressure_index_0_to_100") or
+                    embedded_pas.get("pressure_index") or
+                    embedded_pas.get("pressure_index_0_to_100") or
+                    0
+                ),
+                "direction_bias": (
+                    top_pas.get("direction_bias") or
+                    embedded_pas.get("direction_bias") or
+                    "Unknown"
+                ),
+                "acceleration_delta": (
+                    top_pas.get("acceleration_delta") or
+                    embedded_pas.get("acceleration_delta") or
+                    0
+                ),
+                "signal_strength": (
+                    top_pas.get("signal_strength") or
+                    embedded_pas.get("signal_strength") or
+                    "Moderate"
+                ),
+                "decay_window_estimate_hours": (
+                    top_pas.get("decay_window_estimate_hours") or
+                    embedded_pas.get("decay_window_estimate_hours") or
+                    24
+                ),
+                "top_driver_clusters": (
+                    top_pas.get("top_driver_clusters") or
+                    embedded_pas.get("top_driver_clusters") or
+                    []
+                ),
+            }
+
+            # Normalise cascade_map field names (candidate_instruments -> instruments)
+            cascade_map = []
+            source_cascade = top_cascade if top_cascade else embedded_sp.get("cascade_map", [])
+            for entry in source_cascade:
+                cascade_entry = {
+                    "exposure_category": entry.get("exposure_category", ""),
+                    "expected_direction": entry.get("expected_direction", ""),
+                    "magnitude": entry.get("magnitude", "Moderate"),
+                    "lag_hours": entry.get("lag_hours", 0),
+                }
+                # Handle both "instruments" and "candidate_instruments"
+                instruments = (
+                    entry.get("instruments") or
+                    entry.get("candidate_instruments") or
+                    []
+                )
+                if instruments:
+                    cascade_entry["instruments"] = instruments
+                cascade_map.append(cascade_entry)
+
+            # Normalise candidate_trades
+            candidate_trades = (
+                inner.get("candidate_trades") or
+                embedded_sp.get("candidate_trades") or
+                []
+            )
+
+            # Extract report_id
+            report_id = meta.get("report_code")
+            if not report_id and "report_markdown" in inner:
+                rid_match = re.search(r'\[([A-Z0-9]{4})\]', inner["report_markdown"])
+                if rid_match:
+                    report_id = rid_match.group(1)
+
+            # If we have usable data, build signal_pack
+            if cascade_map or pas.get("pressure_index"):
+                signal_pack = {
+                    "metadata": {
+                        "primary_asset_name": pas["primary_asset_name"],
+                        "report_id": report_id,
+                        "generated_at": meta.get("analysis_timestamp",
+                                                 datetime.now(timezone.utc).isoformat()),
+                        "decay_window_hours": pas["decay_window_estimate_hours"],
+                        "source": "8a_structured",
+                    },
+                    "primary_asset_signal": pas,
+                    "cascade_map": cascade_map,
+                    "candidate_trades": candidate_trades,
+                }
+                logger.info(
+                    "Built signal_pack from 8A structured data: {} | PI={} Dir={} | {} cascades".format(
+                        pas["primary_asset_name"], pas["pressure_index"],
+                        pas["direction_bias"], len(cascade_map)))
+                return signal_pack
+
+            # Fallback: parse the report_markdown
+            if "report_markdown" in inner:
+                return parse_8a_markdown(inner["report_markdown"], meta=meta)
 
     # If it contains enough NAS fields to be usable directly
     if "direction_bias" in raw or "pressure_index" in raw:
@@ -235,8 +787,13 @@ def scan():
 
         for item in items:
             title = item.get("title", "")
-            # Only process items that look like NAS signal packs
-            if REPORT_TITLE_PREFIX and REPORT_TITLE_PREFIX.lower() not in title.lower():
+            # Accept items that match our prefix OR contain "Narrative Asset Signal"
+            is_nas = (
+                (REPORT_TITLE_PREFIX and REPORT_TITLE_PREFIX.lower() in title.lower()) or
+                "narrative asset signal" in title.lower() or
+                "signal brief" in title.lower()
+            )
+            if not is_nas:
                 continue
 
             rss_guid = item.get("guid") or item.get("link") or ""
@@ -252,15 +809,20 @@ def scan():
                     continue
             conn.close()
 
-            # Extract signal_pack from description
+            # Method 1: Try extracting signal_pack JSON from description
+            signal_pack = None
             raw = extract_signal_pack(item.get("description", ""))
-            if not raw:
-                logger.debug("No signal_pack found in item: {}".format(title[:60]))
-                continue
+            if raw:
+                signal_pack = normalise_signal_pack(raw)
 
-            signal_pack = normalise_signal_pack(raw)
+            # Method 2: If no JSON found, fetch and parse the HTML report page
+            if not signal_pack and item.get("link"):
+                logger.info("No JSON in RSS, parsing HTML report: {}".format(
+                    item["link"][:80]))
+                signal_pack = parse_html_report(item["link"])
+
             if not signal_pack:
-                logger.warning("Could not normalise signal_pack from: {}".format(title[:60]))
+                logger.warning("Could not extract signal from: {}".format(title[:60]))
                 continue
 
             sid = ingest_signal_pack(

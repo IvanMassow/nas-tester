@@ -4,10 +4,9 @@ All constants, thresholds, ETF proxy map, and paths.
 """
 import os
 
-# RSS feeds for NAS signal_packs
-# Replace with actual feed URL when NAS pipeline is live
+# RSS feeds for NAS signal reports
 RSS_FEEDS = [
-    # "https://nassignal.makes.news/rss.xml",
+    "https://oilfutures.makes.news/section/69a05b63d35a8f8b7090b8f2/rss.xml",
 ]
 RSS_URL = RSS_FEEDS[0] if RSS_FEEDS else ""
 REPORT_TITLE_PREFIX = "NAS"
@@ -159,10 +158,35 @@ ETF_PROXY_MAP = {
     "euro": "FXE",
     "yen": "FXY",
 
+    # Rates and inflation (from NAS reports)
+    "rates pressure": "TLT",
+    "rates_pressure": "TLT",
+    "inflation_expectations": "TIP",
+    "us 2y": "SHY",
+    "us 10y": "IEF",
+    "us 2y rate": "SHY",
+    "us 10y rate": "IEF",
+
+    # EM FX
+    "em fx vulnerability": "EEM",
+    "em_fx_vulnerability": "EEM",
+    "emfx basket": "EEM",
+    "em fx": "EEM",
+
+    # Energy (underscore variants from 8A structured data)
+    "energy_equities": "XLE",
+
+    # Oil services
+    "oil services": "OIH",
+    "energy services": "OIH",
+
     # Cross-asset common cascade categories
     "travel & tourism": "JETS",
     "food producers": "DBA",
     "plastics": "XLB",
+    "petrochemical": "XLB",
+    "petrochemicals": "XLB",
+    "shipping & logistics": "IYT",
 }
 
 # Strength ordering for signal_strength comparisons

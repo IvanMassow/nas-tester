@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-26T18:44:23.101514+00:00",
+  "updated": "2026-02-27T11:25:14.132514+00:00",
   "summary": {
-    "total_signals": 1,
-    "total_positions": 6,
-    "active_positions": 6,
+    "total_signals": 2,
+    "total_positions": 9,
+    "active_positions": 9,
     "closed_positions": 0,
-    "scoreable_positions": 6,
+    "scoreable_positions": 7,
     "best_category": "N/A"
   },
   "hit_rates": {
@@ -40,25 +40,47 @@
   },
   "leaderboard": [
     {
-      "category": "broad commodities",
+      "category": "vulnerability",
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": null,
       "tickers": [
-        "DJP"
+        "EEM"
       ]
     },
     {
-      "category": "transport",
+      "category": "pressure",
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": null,
       "tickers": [
-        "IYT"
+        "TLT"
+      ]
+    },
+    {
+      "category": "expectations",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "TIP"
+      ]
+    },
+    {
+      "category": "inflation expectations",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "TIPS"
       ]
     },
     {
@@ -92,17 +114,6 @@
       "avg_lead_time_hours": null,
       "tickers": [
         "XLE"
-      ]
-    },
-    {
-      "category": "crude oil",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
-      "tickers": [
-        "USO"
       ]
     }
   ]

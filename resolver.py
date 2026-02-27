@@ -192,25 +192,64 @@ def _cache_resolution(category, ticker, method):
         conn.close()
 
 
+def _is_valid_ticker(ticker):
+    """Quick check if a ticker is likely a real, liquid instrument.
+    Rejects non-ticker strings like 'US 2Y', 'EMFX basket', '5Y5Y inflation swap'.
+    Also validates price > $1 to avoid penny stocks and mismatches.
+    """
+    if not ticker or not isinstance(ticker, str):
+        return False
+    # Real tickers: 1-5 uppercase letters, no spaces, no digits in first char
+    ticker = ticker.strip()
+    if " " in ticker:
+        return False
+    if len(ticker) > 5 or len(ticker) < 1:
+        return False
+    if not ticker.isalpha():
+        return False
+    # Validate via yfinance that it has a real price > $1
+    try:
+        import yfinance as yf
+        t = yf.Ticker(ticker)
+        info = t.info
+        price = info.get("regularMarketPrice") or info.get("previousClose") or 0
+        if price and price > 1:
+            return True
+        return False
+    except Exception:
+        return False
+
+
 def resolve_all_cascade(cascade_map):
     """Resolve proxy tickers for all entries in a cascade map.
     Returns list of (cascade_entry, ticker, method) tuples.
+
+    When cascade specifies instruments, validates they are real liquid tickers.
+    Falls back to exposure_category resolution if instruments are invalid
+    (e.g. 'US 2Y', 'EMFX basket', 'TIPS' which is a penny stock not the ETF).
     """
     results = []
     for entry in cascade_map:
         category = entry.get("exposure_category", "")
         instruments = entry.get("instruments", entry.get("candidate_instruments", []))
 
-        # If the cascade already specifies tickers, use the first one
+        found = False
         if instruments:
-            ticker = instruments[0] if isinstance(instruments[0], str) else instruments[0].get("ticker", "")
-            if ticker:
-                results.append((entry, ticker, "cascade_specified"))
-                continue
+            for inst in instruments:
+                ticker = inst if isinstance(inst, str) else inst.get("ticker", "")
+                ticker = ticker.strip()
+                if ticker and _is_valid_ticker(ticker):
+                    results.append((entry, ticker, "cascade_specified"))
+                    found = True
+                    break
+                else:
+                    logger.debug("Resolver: cascade instrument '{}' is not a valid ticker, "
+                                 "trying next or falling back".format(ticker))
 
-        # Otherwise resolve from the exposure_category
-        ticker, method = resolve_proxy(category)
-        results.append((entry, ticker, method))
+        if not found:
+            # Resolve from the exposure_category
+            ticker, method = resolve_proxy(category)
+            results.append((entry, ticker, method))
 
     return results
 

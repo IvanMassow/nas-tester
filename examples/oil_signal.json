@@ -1,0 +1,69 @@
+{
+  "signal_pack": {
+    "metadata": {
+      "primary_asset_name": "Crude Oil",
+      "ticker": "CL",
+      "report_id": "NAS-OIL-001",
+      "generated_at": "2026-02-27T10:00:00Z",
+      "decay_window_hours": 48,
+      "feed_source": "oil-market-feed"
+    },
+    "primary_asset_signal": {
+      "primary_asset_name": "Crude Oil",
+      "direction_bias": "Bearish Pressure",
+      "pressure_index": 7.2,
+      "acceleration_delta": -12.5,
+      "signal_strength": "High",
+      "decay_window_estimate_hours": 48,
+      "top_driver_clusters": [
+        {"cluster": "OPEC+ production policy shift", "weight": 0.35},
+        {"cluster": "US strategic reserve releases", "weight": 0.25},
+        {"cluster": "China demand slowdown signals", "weight": 0.20}
+      ]
+    },
+    "cascade_map": [
+      {
+        "exposure_category": "crude oil",
+        "expected_direction": "DOWN",
+        "magnitude": "High",
+        "lag_hours": 0,
+        "mechanism": "Direct: OPEC+ supply narrative crushes price"
+      },
+      {
+        "exposure_category": "energy equities",
+        "expected_direction": "DOWN",
+        "magnitude": "Moderate",
+        "lag_hours": 2,
+        "mechanism": "Oil majors follow crude with 2-4h lag"
+      },
+      {
+        "exposure_category": "airlines",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 6,
+        "mechanism": "INVERSE: Fuel cost relief lifts airline margins"
+      },
+      {
+        "exposure_category": "transport",
+        "expected_direction": "UP",
+        "magnitude": "Low",
+        "lag_hours": 12,
+        "mechanism": "INVERSE: Cheaper diesel benefits logistics"
+      },
+      {
+        "exposure_category": "chemicals",
+        "expected_direction": "UP",
+        "magnitude": "Low",
+        "lag_hours": 12,
+        "mechanism": "INVERSE: Petrochemical feedstock costs fall"
+      },
+      {
+        "exposure_category": "us equities",
+        "expected_direction": "UP",
+        "magnitude": "Low",
+        "lag_hours": 24,
+        "mechanism": "Cheap energy = mild S&P tailwind (consumer spending boost)"
+      }
+    ]
+  }
+}

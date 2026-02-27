@@ -238,7 +238,7 @@ def _build_hero(data):
     return """
     <section class="hero">
         <div class="hero-inner">
-            <h1 class="hero-title">NAS SIGNAL TESTER</h1>
+            <h1 class="hero-title">SENTIMENT EDGE LAB</h1>
             <p class="hero-subtitle">{}</p>
             <div class="stat-grid">{}</div>
         </div>
@@ -774,12 +774,33 @@ def generate_report():
     proof = _build_proof_section(data)
     signals_table = _build_signals_table(data["signals"])
 
+    # OG description
+    s = data["summary"]
+    hr24 = data["hit_rates"].get(24, {})
+    og_parts = []
+    if s["active_positions"] > 0:
+        og_parts.append("{} active positions".format(s["active_positions"]))
+    if hr24.get("rate") is not None:
+        og_parts.append("{:.0f}% hit rate at 24h".format(hr24["rate"]))
+    if data.get("avg_lead_time_hours") is not None:
+        og_parts.append("{:.1f}h avg advantage".format(data["avg_lead_time_hours"]))
+    og_desc = "Sentiment Edge Lab: " + (", ".join(og_parts) if og_parts else "Awaiting first signals")
+
     html = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NAS Signal Tester</title>
+<title>NOAH Sentiment Edge Lab</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="NOAH Sentiment Edge Lab">
+<meta property="og:description" content="{og_desc}">
+<meta property="og:image" content="https://ivanmassow.github.io/nas-tester/og-image.png">
+<meta property="og:url" content="https://ivanmassow.github.io/nas-tester/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NOAH Sentiment Edge Lab">
+<meta name="twitter:description" content="{og_desc}">
+<meta name="twitter:image" content="https://ivanmassow.github.io/nas-tester/og-image.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 /* === Noah Pink Design System === */
@@ -822,8 +843,8 @@ body {{
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 3px;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
 }}
 .header-nav {{
@@ -881,12 +902,12 @@ body {{
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 28px;
-    color: var(--accent);
+    color: var(--gold);
 }}
 .stat-label {{
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.6);
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-top: 4px;
@@ -1330,10 +1351,10 @@ body {{
 <footer class="footer">
     <div class="footer-links">
         <a href="https://ivanmassow.github.io/hedgefund-tracker/">Hedge Fund Tracker</a>
-        <a href="https://ivanmassow.github.io/nas-tester/">NAS Tester</a>
+        <a href="https://ivanmassow.github.io/nas-tester/">Sentiment Edge Lab</a>
     </div>
     <p class="footer-disclaimer">
-        NAS Signal Tester is a research tool for benchmarking narrative asset signals.
+        Sentiment Edge Lab is a research tool for benchmarking narrative-driven asset signals.
         No real trades are executed. Paper positions only. Not financial advice.<br>
         Generated {generated}
     </p>
@@ -1341,6 +1362,7 @@ body {{
 
 </body>
 </html>""".format(
+        og_desc=og_desc,
         updated=now.strftime("%Y-%m-%d %H:%M UTC"),
         hero=hero,
         active_table=active_table,

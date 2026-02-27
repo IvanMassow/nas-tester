@@ -1,0 +1,83 @@
+{
+  "signal_pack": {
+    "metadata": {
+      "primary_asset_name": "Data Centre Infrastructure",
+      "ticker": "SMH",
+      "report_id": "NAS-DC-001",
+      "generated_at": "2026-02-27T09:00:00Z",
+      "decay_window_hours": 48,
+      "feed_source": "data-centre-feed"
+    },
+    "primary_asset_signal": {
+      "primary_asset_name": "Data Centre Infrastructure",
+      "direction_bias": "Bullish Pressure",
+      "pressure_index": 8.1,
+      "acceleration_delta": 22.0,
+      "signal_strength": "High",
+      "decay_window_estimate_hours": 48,
+      "top_driver_clusters": [
+        {"cluster": "AI compute demand exceeding capacity forecasts", "weight": 0.45},
+        {"cluster": "Hyperscaler capex guidance upgrades", "weight": 0.30},
+        {"cluster": "Power grid constraint narrative", "weight": 0.15}
+      ]
+    },
+    "cascade_map": [
+      {
+        "exposure_category": "semiconductors",
+        "expected_direction": "UP",
+        "magnitude": "High",
+        "lag_hours": 0,
+        "mechanism": "Direct: More data centres = more chips (Nvidia, AMD, etc)"
+      },
+      {
+        "exposure_category": "technology",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 2,
+        "mechanism": "Broad tech sentiment lift from AI infrastructure spend"
+      },
+      {
+        "exposure_category": "utilities",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 6,
+        "mechanism": "Data centres are power-hungry — utility demand narrative"
+      },
+      {
+        "exposure_category": "copper",
+        "expected_direction": "UP",
+        "magnitude": "Low",
+        "lag_hours": 12,
+        "mechanism": "Wiring, cooling, power infrastructure all need copper"
+      },
+      {
+        "exposure_category": "real estate",
+        "expected_direction": "UP",
+        "magnitude": "Low",
+        "lag_hours": 24,
+        "mechanism": "Data centre REITs benefit from capacity constraints"
+      },
+      {
+        "exposure_category": "natural gas",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 12,
+        "mechanism": "Gas power generation fills the grid gap for data centres"
+      },
+      {
+        "exposure_category": "nuclear energy",
+        "expected_direction": "UP",
+        "magnitude": "Low",
+        "lag_hours": 48,
+        "mechanism": "Long-tail: nuclear seen as solution to AI power demand"
+      },
+      {
+        "exposure_category": "us equities",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 4,
+        "mechanism": "AI infrastructure spend lifts S&P broadly"
+      }
+    ]
+  }
+}

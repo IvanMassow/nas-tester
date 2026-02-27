@@ -1,0 +1,76 @@
+{
+  "signal_pack": {
+    "metadata": {
+      "primary_asset_name": "Lithium & Battery Technology",
+      "ticker": "LIT",
+      "report_id": "NAS-BATT-001",
+      "generated_at": "2026-02-27T14:00:00Z",
+      "decay_window_hours": 72,
+      "feed_source": "battery-tech-feed"
+    },
+    "primary_asset_signal": {
+      "primary_asset_name": "Lithium & Battery Technology",
+      "direction_bias": "Bullish Pressure",
+      "pressure_index": 6.8,
+      "acceleration_delta": 18.3,
+      "signal_strength": "High",
+      "decay_window_estimate_hours": 72,
+      "top_driver_clusters": [
+        {"cluster": "Solid-state battery breakthrough announcements", "weight": 0.40},
+        {"cluster": "EU battery gigafactory subsidies", "weight": 0.25},
+        {"cluster": "EV adoption acceleration data", "weight": 0.20}
+      ]
+    },
+    "cascade_map": [
+      {
+        "exposure_category": "lithium",
+        "expected_direction": "UP",
+        "magnitude": "High",
+        "lag_hours": 0,
+        "mechanism": "Direct: Battery demand narrative lifts lithium miners"
+      },
+      {
+        "exposure_category": "rare earths",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 4,
+        "mechanism": "Battery supply chain pull-through to rare earth miners"
+      },
+      {
+        "exposure_category": "clean energy",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 6,
+        "mechanism": "Better batteries = more viable renewables"
+      },
+      {
+        "exposure_category": "crude oil",
+        "expected_direction": "DOWN",
+        "magnitude": "Low",
+        "lag_hours": 24,
+        "mechanism": "INVERSE: EV acceleration narrative pressures oil demand outlook"
+      },
+      {
+        "exposure_category": "copper",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 6,
+        "mechanism": "EVs and charging infrastructure need massive copper"
+      },
+      {
+        "exposure_category": "us equities",
+        "expected_direction": "UP",
+        "magnitude": "Low",
+        "lag_hours": 12,
+        "mechanism": "Tech innovation narrative gives mild S&P lift"
+      },
+      {
+        "exposure_category": "semiconductors",
+        "expected_direction": "UP",
+        "magnitude": "Moderate",
+        "lag_hours": 8,
+        "mechanism": "Battery management systems need more chips"
+      }
+    ]
+  }
+}
