@@ -1,11 +1,11 @@
 {
-  "updated": "2026-02-27T13:13:50.707467+00:00",
+  "updated": "2026-02-27T13:35:37.779555+00:00",
   "summary": {
-    "total_signals": 3,
-    "total_positions": 6,
-    "active_positions": 6,
+    "total_signals": 5,
+    "total_positions": 7,
+    "active_positions": 7,
     "closed_positions": 0,
-    "scoreable_positions": 6,
+    "scoreable_positions": 7,
     "best_category": "N/A"
   },
   "hit_rates": {
@@ -39,6 +39,17 @@
     "24h+": 0
   },
   "leaderboard": [
+    {
+      "category": "primary_asset",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "SMH"
+      ]
+    },
     {
       "category": "em_fx_vulnerability",
       "positions": 1,
