@@ -86,74 +86,130 @@ def _hit_cell(hit_val):
     return '<span class="hit-no">&#10005;</span>'
 
 
-def _advantage_timeline_svg(t_belief, t_reality, t_peak, hours_elapsed, max_hours=96):
-    """Generate an inline SVG advantage timeline arrow.
-    Shows the advantage window (teal), confirmation (green), and peak (gold marker).
+def _advantage_timeline_svg(t_belief, t_reality, t_peak, hours_elapsed,
+                            position_id=None, expected_direction=None,
+                            max_hours=96, min_move=0.5):
+    """Generate an inline SVG advantage timeline — a continuous colour bar.
+
+    Concept: "bar chart without an axis"
+    - Each time slice is coloured by whether the return confirms the signal:
+      Grey (#ccc5bb)   = waiting — return hasn't crossed threshold yet
+      Green (#27ae60)  = confirmed — moving in expected direction
+      Gold (#d4a843)   = small dip in a favourable trend (smoothed noise)
+      Red (#c0392b)    = diverging — moving against expected direction
+    - Uses a 3-sample rolling average to smooth noise / minor fluctuations
+    - Peak marker = gold diamond at max favourable point
+    - T0 marker = dark dot at the start
+
+    If no price samples exist yet, falls back to a simple elapsed-time bar.
     """
     width = 280
-    height = 32
-    bar_y = 12
-    bar_h = 8
+    height = 36
+    bar_y = 10
+    bar_h = 12
 
-    # Scale hours to pixels
     def h_to_x(h):
         return max(4, min(width - 4, int(h / max_hours * (width - 8)) + 4))
 
     svg_parts = [
-        '<svg width="{}" height="{}" viewBox="0 0 {} {}" xmlns="http://www.w3.org/2000/svg">'.format(
-            width, height, width, height),
-        # Background track
-        '<rect x="4" y="{}" width="{}" height="{}" rx="3" fill="#e8ddd4"/>'.format(
+        '<svg width="{}" height="{}" viewBox="0 0 {} {}"'
+        ' xmlns="http://www.w3.org/2000/svg">'.format(width, height, width, height),
+        # Full background track (pale, represents the monitoring window)
+        '<rect x="4" y="{}" width="{}" height="{}" rx="4" fill="#e8ddd4"/>'.format(
             bar_y, width - 8, bar_h),
     ]
 
-    # Elapsed time bar (light grey)
-    if hours_elapsed and hours_elapsed > 0:
-        elapsed_w = h_to_x(min(hours_elapsed, max_hours)) - 4
-        svg_parts.append(
-            '<rect x="4" y="{}" width="{}" height="{}" rx="3" fill="#d5cdc4"/>'.format(
-                bar_y, elapsed_w, bar_h))
-
-    belief_x = 4  # always starts at left
-
-    if t_reality:
-        # Parse hours between belief and reality
+    # --- Try to get actual price samples for this position ---
+    samples = []
+    if position_id:
         try:
-            tb = datetime.fromisoformat(t_belief) if isinstance(t_belief, str) else t_belief
-            tr = datetime.fromisoformat(t_reality) if isinstance(t_reality, str) else t_reality
-            if tb.tzinfo is None:
-                tb = tb.replace(tzinfo=timezone.utc)
-            if tr.tzinfo is None:
-                tr = tr.replace(tzinfo=timezone.utc)
-            reality_hours = (tr - tb).total_seconds() / 3600
+            from db import get_conn as _gc
+            conn = _gc()
+            rows = conn.execute(
+                'SELECT hours_since_open, return_pct FROM price_samples '
+                'WHERE position_id = ? ORDER BY timestamp',
+                (position_id,)
+            ).fetchall()
+            conn.close()
+            samples = [(r['hours_since_open'] or 0, r['return_pct'] or 0) for r in rows]
         except Exception:
-            reality_hours = None
+            samples = []
 
-        if reality_hours is not None and reality_hours > 0:
-            reality_x = h_to_x(reality_hours)
-            # Advantage window (teal)
+    is_down = (expected_direction or "").upper() == "DOWN"
+
+    if len(samples) >= 2:
+        # --- Smooth returns with 3-sample rolling average ---
+        returns = [r for _, r in samples]
+        smoothed = []
+        for i in range(len(returns)):
+            window_start = max(0, i - 1)
+            window_end = min(len(returns), i + 2)
+            avg = sum(returns[window_start:window_end]) / (window_end - window_start)
+            smoothed.append(avg)
+
+        # --- Build coloured segments ---
+        # For DOWN-expected positions, invert: negative return = favourable
+        def is_favourable(ret):
+            if is_down:
+                return ret < -min_move
+            return ret > min_move
+
+        def is_adverse(ret):
+            if is_down:
+                return ret > min_move
+            return ret < -min_move
+
+        # Track whether we've EVER been green (for gold/noise handling)
+        ever_green = False
+        segments = []  # (start_x, end_x, colour)
+
+        for i, (hours, _) in enumerate(samples):
+            s_ret = smoothed[i]
+            next_hours = samples[i + 1][0] if i + 1 < len(samples) else (hours_elapsed or hours + 0.5)
+            x1 = h_to_x(hours)
+            x2 = h_to_x(min(next_hours, max_hours))
+            if x2 <= x1:
+                x2 = x1 + 1
+
+            if is_favourable(s_ret):
+                colour = "#27ae60"  # green — confirmed
+                ever_green = True
+            elif is_adverse(s_ret):
+                if ever_green:
+                    colour = "#d4a843"  # gold — dip in a trend that was green
+                else:
+                    colour = "#c0392b"  # red — moving wrong way from the start
+            else:
+                if ever_green:
+                    colour = "#27ae60"  # was green, minor pullback inside threshold
+                else:
+                    colour = "#ccc5bb"  # grey — waiting / no signal yet
+            segments.append((x1, x2, colour))
+
+        for x1, x2, colour in segments:
             svg_parts.append(
-                '<rect x="{}" y="{}" width="{}" height="{}" rx="3" fill="#0d7680" opacity="0.85"/>'.format(
-                    belief_x, bar_y, max(2, reality_x - belief_x), bar_h))
-            # Confirmation bar (green) from reality onward
-            confirm_end = h_to_x(min(hours_elapsed or max_hours, max_hours))
-            if confirm_end > reality_x:
-                svg_parts.append(
-                    '<rect x="{}" y="{}" width="{}" height="{}" rx="3" fill="#27ae60" opacity="0.7"/>'.format(
-                        reality_x, bar_y, confirm_end - reality_x, bar_h))
-            # Reality marker
+                '<rect x="{}" y="{}" width="{}" height="{}" fill="{}" opacity="0.85"/>'.format(
+                    x1, bar_y, max(1, x2 - x1), bar_h, colour))
+
+        # Round the leftmost and rightmost edges
+        if segments:
             svg_parts.append(
-                '<circle cx="{}" cy="{}" r="5" fill="#27ae60" stroke="#fff" stroke-width="1.5"/>'.format(
-                    reality_x, bar_y + bar_h // 2))
+                '<rect x="4" y="{}" width="4" height="{}" rx="4" ry="4" fill="{}"/>'.format(
+                    bar_y, bar_h, segments[0][2]))
+            last_x = segments[-1][1]
+            svg_parts.append(
+                '<rect x="{}" y="{}" width="4" height="{}" rx="4" ry="4" fill="{}"/>'.format(
+                    max(4, last_x - 4), bar_y, bar_h, segments[-1][2]))
+
     else:
-        # No reality yet — entire elapsed is advantage window
+        # Fallback: simple elapsed-time bar (grey = waiting)
         if hours_elapsed and hours_elapsed > 0:
-            adv_w = h_to_x(min(hours_elapsed, max_hours)) - belief_x
+            elapsed_w = h_to_x(min(hours_elapsed, max_hours)) - 4
             svg_parts.append(
-                '<rect x="{}" y="{}" width="{}" height="{}" rx="3" fill="#0d7680" opacity="0.85"/>'.format(
-                    belief_x, bar_y, max(2, adv_w), bar_h))
+                '<rect x="4" y="{}" width="{}" height="{}" rx="4" fill="#ccc5bb" opacity="0.85"/>'.format(
+                    bar_y, max(2, elapsed_w), bar_h))
 
-    # Peak marker (gold star)
+    # --- Peak marker (gold diamond) ---
     if t_peak and t_belief:
         try:
             tb = datetime.fromisoformat(t_belief) if isinstance(t_belief, str) else t_belief
@@ -164,30 +220,51 @@ def _advantage_timeline_svg(t_belief, t_reality, t_peak, hours_elapsed, max_hour
                 tp = tp.replace(tzinfo=timezone.utc)
             peak_hours = (tp - tb).total_seconds() / 3600
             peak_x = h_to_x(peak_hours)
+            cy = bar_y + bar_h // 2
             svg_parts.append(
-                '<polygon points="{},{} {},{} {},{} {},{} {},{}" fill="#d4a843"/>'.format(
-                    peak_x, bar_y - 2,
-                    peak_x + 4, bar_y + bar_h + 4,
-                    peak_x - 5, bar_y + 2,
-                    peak_x + 5, bar_y + 2,
-                    peak_x - 4, bar_y + bar_h + 4))
+                '<polygon points="{},{} {},{} {},{} {},{}" fill="#d4a843" '
+                'stroke="#fff" stroke-width="1"/>'.format(
+                    peak_x, cy - 6,
+                    peak_x + 5, cy,
+                    peak_x, cy + 6,
+                    peak_x - 5, cy))
         except Exception:
             pass
 
-    # T_belief marker (left dot)
-    svg_parts.append(
-        '<circle cx="{}" cy="{}" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>'.format(
-            belief_x, bar_y + bar_h // 2))
+    # --- T_reality marker (green ring — the moment the market confirmed) ---
+    if t_reality and t_belief:
+        try:
+            tb = datetime.fromisoformat(t_belief) if isinstance(t_belief, str) else t_belief
+            tr = datetime.fromisoformat(t_reality) if isinstance(t_reality, str) else t_reality
+            if tb.tzinfo is None:
+                tb = tb.replace(tzinfo=timezone.utc)
+            if tr.tzinfo is None:
+                tr = tr.replace(tzinfo=timezone.utc)
+            reality_hours = (tr - tb).total_seconds() / 3600
+            if reality_hours > 0:
+                rx = h_to_x(reality_hours)
+                svg_parts.append(
+                    '<circle cx="{}" cy="{}" r="5" fill="none" '
+                    'stroke="#27ae60" stroke-width="2"/>'.format(rx, bar_y + bar_h // 2))
+        except Exception:
+            pass
 
-    # Labels
+    # --- T0 marker (dark dot at start) ---
     svg_parts.append(
-        '<text x="{}" y="{}" font-size="8" fill="#666" font-family="Montserrat,sans-serif">T0</text>'.format(
-            belief_x - 1, height - 1))
+        '<circle cx="4" cy="{}" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>'.format(
+            bar_y + bar_h // 2))
+
+    # --- Labels ---
+    svg_parts.append(
+        '<text x="3" y="{}" font-size="8" fill="#888" '
+        'font-family="Montserrat,sans-serif">T0</text>'.format(height - 1))
 
     if hours_elapsed:
         elapsed_x = h_to_x(min(hours_elapsed, max_hours))
         svg_parts.append(
-            '<text x="{}" y="{}" font-size="8" fill="#666" font-family="Montserrat,sans-serif" text-anchor="end">{:.0f}h</text>'.format(
+            '<text x="{}" y="{}" font-size="8" fill="#888" '
+            'font-family="Montserrat,sans-serif" text-anchor="end">'
+            '{:.0f}h</text>'.format(
                 elapsed_x, height - 1, min(hours_elapsed, max_hours)))
 
     svg_parts.append('</svg>')
@@ -303,7 +380,9 @@ def _build_active_table(positions, scores):
 
         timeline = _advantage_timeline_svg(
             p.get("t_belief"), p.get("t_reality"), p.get("t_peak"),
-            hours_elapsed)
+            hours_elapsed,
+            position_id=p.get("id"),
+            expected_direction=p.get("expected_direction"))
 
         # State indicator
         state = p.get("state", "ACTIVE")
