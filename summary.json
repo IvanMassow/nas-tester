@@ -1,7 +1,7 @@
 {
-  "updated": "2026-02-28T12:55:24.399398+00:00",
+  "updated": "2026-02-28T13:06:44.917405+00:00",
   "summary": {
-    "total_signals": 5,
+    "total_signals": 6,
     "total_positions": 7,
     "active_positions": 7,
     "closed_positions": 0,
@@ -20,9 +20,9 @@
       "total": 7
     },
     "24": {
-      "rate": 50.0,
+      "rate": 42.9,
       "hits": 3,
-      "total": 6
+      "total": 7
     },
     "72": {
       "rate": null,
@@ -75,9 +75,9 @@
     {
       "category": "primary_asset",
       "positions": 1,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 1.61,
+      "avg_return_when_wrong": 1.53,
       "avg_lead_time_hours": null,
       "tickers": [
         "SMH"
