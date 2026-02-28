@@ -1,12 +1,12 @@
 {
-  "updated": "2026-02-28T06:19:39.301485+00:00",
+  "updated": "2026-02-28T11:55:24.243111+00:00",
   "summary": {
     "total_signals": 5,
     "total_positions": 7,
     "active_positions": 7,
     "closed_positions": 0,
     "scoreable_positions": 7,
-    "best_category": "N/A"
+    "best_category": "rates_pressure"
   },
   "hit_rates": {
     "6": {
@@ -20,9 +20,9 @@
       "total": 7
     },
     "24": {
-      "rate": null,
-      "hits": 0,
-      "total": 0
+      "rate": 50.0,
+      "hits": 3,
+      "total": 6
     },
     "72": {
       "rate": null,
@@ -40,6 +40,39 @@
   },
   "leaderboard": [
     {
+      "category": "rates_pressure",
+      "positions": 1,
+      "hit_rate_24h": 100.0,
+      "avg_return_when_right": 0.58,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 5.6,
+      "tickers": [
+        "TLT"
+      ]
+    },
+    {
+      "category": "airlines",
+      "positions": 1,
+      "hit_rate_24h": 100.0,
+      "avg_return_when_right": 4.11,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 5.6,
+      "tickers": [
+        "JETS"
+      ]
+    },
+    {
+      "category": "energy_equities",
+      "positions": 1,
+      "hit_rate_24h": 100.0,
+      "avg_return_when_right": 1.32,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 5.6,
+      "tickers": [
+        "XLE"
+      ]
+    },
+    {
       "category": "primary_asset",
       "positions": 1,
       "hit_rate_24h": null,
@@ -53,29 +86,18 @@
     {
       "category": "em_fx_vulnerability",
       "positions": 1,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.28,
+      "avg_return_when_wrong": 0.26,
       "avg_lead_time_hours": 8.1,
       "tickers": [
         "EEM"
       ]
     },
     {
-      "category": "rates_pressure",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": 0.57,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 5.6,
-      "tickers": [
-        "TLT"
-      ]
-    },
-    {
       "category": "inflation_expectations",
       "positions": 1,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
       "avg_return_when_wrong": 0.15,
       "avg_lead_time_hours": null,
@@ -86,34 +108,12 @@
     {
       "category": "chemicals",
       "positions": 1,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.44,
+      "avg_return_when_wrong": 0.55,
       "avg_lead_time_hours": null,
       "tickers": [
         "XLB"
-      ]
-    },
-    {
-      "category": "airlines",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": 4.18,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 5.6,
-      "tickers": [
-        "JETS"
-      ]
-    },
-    {
-      "category": "energy_equities",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": 1.19,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 5.6,
-      "tickers": [
-        "XLE"
       ]
     }
   ]
