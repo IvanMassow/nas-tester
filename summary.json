@@ -1,10 +1,10 @@
 {
-  "updated": "2026-03-01T13:19:18.099258+00:00",
+  "updated": "2026-03-01T14:19:57.129933+00:00",
   "summary": {
     "total_signals": 6,
     "total_positions": 7,
-    "active_positions": 7,
-    "closed_positions": 0,
+    "active_positions": 6,
+    "closed_positions": 1,
     "scoreable_positions": 7,
     "best_category": "rates_pressure"
   },
