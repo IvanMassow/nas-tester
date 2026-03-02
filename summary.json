@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-02T10:30:46.317787+00:00",
+  "updated": "2026-03-02T11:31:10.632130+00:00",
   "summary": {
     "total_signals": 7,
     "total_positions": 7,
@@ -25,9 +25,9 @@
       "total": 7
     },
     "72": {
-      "rate": null,
-      "hits": 0,
-      "total": 0
+      "rate": 50.0,
+      "hits": 3,
+      "total": 6
     }
   },
   "avg_lead_time_hours": 6.2,
@@ -43,7 +43,7 @@
       "category": "rates_pressure",
       "positions": 1,
       "hit_rate_24h": 100.0,
-      "avg_return_when_right": 0.58,
+      "avg_return_when_right": 0.59,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 5.6,
       "tickers": [
@@ -54,7 +54,7 @@
       "category": "airlines",
       "positions": 1,
       "hit_rate_24h": 100.0,
-      "avg_return_when_right": 4.11,
+      "avg_return_when_right": 4.08,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 5.6,
       "tickers": [
@@ -65,7 +65,7 @@
       "category": "energy_equities",
       "positions": 1,
       "hit_rate_24h": 100.0,
-      "avg_return_when_right": 1.32,
+      "avg_return_when_right": 1.39,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 5.6,
       "tickers": [
@@ -88,7 +88,7 @@
       "positions": 1,
       "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.26,
+      "avg_return_when_wrong": 0.24,
       "avg_lead_time_hours": 8.1,
       "tickers": [
         "EEM"
@@ -110,7 +110,7 @@
       "positions": 1,
       "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.55,
+      "avg_return_when_wrong": 0.61,
       "avg_lead_time_hours": null,
       "tickers": [
         "XLB"
