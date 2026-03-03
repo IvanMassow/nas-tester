@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-03T10:00:14.876863+00:00",
+  "updated": "2026-03-03T11:00:31.947688+00:00",
   "summary": {
     "total_signals": 9,
     "total_positions": 9,
@@ -10,9 +10,9 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 42.9,
+      "rate": 37.5,
       "hits": 3,
-      "total": 7
+      "total": 8
     },
     "12": {
       "rate": 42.9,
@@ -88,7 +88,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.0,
       "avg_lead_time_hours": null,
       "tickers": [
         "GLD"
@@ -142,10 +142,10 @@
   "direct_proxy_stats": {
     "direct_count": 4,
     "indirect_count": 5,
-    "direct_hit_rate_6h": 66.66666666666666,
+    "direct_hit_rate_6h": 50.0,
     "direct_hit_rate_24h": 66.66666666666666,
     "direct_hits_6h": 2,
-    "direct_total_6h": 3,
+    "direct_total_6h": 4,
     "avg_direct_lead_hours": 5.56
   },
   "positions": [
@@ -175,11 +175,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 0.0,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "SMH",
