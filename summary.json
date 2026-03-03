@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-03T05:06:44.563518+00:00",
+  "updated": "2026-03-03T06:07:14.250652+00:00",
   "summary": {
     "total_signals": 8,
-    "total_positions": 7,
-    "active_positions": 0,
+    "total_positions": 8,
+    "active_positions": 1,
     "closed_positions": 7,
-    "scoreable_positions": 7,
+    "scoreable_positions": 8,
     "best_category": "rates_pressure"
   },
   "hit_rates": {
@@ -70,6 +70,17 @@
       "avg_lead_time_hours": 5.6,
       "tickers": [
         "XLE"
+      ]
+    },
+    {
+      "category": "gold",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "GLD"
       ]
     },
     {
