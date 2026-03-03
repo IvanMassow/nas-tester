@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-03T16:27:46.115417+00:00",
+  "updated": "2026-03-03T17:28:15.037144+00:00",
   "summary": {
     "total_signals": 11,
     "total_positions": 16,
@@ -10,9 +10,9 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 37.5,
-      "hits": 3,
-      "total": 8
+      "rate": 42.9,
+      "hits": 6,
+      "total": 14
     },
     "12": {
       "rate": 42.9,
@@ -43,7 +43,7 @@
       "category": "airlines",
       "positions": 2,
       "hit_rate_24h": 100.0,
-      "avg_return_when_right": 4.08,
+      "avg_return_when_right": 3.73,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 4.1,
       "tickers": [
@@ -87,7 +87,7 @@
       "category": "vulnerability",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": null,
+      "avg_return_when_right": 5.46,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 2.6,
       "tickers": [
@@ -99,7 +99,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.25,
       "avg_lead_time_hours": null,
       "tickers": [
         "TLT"
@@ -110,7 +110,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.03,
       "avg_lead_time_hours": null,
       "tickers": [
         "TIP"
@@ -120,7 +120,7 @@
       "category": "chemicals",
       "positions": 2,
       "hit_rate_24h": 0.0,
-      "avg_return_when_right": null,
+      "avg_return_when_right": 2.77,
       "avg_return_when_wrong": 0.61,
       "avg_lead_time_hours": 2.6,
       "tickers": [
@@ -132,7 +132,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.43,
       "avg_lead_time_hours": null,
       "tickers": [
         "XLE"
@@ -186,10 +186,10 @@
   "direct_proxy_stats": {
     "direct_count": 6,
     "indirect_count": 10,
-    "direct_hit_rate_6h": 66.66666666666666,
+    "direct_hit_rate_6h": 75.0,
     "direct_hit_rate_24h": 66.66666666666666,
-    "direct_hits_6h": 2,
-    "direct_total_6h": 3,
+    "direct_hits_6h": 3,
+    "direct_total_6h": 4,
     "avg_direct_lead_hours": 4.573333333333333
   },
   "positions": [
@@ -235,11 +235,17 @@
       "lead_time_hours": 2.6,
       "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
-      "best_confirmed_horizon": null,
-      "best_confirmed_return": null,
-      "horizons": {}
+      "latest_return_pct": -5.4553,
+      "latest_state": "CONFIRMED",
+      "best_confirmed_horizon": 6,
+      "best_confirmed_return": -5.4553,
+      "horizons": {
+        "6": {
+          "return_pct": -5.4553,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        }
+      }
     },
     {
       "ticker": "TLT",
@@ -251,11 +257,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": -0.2455,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": -0.2455,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "TIP",
@@ -267,11 +279,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": -0.0314,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": -0.0314,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "XLB",
@@ -283,11 +301,17 @@
       "lead_time_hours": 2.6,
       "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
-      "best_confirmed_horizon": null,
-      "best_confirmed_return": null,
-      "horizons": {}
+      "latest_return_pct": -2.77,
+      "latest_state": "CONFIRMED",
+      "best_confirmed_horizon": 6,
+      "best_confirmed_return": -2.77,
+      "horizons": {
+        "6": {
+          "return_pct": -2.77,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        }
+      }
     },
     {
       "ticker": "JETS",
@@ -299,11 +323,17 @@
       "lead_time_hours": 2.6,
       "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
-      "best_confirmed_horizon": null,
-      "best_confirmed_return": null,
-      "horizons": {}
+      "latest_return_pct": -2.3105,
+      "latest_state": "CONFIRMED",
+      "best_confirmed_horizon": 6,
+      "best_confirmed_return": -2.3105,
+      "horizons": {
+        "6": {
+          "return_pct": -2.3105,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        }
+      }
     },
     {
       "ticker": "XLE",
@@ -315,11 +345,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": -0.4295,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": -0.4295,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "USO",
