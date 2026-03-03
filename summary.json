@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-03T07:07:40.871378+00:00",
+  "updated": "2026-03-03T07:59:41.155595+00:00",
   "summary": {
     "total_signals": 8,
     "total_positions": 8,
@@ -126,6 +126,287 @@
       "tickers": [
         "XLB"
       ]
+    }
+  ],
+  "direct_proxy_stats": {
+    "direct_count": 4,
+    "indirect_count": 4,
+    "direct_hit_rate_6h": 66.66666666666666,
+    "direct_hit_rate_24h": 66.66666666666666,
+    "direct_hits_6h": 2,
+    "direct_total_6h": 3,
+    "avg_direct_lead_hours": 5.56
+  },
+  "positions": [
+    {
+      "ticker": "GLD",
+      "category": "gold",
+      "expected_direction": "DOWN",
+      "tier": "DIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 490.0,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "SMH",
+      "category": "primary_asset",
+      "expected_direction": "UP",
+      "tier": "DIRECT",
+      "group": "EQUITY",
+      "entry_price": 412.010009765625,
+      "lead_time_hours": null,
+      "advantage_state": "EXPIRED",
+      "is_active": 0,
+      "latest_return_pct": -1.3689,
+      "latest_state": "MISS",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {
+        "6": {
+          "return_pct": -1.8495,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "12": {
+          "return_pct": -1.3689,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "24": {
+          "return_pct": -1.3689,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
+    },
+    {
+      "ticker": "EEM",
+      "category": "em_fx_vulnerability",
+      "expected_direction": "DOWN",
+      "tier": "INDIRECT",
+      "group": "MACRO",
+      "entry_price": 62.709999084472656,
+      "lead_time_hours": 8.09,
+      "advantage_state": "CONFIRMED",
+      "is_active": 0,
+      "latest_return_pct": -0.2073,
+      "latest_state": "TRACKING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {
+        "6": {
+          "return_pct": -0.3508,
+          "score_state": "TRACKING",
+          "passed": 0
+        },
+        "12": {
+          "return_pct": -0.2073,
+          "score_state": "TRACKING",
+          "passed": 0
+        },
+        "24": {
+          "return_pct": -0.2073,
+          "score_state": "TRACKING",
+          "passed": 0
+        },
+        "72": {
+          "return_pct": -0.2073,
+          "score_state": "TRACKING",
+          "passed": 0
+        }
+      }
+    },
+    {
+      "ticker": "TLT",
+      "category": "rates_pressure",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "MACRO",
+      "entry_price": 90.2699966430664,
+      "lead_time_hours": 5.56,
+      "advantage_state": "PEAKED",
+      "is_active": 0,
+      "latest_return_pct": 0.6093,
+      "latest_state": "CONFIRMED",
+      "best_confirmed_horizon": 72,
+      "best_confirmed_return": 0.6093,
+      "horizons": {
+        "6": {
+          "return_pct": 0.5316,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "12": {
+          "return_pct": 0.6093,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "24": {
+          "return_pct": 0.6093,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "72": {
+          "return_pct": 0.6093,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        }
+      }
+    },
+    {
+      "ticker": "TIP",
+      "category": "inflation_expectations",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "MACRO",
+      "entry_price": 111.70999908447266,
+      "lead_time_hours": null,
+      "advantage_state": "EXPIRED",
+      "is_active": 0,
+      "latest_return_pct": 0.1522,
+      "latest_state": "TRACKING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {
+        "6": {
+          "return_pct": 0.1521,
+          "score_state": "TRACKING",
+          "passed": 0
+        },
+        "12": {
+          "return_pct": 0.1522,
+          "score_state": "TRACKING",
+          "passed": 0
+        },
+        "24": {
+          "return_pct": 0.1522,
+          "score_state": "TRACKING",
+          "passed": 0
+        },
+        "72": {
+          "return_pct": 0.1522,
+          "score_state": "TRACKING",
+          "passed": 0
+        }
+      }
+    },
+    {
+      "ticker": "XLB",
+      "category": "chemicals",
+      "expected_direction": "DOWN",
+      "tier": "INDIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 53.0,
+      "lead_time_hours": null,
+      "advantage_state": "EXPIRED",
+      "is_active": 0,
+      "latest_return_pct": 0.7736,
+      "latest_state": "MISS",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {
+        "6": {
+          "return_pct": 0.1132,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "12": {
+          "return_pct": 0.7736,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "24": {
+          "return_pct": 0.7736,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "72": {
+          "return_pct": 0.7736,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
+    },
+    {
+      "ticker": "JETS",
+      "category": "airlines",
+      "expected_direction": "DOWN",
+      "tier": "DIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 29.6299991607666,
+      "lead_time_hours": 5.56,
+      "advantage_state": "PEAKED",
+      "is_active": 0,
+      "latest_return_pct": -3.9824,
+      "latest_state": "CONFIRMED",
+      "best_confirmed_horizon": 72,
+      "best_confirmed_return": -3.9824,
+      "horizons": {
+        "6": {
+          "return_pct": -4.3706,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "12": {
+          "return_pct": -3.9824,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "24": {
+          "return_pct": -3.9824,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "72": {
+          "return_pct": -3.9824,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        }
+      }
+    },
+    {
+      "ticker": "XLE",
+      "category": "energy_equities",
+      "expected_direction": "UP",
+      "tier": "DIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 55.04999923706055,
+      "lead_time_hours": 5.56,
+      "advantage_state": "PEAKED",
+      "is_active": 0,
+      "latest_return_pct": 1.5804,
+      "latest_state": "CONFIRMED",
+      "best_confirmed_horizon": 72,
+      "best_confirmed_return": 1.5804,
+      "horizons": {
+        "6": {
+          "return_pct": 0.7993,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "12": {
+          "return_pct": 1.5804,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "24": {
+          "return_pct": 1.5804,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "72": {
+          "return_pct": 1.5804,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        }
+      }
     }
   ]
 }
