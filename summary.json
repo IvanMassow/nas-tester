@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-03T12:11:01.500201+00:00",
+  "updated": "2026-03-03T12:46:18.193935+00:00",
   "summary": {
-    "total_signals": 10,
-    "total_positions": 15,
+    "total_signals": 11,
+    "total_positions": 16,
     "active_positions": 8,
-    "closed_positions": 7,
-    "scoreable_positions": 15,
+    "closed_positions": 8,
+    "scoreable_positions": 16,
     "best_category": "airlines"
   },
   "hit_rates": {
@@ -70,6 +70,17 @@
       "avg_lead_time_hours": 5.6,
       "tickers": [
         "XLE"
+      ]
+    },
+    {
+      "category": "gold",
+      "positions": 2,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": 0.0,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "GLD"
       ]
     },
     {
@@ -139,17 +150,6 @@
       ]
     },
     {
-      "category": "gold",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.0,
-      "avg_lead_time_hours": null,
-      "tickers": [
-        "GLD"
-      ]
-    },
-    {
       "category": "primary_asset",
       "positions": 1,
       "hit_rate_24h": 0.0,
@@ -184,7 +184,7 @@
     }
   ],
   "direct_proxy_stats": {
-    "direct_count": 5,
+    "direct_count": 6,
     "indirect_count": 10,
     "direct_hit_rate_6h": 50.0,
     "direct_hit_rate_24h": 66.66666666666666,
@@ -193,6 +193,22 @@
     "avg_direct_lead_hours": 5.56
   },
   "positions": [
+    {
+      "ticker": "GLD",
+      "category": "gold",
+      "expected_direction": "UP",
+      "tier": "DIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 490.0,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "EEM",
       "category": "vulnerability",
@@ -314,7 +330,7 @@
       "entry_price": 490.0,
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
-      "is_active": 1,
+      "is_active": 0,
       "latest_return_pct": 0.0,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
