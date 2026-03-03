@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-03T08:59:58.030354+00:00",
+  "updated": "2026-03-03T10:00:14.876863+00:00",
   "summary": {
-    "total_signals": 8,
-    "total_positions": 8,
-    "active_positions": 1,
+    "total_signals": 9,
+    "total_positions": 9,
+    "active_positions": 2,
     "closed_positions": 7,
-    "scoreable_positions": 8,
+    "scoreable_positions": 9,
     "best_category": "rates_pressure"
   },
   "hit_rates": {
@@ -73,6 +73,17 @@
       ]
     },
     {
+      "category": "wti crude oil futures and brent crude futures",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "USO"
+      ]
+    },
+    {
       "category": "gold",
       "positions": 1,
       "hit_rate_24h": null,
@@ -130,7 +141,7 @@
   ],
   "direct_proxy_stats": {
     "direct_count": 4,
-    "indirect_count": 4,
+    "indirect_count": 5,
     "direct_hit_rate_6h": 66.66666666666666,
     "direct_hit_rate_24h": 66.66666666666666,
     "direct_hits_6h": 2,
@@ -138,6 +149,22 @@
     "avg_direct_lead_hours": 5.56
   },
   "positions": [
+    {
+      "ticker": "USO",
+      "category": "wti crude oil futures and brent crude futures",
+      "expected_direction": "DOWN",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 87.19000244140625,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "GLD",
       "category": "gold",
