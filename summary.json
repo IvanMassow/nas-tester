@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-03T17:28:15.037144+00:00",
+  "updated": "2026-03-03T18:28:36.091793+00:00",
   "summary": {
     "total_signals": 11,
     "total_positions": 16,
@@ -43,7 +43,7 @@
       "category": "airlines",
       "positions": 2,
       "hit_rate_24h": 100.0,
-      "avg_return_when_right": 3.73,
+      "avg_return_when_right": 3.66,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 4.1,
       "tickers": [
@@ -87,7 +87,7 @@
       "category": "vulnerability",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": 5.46,
+      "avg_return_when_right": 5.61,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 2.6,
       "tickers": [
@@ -99,7 +99,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.25,
+      "avg_return_when_wrong": 0.29,
       "avg_lead_time_hours": null,
       "tickers": [
         "TLT"
@@ -110,7 +110,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.03,
+      "avg_return_when_wrong": 0.05,
       "avg_lead_time_hours": null,
       "tickers": [
         "TIP"
@@ -120,7 +120,7 @@
       "category": "chemicals",
       "positions": 2,
       "hit_rate_24h": 0.0,
-      "avg_return_when_right": 2.77,
+      "avg_return_when_right": 2.66,
       "avg_return_when_wrong": 0.61,
       "avg_lead_time_hours": 2.6,
       "tickers": [
@@ -132,7 +132,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.43,
+      "avg_return_when_wrong": 0.26,
       "avg_lead_time_hours": null,
       "tickers": [
         "XLE"
@@ -235,13 +235,13 @@
       "lead_time_hours": 2.6,
       "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": -5.4553,
+      "latest_return_pct": -5.6098,
       "latest_state": "CONFIRMED",
       "best_confirmed_horizon": 6,
-      "best_confirmed_return": -5.4553,
+      "best_confirmed_return": -5.6098,
       "horizons": {
         "6": {
-          "return_pct": -5.4553,
+          "return_pct": -5.6098,
           "score_state": "CONFIRMED",
           "passed": 1
         }
@@ -257,13 +257,13 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": -0.2455,
+      "latest_return_pct": -0.2901,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
-          "return_pct": -0.2455,
+          "return_pct": -0.2901,
           "score_state": "MISS",
           "passed": 0
         }
@@ -279,13 +279,13 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": -0.0314,
+      "latest_return_pct": -0.0493,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
-          "return_pct": -0.0314,
+          "return_pct": -0.0493,
           "score_state": "MISS",
           "passed": 0
         }
@@ -301,13 +301,13 @@
       "lead_time_hours": 2.6,
       "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": -2.77,
+      "latest_return_pct": -2.6573,
       "latest_state": "CONFIRMED",
       "best_confirmed_horizon": 6,
-      "best_confirmed_return": -2.77,
+      "best_confirmed_return": -2.6573,
       "horizons": {
         "6": {
-          "return_pct": -2.77,
+          "return_pct": -2.6573,
           "score_state": "CONFIRMED",
           "passed": 1
         }
@@ -323,13 +323,13 @@
       "lead_time_hours": 2.6,
       "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": -2.3105,
+      "latest_return_pct": -1.9675,
       "latest_state": "CONFIRMED",
       "best_confirmed_horizon": 6,
-      "best_confirmed_return": -2.3105,
+      "best_confirmed_return": -1.9675,
       "horizons": {
         "6": {
-          "return_pct": -2.3105,
+          "return_pct": -1.9675,
           "score_state": "CONFIRMED",
           "passed": 1
         }
@@ -345,13 +345,13 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": -0.4295,
+      "latest_return_pct": -0.263,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
-          "return_pct": -0.4295,
+          "return_pct": -0.263,
           "score_state": "MISS",
           "passed": 0
         }
