@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-03T13:46:46.718196+00:00",
+  "updated": "2026-03-03T14:47:09.050713+00:00",
   "summary": {
     "total_signals": 11,
     "total_positions": 16,
@@ -30,10 +30,10 @@
       "total": 6
     }
   },
-  "avg_lead_time_hours": 6.2,
+  "avg_lead_time_hours": 4.7,
   "advantage_distribution": {
     "0-2h": 0,
-    "2-6h": 3,
+    "2-6h": 6,
     "6-12h": 1,
     "12-24h": 0,
     "24h+": 0
@@ -45,7 +45,7 @@
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 4.08,
       "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 5.6,
+      "avg_lead_time_hours": 4.1,
       "tickers": [
         "JETS"
       ]
@@ -89,7 +89,7 @@
       "hit_rate_24h": null,
       "avg_return_when_right": null,
       "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
+      "avg_lead_time_hours": 2.6,
       "tickers": [
         "EEM"
       ]
@@ -122,7 +122,7 @@
       "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
       "avg_return_when_wrong": 0.61,
-      "avg_lead_time_hours": null,
+      "avg_lead_time_hours": 2.6,
       "tickers": [
         "XLB"
       ]
@@ -190,7 +190,7 @@
     "direct_hit_rate_24h": 66.66666666666666,
     "direct_hits_6h": 2,
     "direct_total_6h": 4,
-    "avg_direct_lead_hours": 5.56
+    "avg_direct_lead_hours": 4.573333333333333
   },
   "positions": [
     {
@@ -216,8 +216,8 @@
       "tier": "INDIRECT",
       "group": "OTHER",
       "entry_price": 61.5,
-      "lead_time_hours": null,
-      "advantage_state": "AHEAD",
+      "lead_time_hours": 2.6,
+      "advantage_state": "CONFIRMED",
       "is_active": 1,
       "latest_return_pct": null,
       "latest_state": "PENDING",
@@ -264,8 +264,8 @@
       "tier": "INDIRECT",
       "group": "COMMODITIES",
       "entry_price": 53.25,
-      "lead_time_hours": null,
-      "advantage_state": "AHEAD",
+      "lead_time_hours": 2.6,
+      "advantage_state": "CONFIRMED",
       "is_active": 1,
       "latest_return_pct": null,
       "latest_state": "PENDING",
@@ -280,8 +280,8 @@
       "tier": "DIRECT",
       "group": "COMMODITIES",
       "entry_price": 27.700000762939453,
-      "lead_time_hours": null,
-      "advantage_state": "AHEAD",
+      "lead_time_hours": 2.6,
+      "advantage_state": "CONFIRMED",
       "is_active": 1,
       "latest_return_pct": null,
       "latest_state": "PENDING",
