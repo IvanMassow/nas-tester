@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-03T15:27:23.189355+00:00",
+  "updated": "2026-03-03T16:27:46.115417+00:00",
   "summary": {
     "total_signals": 11,
     "total_positions": 16,
@@ -143,7 +143,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 7.33,
+      "avg_return_when_wrong": 7.05,
       "avg_lead_time_hours": null,
       "tickers": [
         "USO"
@@ -331,13 +331,13 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": 7.3288,
+      "latest_return_pct": 7.0536,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
-          "return_pct": 7.3288,
+          "return_pct": 7.0536,
           "score_state": "MISS",
           "passed": 0
         }
