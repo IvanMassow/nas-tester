@@ -1,12 +1,12 @@
 {
-  "updated": "2026-03-03T12:00:52.954951+00:00",
+  "updated": "2026-03-03T12:11:01.500201+00:00",
   "summary": {
-    "total_signals": 9,
-    "total_positions": 9,
-    "active_positions": 2,
+    "total_signals": 10,
+    "total_positions": 15,
+    "active_positions": 8,
     "closed_positions": 7,
-    "scoreable_positions": 9,
-    "best_category": "rates_pressure"
+    "scoreable_positions": 15,
+    "best_category": "airlines"
   },
   "hit_rates": {
     "6": {
@@ -40,6 +40,17 @@
   },
   "leaderboard": [
     {
+      "category": "airlines",
+      "positions": 2,
+      "hit_rate_24h": 100.0,
+      "avg_return_when_right": 4.08,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 5.6,
+      "tickers": [
+        "JETS"
+      ]
+    },
+    {
       "category": "rates_pressure",
       "positions": 1,
       "hit_rate_24h": 100.0,
@@ -51,23 +62,67 @@
       ]
     },
     {
-      "category": "airlines",
-      "positions": 1,
-      "hit_rate_24h": 100.0,
-      "avg_return_when_right": 4.08,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 5.6,
-      "tickers": [
-        "JETS"
-      ]
-    },
-    {
       "category": "energy_equities",
       "positions": 1,
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 1.39,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 5.6,
+      "tickers": [
+        "XLE"
+      ]
+    },
+    {
+      "category": "vulnerability",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "EEM"
+      ]
+    },
+    {
+      "category": "pressure",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "TLT"
+      ]
+    },
+    {
+      "category": "expectations",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "TIP"
+      ]
+    },
+    {
+      "category": "chemicals",
+      "positions": 2,
+      "hit_rate_24h": 0.0,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": 0.61,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "XLB"
+      ]
+    },
+    {
+      "category": "equities",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
       "tickers": [
         "XLE"
       ]
@@ -126,22 +181,11 @@
       "tickers": [
         "TIP"
       ]
-    },
-    {
-      "category": "chemicals",
-      "positions": 1,
-      "hit_rate_24h": 0.0,
-      "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.61,
-      "avg_lead_time_hours": null,
-      "tickers": [
-        "XLB"
-      ]
     }
   ],
   "direct_proxy_stats": {
-    "direct_count": 4,
-    "indirect_count": 5,
+    "direct_count": 5,
+    "indirect_count": 10,
     "direct_hit_rate_6h": 50.0,
     "direct_hit_rate_24h": 66.66666666666666,
     "direct_hits_6h": 2,
@@ -149,6 +193,102 @@
     "avg_direct_lead_hours": 5.56
   },
   "positions": [
+    {
+      "ticker": "EEM",
+      "category": "vulnerability",
+      "expected_direction": "DOWN",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 61.5,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "TLT",
+      "category": "pressure",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 89.61000061035156,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "TIP",
+      "category": "expectations",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 111.56999969482422,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "XLB",
+      "category": "chemicals",
+      "expected_direction": "DOWN",
+      "tier": "INDIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 53.25,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "JETS",
+      "category": "airlines",
+      "expected_direction": "DOWN",
+      "tier": "DIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 27.700000762939453,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "XLE",
+      "category": "equities",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 57.040000915527344,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "USO",
       "category": "wti crude oil futures and brent crude futures",
