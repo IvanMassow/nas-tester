@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-04T16:52:14.024985+00:00",
+  "updated": "2026-03-04T17:52:35.032909+00:00",
   "summary": {
     "total_signals": 13,
     "total_positions": 17,
@@ -10,19 +10,19 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 43.8,
-      "hits": 7,
-      "total": 16
+      "rate": 40.0,
+      "hits": 4,
+      "total": 10
     },
     "12": {
-      "rate": 46.7,
-      "hits": 7,
-      "total": 15
+      "rate": 50.0,
+      "hits": 4,
+      "total": 8
     },
     "24": {
       "rate": 50.0,
-      "hits": 7,
-      "total": 14
+      "hits": 4,
+      "total": 8
     },
     "72": {
       "rate": 50.0,
@@ -30,13 +30,13 @@
       "total": 6
     }
   },
-  "avg_lead_time_hours": 4.5,
+  "avg_lead_time_hours": 14.4,
   "advantage_distribution": {
     "0-2h": 0,
-    "2-6h": 7,
+    "2-6h": 4,
     "6-12h": 1,
     "12-24h": 0,
-    "24h+": 0
+    "24h+": 3
   },
   "leaderboard": [
     {
@@ -44,30 +44,19 @@
       "positions": 2,
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 1.32,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.91,
       "avg_lead_time_hours": 3.2,
       "tickers": [
         "GLD"
       ]
     },
     {
-      "category": "vulnerability",
-      "positions": 1,
-      "hit_rate_24h": 100.0,
-      "avg_return_when_right": 5.21,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 2.6,
-      "tickers": [
-        "EEM"
-      ]
-    },
-    {
       "category": "airlines",
       "positions": 2,
       "hit_rate_24h": 100.0,
-      "avg_return_when_right": 2.89,
+      "avg_return_when_right": 4.08,
       "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 4.1,
+      "avg_lead_time_hours": 17.4,
       "tickers": [
         "JETS"
       ]
@@ -95,33 +84,33 @@
       ]
     },
     {
-      "category": "chemicals",
-      "positions": 2,
-      "hit_rate_24h": 50.0,
-      "avg_return_when_right": 2.53,
-      "avg_return_when_wrong": 0.61,
-      "avg_lead_time_hours": 2.6,
-      "tickers": [
-        "XLB"
-      ]
-    },
-    {
       "category": "crude oil futures",
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.64,
+      "avg_return_when_wrong": null,
       "avg_lead_time_hours": null,
       "tickers": [
         "USO"
       ]
     },
     {
+      "category": "vulnerability",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 29.2,
+      "tickers": [
+        "EEM"
+      ]
+    },
+    {
       "category": "pressure",
       "positions": 1,
-      "hit_rate_24h": 0.0,
+      "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.23,
+      "avg_return_when_wrong": null,
       "avg_lead_time_hours": null,
       "tickers": [
         "TLT"
@@ -130,20 +119,31 @@
     {
       "category": "expectations",
       "positions": 1,
-      "hit_rate_24h": 0.0,
+      "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.06,
+      "avg_return_when_wrong": null,
       "avg_lead_time_hours": null,
       "tickers": [
         "TIP"
       ]
     },
     {
-      "category": "equities",
-      "positions": 1,
+      "category": "chemicals",
+      "positions": 2,
       "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.7,
+      "avg_return_when_wrong": 0.61,
+      "avg_lead_time_hours": 29.2,
+      "tickers": [
+        "XLB"
+      ]
+    },
+    {
+      "category": "equities",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
       "avg_lead_time_hours": null,
       "tickers": [
         "XLE"
@@ -197,11 +197,11 @@
   "direct_proxy_stats": {
     "direct_count": 6,
     "indirect_count": 11,
-    "direct_hit_rate_6h": 80.0,
-    "direct_hit_rate_24h": 80.0,
-    "direct_hits_6h": 4,
+    "direct_hit_rate_6h": 60.0,
+    "direct_hit_rate_24h": 75.0,
+    "direct_hits_6h": 3,
     "direct_total_6h": 5,
-    "avg_direct_lead_hours": 4.2275
+    "avg_direct_lead_hours": 10.875000000000002
   },
   "positions": [
     {
@@ -214,11 +214,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 0.9078,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": 0.9078,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "USO",
@@ -230,22 +236,11 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": -0.6444,
-      "latest_state": "MISS",
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {
-        "6": {
-          "return_pct": -0.6444,
-          "score_state": "MISS",
-          "passed": 0
-        },
-        "12": {
-          "return_pct": -0.6444,
-          "score_state": "MISS",
-          "passed": 0
-        }
-      }
+      "horizons": {}
     },
     {
       "ticker": "GLD",
@@ -286,30 +281,14 @@
       "tier": "INDIRECT",
       "group": "OTHER",
       "entry_price": 61.5,
-      "lead_time_hours": 2.6,
-      "advantage_state": "PEAKED",
+      "lead_time_hours": 29.19,
+      "advantage_state": "CONFIRMED",
       "is_active": 1,
-      "latest_return_pct": -5.0081,
-      "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 24,
-      "best_confirmed_return": -5.0081,
-      "horizons": {
-        "6": {
-          "return_pct": -5.6098,
-          "score_state": "CONFIRMED",
-          "passed": 1
-        },
-        "12": {
-          "return_pct": -5.0081,
-          "score_state": "CONFIRMED",
-          "passed": 1
-        },
-        "24": {
-          "return_pct": -5.0081,
-          "score_state": "CONFIRMED",
-          "passed": 1
-        }
-      }
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
     },
     {
       "ticker": "TLT",
@@ -321,27 +300,11 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": -0.2009,
-      "latest_state": "MISS",
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {
-        "6": {
-          "return_pct": -0.2901,
-          "score_state": "MISS",
-          "passed": 0
-        },
-        "12": {
-          "return_pct": -0.2009,
-          "score_state": "MISS",
-          "passed": 0
-        },
-        "24": {
-          "return_pct": -0.2009,
-          "score_state": "MISS",
-          "passed": 0
-        }
-      }
+      "horizons": {}
     },
     {
       "ticker": "TIP",
@@ -353,27 +316,11 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": -0.0627,
-      "latest_state": "MISS",
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {
-        "6": {
-          "return_pct": -0.0493,
-          "score_state": "MISS",
-          "passed": 0
-        },
-        "12": {
-          "return_pct": -0.0627,
-          "score_state": "MISS",
-          "passed": 0
-        },
-        "24": {
-          "return_pct": -0.0627,
-          "score_state": "MISS",
-          "passed": 0
-        }
-      }
+      "horizons": {}
     },
     {
       "ticker": "XLB",
@@ -382,30 +329,14 @@
       "tier": "INDIRECT",
       "group": "COMMODITIES",
       "entry_price": 53.25,
-      "lead_time_hours": 2.6,
-      "advantage_state": "PEAKED",
+      "lead_time_hours": 29.19,
+      "advantage_state": "CONFIRMED",
       "is_active": 1,
-      "latest_return_pct": -2.4601,
-      "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 24,
-      "best_confirmed_return": -2.4601,
-      "horizons": {
-        "6": {
-          "return_pct": -2.6573,
-          "score_state": "CONFIRMED",
-          "passed": 1
-        },
-        "12": {
-          "return_pct": -2.4601,
-          "score_state": "CONFIRMED",
-          "passed": 1
-        },
-        "24": {
-          "return_pct": -2.4601,
-          "score_state": "CONFIRMED",
-          "passed": 1
-        }
-      }
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
     },
     {
       "ticker": "JETS",
@@ -414,30 +345,14 @@
       "tier": "DIRECT",
       "group": "COMMODITIES",
       "entry_price": 27.700000762939453,
-      "lead_time_hours": 2.6,
-      "advantage_state": "PEAKED",
+      "lead_time_hours": 29.19,
+      "advantage_state": "CONFIRMED",
       "is_active": 1,
-      "latest_return_pct": -0.9747,
-      "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 24,
-      "best_confirmed_return": -0.9747,
-      "horizons": {
-        "6": {
-          "return_pct": -1.9675,
-          "score_state": "CONFIRMED",
-          "passed": 1
-        },
-        "12": {
-          "return_pct": -0.9747,
-          "score_state": "CONFIRMED",
-          "passed": 1
-        },
-        "24": {
-          "return_pct": -0.9747,
-          "score_state": "CONFIRMED",
-          "passed": 1
-        }
-      }
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
     },
     {
       "ticker": "XLE",
@@ -449,27 +364,11 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": -0.9116,
-      "latest_state": "MISS",
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {
-        "6": {
-          "return_pct": -0.263,
-          "score_state": "MISS",
-          "passed": 0
-        },
-        "12": {
-          "return_pct": -0.9116,
-          "score_state": "MISS",
-          "passed": 0
-        },
-        "24": {
-          "return_pct": -0.9116,
-          "score_state": "MISS",
-          "passed": 0
-        }
-      }
+      "horizons": {}
     },
     {
       "ticker": "USO",
