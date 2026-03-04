@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-04T17:52:35.032909+00:00",
+  "updated": "2026-03-04T18:53:02.823213+00:00",
   "summary": {
     "total_signals": 13,
     "total_positions": 17,
@@ -20,9 +20,9 @@
       "total": 8
     },
     "24": {
-      "rate": 50.0,
+      "rate": 44.4,
       "hits": 4,
-      "total": 8
+      "total": 9
     },
     "72": {
       "rate": 50.0,
@@ -44,7 +44,7 @@
       "positions": 2,
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 1.32,
-      "avg_return_when_wrong": 0.91,
+      "avg_return_when_wrong": 0.72,
       "avg_lead_time_hours": 3.2,
       "tickers": [
         "GLD"
@@ -86,9 +86,9 @@
     {
       "category": "crude oil futures",
       "positions": 1,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.45,
       "avg_lead_time_hours": null,
       "tickers": [
         "USO"
@@ -214,13 +214,13 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": 0.9078,
+      "latest_return_pct": 0.722,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
-          "return_pct": 0.9078,
+          "return_pct": 0.722,
           "score_state": "MISS",
           "passed": 0
         }
@@ -236,11 +236,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 0.4461,
+      "latest_state": "TRACKING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "24": {
+          "return_pct": 0.4461,
+          "score_state": "TRACKING",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "GLD",
@@ -282,7 +288,7 @@
       "group": "OTHER",
       "entry_price": 61.5,
       "lead_time_hours": 29.19,
-      "advantage_state": "CONFIRMED",
+      "advantage_state": "PEAKED",
       "is_active": 1,
       "latest_return_pct": null,
       "latest_state": "PENDING",
@@ -330,7 +336,7 @@
       "group": "COMMODITIES",
       "entry_price": 53.25,
       "lead_time_hours": 29.19,
-      "advantage_state": "CONFIRMED",
+      "advantage_state": "PEAKED",
       "is_active": 1,
       "latest_return_pct": null,
       "latest_state": "PENDING",
@@ -346,7 +352,7 @@
       "group": "COMMODITIES",
       "entry_price": 27.700000762939453,
       "lead_time_hours": 29.19,
-      "advantage_state": "CONFIRMED",
+      "advantage_state": "PEAKED",
       "is_active": 1,
       "latest_return_pct": null,
       "latest_state": "PENDING",
