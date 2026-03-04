@@ -1,12 +1,12 @@
 {
-  "updated": "2026-03-04T10:35:46.133966+00:00",
+  "updated": "2026-03-04T11:36:05.218294+00:00",
   "summary": {
     "total_signals": 12,
     "total_positions": 17,
     "active_positions": 8,
     "closed_positions": 9,
     "scoreable_positions": 17,
-    "best_category": "airlines"
+    "best_category": "vulnerability"
   },
   "hit_rates": {
     "6": {
@@ -20,9 +20,9 @@
       "total": 15
     },
     "24": {
-      "rate": 42.9,
-      "hits": 3,
-      "total": 7
+      "rate": 46.2,
+      "hits": 6,
+      "total": 13
     },
     "72": {
       "rate": 50.0,
@@ -40,10 +40,21 @@
   },
   "leaderboard": [
     {
+      "category": "vulnerability",
+      "positions": 1,
+      "hit_rate_24h": 100.0,
+      "avg_return_when_right": 5.21,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 2.6,
+      "tickers": [
+        "EEM"
+      ]
+    },
+    {
       "category": "airlines",
       "positions": 2,
       "hit_rate_24h": 100.0,
-      "avg_return_when_right": 3.21,
+      "avg_return_when_right": 2.89,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 4.1,
       "tickers": [
@@ -73,6 +84,17 @@
       ]
     },
     {
+      "category": "chemicals",
+      "positions": 2,
+      "hit_rate_24h": 50.0,
+      "avg_return_when_right": 2.53,
+      "avg_return_when_wrong": 0.61,
+      "avg_lead_time_hours": 2.6,
+      "tickers": [
+        "XLB"
+      ]
+    },
+    {
       "category": "crude oil futures",
       "positions": 1,
       "hit_rate_24h": null,
@@ -95,22 +117,11 @@
       ]
     },
     {
-      "category": "vulnerability",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": 5.31,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 2.6,
-      "tickers": [
-        "EEM"
-      ]
-    },
-    {
       "category": "pressure",
       "positions": 1,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.25,
+      "avg_return_when_wrong": 0.23,
       "avg_lead_time_hours": null,
       "tickers": [
         "TLT"
@@ -119,7 +130,7 @@
     {
       "category": "expectations",
       "positions": 1,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
       "avg_return_when_wrong": 0.06,
       "avg_lead_time_hours": null,
@@ -128,22 +139,11 @@
       ]
     },
     {
-      "category": "chemicals",
-      "positions": 2,
-      "hit_rate_24h": 0.0,
-      "avg_return_when_right": 2.56,
-      "avg_return_when_wrong": 0.61,
-      "avg_lead_time_hours": 2.6,
-      "tickers": [
-        "XLB"
-      ]
-    },
-    {
       "category": "equities",
       "positions": 1,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.59,
+      "avg_return_when_wrong": 0.7,
       "avg_lead_time_hours": null,
       "tickers": [
         "XLE"
@@ -198,7 +198,7 @@
     "direct_count": 6,
     "indirect_count": 11,
     "direct_hit_rate_6h": 60.0,
-    "direct_hit_rate_24h": 66.66666666666666,
+    "direct_hit_rate_24h": 75.0,
     "direct_hits_6h": 3,
     "direct_total_6h": 5,
     "avg_direct_lead_hours": 4.573333333333333
@@ -286,7 +286,7 @@
       "is_active": 1,
       "latest_return_pct": -5.0081,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 12,
+      "best_confirmed_horizon": 24,
       "best_confirmed_return": -5.0081,
       "horizons": {
         "6": {
@@ -295,6 +295,11 @@
           "passed": 1
         },
         "12": {
+          "return_pct": -5.0081,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "24": {
           "return_pct": -5.0081,
           "score_state": "CONFIRMED",
           "passed": 1
@@ -325,6 +330,11 @@
           "return_pct": -0.2009,
           "score_state": "MISS",
           "passed": 0
+        },
+        "24": {
+          "return_pct": -0.2009,
+          "score_state": "MISS",
+          "passed": 0
         }
       }
     },
@@ -352,6 +362,11 @@
           "return_pct": -0.0627,
           "score_state": "MISS",
           "passed": 0
+        },
+        "24": {
+          "return_pct": -0.0627,
+          "score_state": "MISS",
+          "passed": 0
         }
       }
     },
@@ -367,7 +382,7 @@
       "is_active": 1,
       "latest_return_pct": -2.4601,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 12,
+      "best_confirmed_horizon": 24,
       "best_confirmed_return": -2.4601,
       "horizons": {
         "6": {
@@ -376,6 +391,11 @@
           "passed": 1
         },
         "12": {
+          "return_pct": -2.4601,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "24": {
           "return_pct": -2.4601,
           "score_state": "CONFIRMED",
           "passed": 1
@@ -394,7 +414,7 @@
       "is_active": 1,
       "latest_return_pct": -0.9747,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 12,
+      "best_confirmed_horizon": 24,
       "best_confirmed_return": -0.9747,
       "horizons": {
         "6": {
@@ -403,6 +423,11 @@
           "passed": 1
         },
         "12": {
+          "return_pct": -0.9747,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "24": {
           "return_pct": -0.9747,
           "score_state": "CONFIRMED",
           "passed": 1
@@ -430,6 +455,11 @@
           "passed": 0
         },
         "12": {
+          "return_pct": -0.9116,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "24": {
           "return_pct": -0.9116,
           "score_state": "MISS",
           "passed": 0
