@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-04T20:53:41.022717+00:00",
+  "updated": "2026-03-04T21:54:00.174938+00:00",
   "summary": {
     "total_signals": 13,
     "total_positions": 17,
@@ -234,7 +234,7 @@
       "group": "OTHER",
       "entry_price": 90.78500366210938,
       "lead_time_hours": 25.41,
-      "advantage_state": "CONFIRMED",
+      "advantage_state": "PEAKED",
       "is_active": 1,
       "latest_return_pct": -0.0275,
       "latest_state": "MISS",
