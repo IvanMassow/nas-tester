@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-04T21:54:00.174938+00:00",
+  "updated": "2026-03-04T21:59:05.762230+00:00",
   "summary": {
-    "total_signals": 13,
-    "total_positions": 17,
-    "active_positions": 8,
+    "total_signals": 14,
+    "total_positions": 18,
+    "active_positions": 9,
     "closed_positions": 9,
-    "scoreable_positions": 17,
+    "scoreable_positions": 18,
     "best_category": "gold"
   },
   "hit_rates": {
@@ -81,6 +81,17 @@
       "avg_lead_time_hours": 5.6,
       "tickers": [
         "XLE"
+      ]
+    },
+    {
+      "category": "natural gas",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "UNG"
       ]
     },
     {
@@ -196,7 +207,7 @@
   ],
   "direct_proxy_stats": {
     "direct_count": 6,
-    "indirect_count": 11,
+    "indirect_count": 12,
     "direct_hit_rate_6h": 60.0,
     "direct_hit_rate_24h": 75.0,
     "direct_hits_6h": 3,
@@ -204,6 +215,22 @@
     "avg_direct_lead_hours": 10.875000000000002
   },
   "positions": [
+    {
+      "ticker": "UNG",
+      "category": "natural gas",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 11.779999732971191,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "GLD",
       "category": "gold",
