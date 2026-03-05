@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-05T17:27:53.715938+00:00",
+  "updated": "2026-03-05T18:28:16.903430+00:00",
   "summary": {
     "total_signals": 18,
     "total_positions": 25,
@@ -10,9 +10,9 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 40.0,
+      "rate": 33.3,
       "hits": 4,
-      "total": 10
+      "total": 12
     },
     "12": {
       "rate": 44.4,
@@ -55,7 +55,7 @@
       "positions": 2,
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 1.32,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 1.35,
       "avg_lead_time_hours": 3.2,
       "tickers": [
         "GLD"
@@ -143,7 +143,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 7.56,
       "avg_lead_time_hours": null,
       "tickers": [
         "COPX"
@@ -219,10 +219,10 @@
   "direct_proxy_stats": {
     "direct_count": 7,
     "indirect_count": 18,
-    "direct_hit_rate_6h": 75.0,
+    "direct_hit_rate_6h": 60.0,
     "direct_hit_rate_24h": 75.0,
     "direct_hits_6h": 3,
-    "direct_total_6h": 4,
+    "direct_total_6h": 5,
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
@@ -234,7 +234,7 @@
       "group": "OTHER",
       "entry_price": 57.849998474121094,
       "lead_time_hours": 1.0,
-      "advantage_state": "CONFIRMED",
+      "advantage_state": "PEAKED",
       "is_active": 1,
       "latest_return_pct": null,
       "latest_state": "PENDING",
@@ -332,11 +332,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": -1.3544,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": -1.3544,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "COPX",
@@ -348,11 +354,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": -7.5601,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": -7.5601,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "UNG",
