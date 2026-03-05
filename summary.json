@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-05T02:00:53.838738+00:00",
+  "updated": "2026-03-05T03:01:21.703331+00:00",
   "summary": {
     "total_signals": 14,
     "total_positions": 17,
@@ -10,9 +10,9 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 44.4,
+      "rate": 40.0,
       "hits": 4,
-      "total": 9
+      "total": 10
     },
     "12": {
       "rate": 50.0,
@@ -88,7 +88,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.0,
       "avg_lead_time_hours": null,
       "tickers": [
         "UNG"
@@ -225,11 +225,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 0.0,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "USO",
