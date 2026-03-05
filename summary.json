@@ -1,12 +1,12 @@
 {
-  "updated": "2026-03-05T14:52:09.769320+00:00",
+  "updated": "2026-03-05T15:27:25.055519+00:00",
   "summary": {
-    "total_signals": 17,
-    "total_positions": 19,
-    "active_positions": 3,
+    "total_signals": 18,
+    "total_positions": 25,
+    "active_positions": 9,
     "closed_positions": 16,
-    "scoreable_positions": 19,
-    "best_category": "gold"
+    "scoreable_positions": 25,
+    "best_category": "airlines"
   },
   "hit_rates": {
     "6": {
@@ -40,6 +40,17 @@
   },
   "leaderboard": [
     {
+      "category": "airlines",
+      "positions": 3,
+      "hit_rate_24h": 100.0,
+      "avg_return_when_right": 4.08,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 17.4,
+      "tickers": [
+        "JETS"
+      ]
+    },
+    {
       "category": "gold",
       "positions": 2,
       "hit_rate_24h": 100.0,
@@ -48,17 +59,6 @@
       "avg_lead_time_hours": 3.2,
       "tickers": [
         "GLD"
-      ]
-    },
-    {
-      "category": "airlines",
-      "positions": 2,
-      "hit_rate_24h": 100.0,
-      "avg_return_when_right": 4.08,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 17.4,
-      "tickers": [
-        "JETS"
       ]
     },
     {
@@ -79,6 +79,61 @@
       "avg_return_when_right": 1.39,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 5.6,
+      "tickers": [
+        "XLE"
+      ]
+    },
+    {
+      "category": "vulnerability",
+      "positions": 2,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 29.2,
+      "tickers": [
+        "EEM"
+      ]
+    },
+    {
+      "category": "pressure",
+      "positions": 2,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "TLT"
+      ]
+    },
+    {
+      "category": "expectations",
+      "positions": 2,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "TIP"
+      ]
+    },
+    {
+      "category": "chemicals",
+      "positions": 3,
+      "hit_rate_24h": 0.0,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": 0.61,
+      "avg_lead_time_hours": 29.2,
+      "tickers": [
+        "XLB"
+      ]
+    },
+    {
+      "category": "equities",
+      "positions": 2,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
       "tickers": [
         "XLE"
       ]
@@ -114,61 +169,6 @@
       "avg_lead_time_hours": 25.4,
       "tickers": [
         "USO"
-      ]
-    },
-    {
-      "category": "vulnerability",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 29.2,
-      "tickers": [
-        "EEM"
-      ]
-    },
-    {
-      "category": "pressure",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
-      "tickers": [
-        "TLT"
-      ]
-    },
-    {
-      "category": "expectations",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
-      "tickers": [
-        "TIP"
-      ]
-    },
-    {
-      "category": "chemicals",
-      "positions": 2,
-      "hit_rate_24h": 0.0,
-      "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.61,
-      "avg_lead_time_hours": 29.2,
-      "tickers": [
-        "XLB"
-      ]
-    },
-    {
-      "category": "equities",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
-      "tickers": [
-        "XLE"
       ]
     },
     {
@@ -217,8 +217,8 @@
     }
   ],
   "direct_proxy_stats": {
-    "direct_count": 6,
-    "indirect_count": 13,
+    "direct_count": 7,
+    "indirect_count": 18,
     "direct_hit_rate_6h": 75.0,
     "direct_hit_rate_24h": 75.0,
     "direct_hits_6h": 3,
@@ -226,6 +226,102 @@
     "avg_direct_lead_hours": 10.875000000000002
   },
   "positions": [
+    {
+      "ticker": "EEM",
+      "category": "vulnerability",
+      "expected_direction": "DOWN",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 57.849998474121094,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "TLT",
+      "category": "pressure",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 88.69349670410156,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "TIP",
+      "category": "expectations",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 111.14900207519531,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "XLB",
+      "category": "chemicals",
+      "expected_direction": "DOWN",
+      "tier": "INDIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 51.470001220703125,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "JETS",
+      "category": "airlines",
+      "expected_direction": "DOWN",
+      "tier": "DIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 26.459999084472656,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
+    {
+      "ticker": "XLE",
+      "category": "equities",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 56.8650016784668,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "GLD",
       "category": "gold",
