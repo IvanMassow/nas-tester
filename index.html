@@ -6,12 +6,12 @@
 <title>NOAH Sentiment Edge Lab</title>
 <meta property="og:type" content="website">
 <meta property="og:title" content="NOAH Sentiment Edge Lab">
-<meta property="og:description" content="Sentiment Edge Lab: 67% direct proxy accuracy, 8.8h lead time, 22 signals tracked">
+<meta property="og:description" content="Sentiment Edge Lab: 67% direct proxy accuracy, 8.8h lead time, 24 signals tracked">
 <meta property="og:image" content="https://noah-edge.com/signals/og-image.png">
 <meta property="og:url" content="https://noah-edge.com/signals/">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="NOAH Sentiment Edge Lab">
-<meta name="twitter:description" content="Sentiment Edge Lab: 67% direct proxy accuracy, 8.8h lead time, 22 signals tracked">
+<meta name="twitter:description" content="Sentiment Edge Lab: 67% direct proxy accuracy, 8.8h lead time, 24 signals tracked">
 <meta name="twitter:image" content="https://noah-edge.com/signals/og-image.png">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -676,7 +676,7 @@ body {
         <a href="#act-2">Cascades</a>
         <a href="#act-3">Proof</a>
     </nav>
-    <div class="header-meta">Updated 2026-03-06 12:51 UTC</div>
+    <div class="header-meta">Updated 2026-03-06 12:56 UTC</div>
 </header>
 
 
@@ -686,7 +686,7 @@ body {
             <p class="hero-subtitle">67% directional accuracy on direct proxies at 6 hours &#8212; 8.8h average lead time</p>
             <div class="stat-grid">
         <div class="stat-item">
-            <div class="stat-value">22</div>
+            <div class="stat-value">24</div>
             <div class="stat-label">Signals</div>
         </div>
         <div class="stat-item">
@@ -702,7 +702,7 @@ body {
             <div class="stat-label">Direct Tests</div>
         </div>
         <div class="stat-item">
-            <div class="stat-value">20</div>
+            <div class="stat-value">21</div>
             <div class="stat-label">Monitoring</div>
         </div></div>
         </div>
@@ -795,6 +795,13 @@ body {
                     <tr><th>Ticker</th><th>Category</th><th>Direction</th><th>Return</th><th>Status</th></tr>
                 </thead>
                 <tbody>
+        <tr class="mon-pending">
+            <td><strong>UNG</strong></td>
+            <td>Natural Gas</td>
+            <td style="color:#c0392b;">&#9660; DOWN</td>
+            <td>--</td>
+            <td>PENDING</td>
+        </tr>
         <tr class="mon-pending">
             <td><strong>SLV</strong></td>
             <td>Silver Market</td>
@@ -962,6 +969,26 @@ body {
         <tr class="position-row">
             <td class="cell-ticker">
                 <span class="dot state-active"></span>
+                <strong>UNG</strong> 
+                <div class="cell-sub">natural gas</div>
+            </td>
+            <td class="cell-direction" style="color:#c0392b;">&#9660; DOWN</td>
+            <td class="cell-strength"><span class="strength-badge" style="background:#888;">Low</span></td>
+            <td class="cell-entry">$12.05</td>
+            <td class="cell-return"><span class="ret-pending">--</span></td>
+            <td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
+            <td class="cell-advantage"><span class="adv-badge adv-ahead">&#9719; Ahead of Market</span></td>
+            <td class="cell-timeline"><svg width="280" height="36" viewBox="0 0 280 36" xmlns="http://www.w3.org/2000/svg">
+<rect x="4" y="10" width="272" height="12" rx="4" fill="#e8ddd4"/>
+<rect x="4" y="10" width="2" height="12" rx="4" fill="#ccc5bb" opacity="0.85"/>
+<circle cx="4" cy="16" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>
+<text x="3" y="35" font-size="8" fill="#888" font-family="Montserrat,sans-serif">T0</text>
+<text x="4" y="35" font-size="8" fill="#888" font-family="Montserrat,sans-serif" text-anchor="end">0h</text>
+</svg></td>
+        </tr>
+        <tr class="position-row">
+            <td class="cell-ticker">
+                <span class="dot state-active"></span>
                 <strong>GLD</strong> 
                 <div class="cell-sub">gold</div>
             </td>
@@ -1000,7 +1027,7 @@ body {
 <rect x="4" y="10" width="4" height="12" rx="4" ry="4" fill="#ccc5bb"/>
 <circle cx="4" cy="16" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>
 <text x="3" y="35" font-size="8" fill="#888" font-family="Montserrat,sans-serif">T0</text>
-<text x="6" y="35" font-size="8" fill="#888" font-family="Montserrat,sans-serif" text-anchor="end">1h</text>
+<text x="7" y="35" font-size="8" fill="#888" font-family="Montserrat,sans-serif" text-anchor="end">1h</text>
 </svg></td>
         </tr>
         <tr class="position-row">
@@ -1030,7 +1057,7 @@ body {
         <tr class="position-row">
             <td class="cell-ticker">
                 <span class="dot state-reinforced"></span>
-                <strong>EEM</strong> <span class="reinforce-badge">+1</span>
+                <strong>EEM</strong> <span class="reinforce-badge">+2</span>
                 <div class="cell-sub">vulnerability</div>
             </td>
             <td class="cell-direction" style="color:#c0392b;">&#9660; DOWN</td>
@@ -1095,8 +1122,8 @@ body {
         </tr>
         <tr class="position-row">
             <td class="cell-ticker">
-                <span class="dot state-active"></span>
-                <strong>TLT</strong> 
+                <span class="dot state-reinforced"></span>
+                <strong>TLT</strong> <span class="reinforce-badge">+1</span>
                 <div class="cell-sub">pressure</div>
             </td>
             <td class="cell-direction" style="color:#0d7680;">&#9650; UP</td>
@@ -1160,8 +1187,8 @@ body {
         </tr>
         <tr class="position-row">
             <td class="cell-ticker">
-                <span class="dot state-active"></span>
-                <strong>TIP</strong> 
+                <span class="dot state-reinforced"></span>
+                <strong>TIP</strong> <span class="reinforce-badge">+1</span>
                 <div class="cell-sub">expectations</div>
             </td>
             <td class="cell-direction" style="color:#0d7680;">&#9650; UP</td>
@@ -1225,8 +1252,8 @@ body {
         </tr>
         <tr class="position-row">
             <td class="cell-ticker">
-                <span class="dot state-active"></span>
-                <strong>XLB</strong> 
+                <span class="dot state-reinforced"></span>
+                <strong>XLB</strong> <span class="reinforce-badge">+1</span>
                 <div class="cell-sub">chemicals</div>
             </td>
             <td class="cell-direction" style="color:#c0392b;">&#9660; DOWN</td>
@@ -1291,8 +1318,8 @@ body {
         </tr>
         <tr class="position-row">
             <td class="cell-ticker">
-                <span class="dot state-active"></span>
-                <strong>JETS</strong> 
+                <span class="dot state-reinforced"></span>
+                <strong>JETS</strong> <span class="reinforce-badge">+1</span>
                 <div class="cell-sub">airlines</div>
             </td>
             <td class="cell-direction" style="color:#c0392b;">&#9660; DOWN</td>
@@ -1357,8 +1384,8 @@ body {
         </tr>
         <tr class="position-row">
             <td class="cell-ticker">
-                <span class="dot state-active"></span>
-                <strong>XLE</strong> 
+                <span class="dot state-reinforced"></span>
+                <strong>XLE</strong> <span class="reinforce-badge">+1</span>
                 <div class="cell-sub">equities</div>
             </td>
             <td class="cell-direction" style="color:#0d7680;">&#9650; UP</td>
@@ -1418,106 +1445,6 @@ body {
 <text x="3" y="35" font-size="8" fill="#888" font-family="Montserrat,sans-serif">T0</text>
 <text x="64" y="35" font-size="8" fill="#888" font-family="Montserrat,sans-serif" text-anchor="end">21h</text>
 </svg></td>
-        </tr>
-        <tr class="position-row">
-            <td class="cell-ticker">
-                <span class="dot state-reinforced"></span>
-                <strong>UNG</strong> <span class="reinforce-badge">+1</span>
-                <div class="cell-sub">natural gas</div>
-            </td>
-            <td class="cell-direction" style="color:#0d7680;">&#9650; UP</td>
-            <td class="cell-strength"><span class="strength-badge" style="background:#0d7680;">High</span></td>
-            <td class="cell-entry">$11.78</td>
-            <td class="cell-return"><span class="ret-pos">+2.29%</span></td>
-            <td class="hit-cell"><span class="hit-no">&#10005;</span></td><td class="hit-cell"><span class="hit-no">&#10005;</span></td><td class="hit-cell"><span class="hit-yes">&#10003;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
-            <td class="cell-advantage"><span class="adv-badge adv-peaked">&#9733; Peaked at +16.9h</span></td>
-            <td class="cell-timeline"><svg width="280" height="36" viewBox="0 0 280 36" xmlns="http://www.w3.org/2000/svg">
-<rect x="4" y="10" width="272" height="12" rx="4" fill="#e8ddd4"/>
-<rect x="4" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="5" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="6" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="8" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="9" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="11" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="12" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="14" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="15" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="16" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="18" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="19" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="21" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="22" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="23" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="25" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="26" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="28" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="29" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="31" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="32" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="33" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="35" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="36" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="38" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="39" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="41" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="42" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="43" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="45" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="47" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="48" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="50" y="10" width="1" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="51" y="10" width="2" height="12" fill="#ccc5bb" opacity="0.85"/>
-<rect x="53" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="54" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="56" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="57" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="59" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="60" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="62" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="63" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="64" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="66" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="67" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="69" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="70" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="72" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="73" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="74" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="76" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="77" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="79" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="80" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="82" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="83" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="84" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="86" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="87" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="89" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="90" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="92" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="93" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="94" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="96" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="97" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="99" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="100" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="101" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="103" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="104" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="106" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="107" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="109" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="110" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="112" y="10" width="2" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="114" y="10" width="1" height="12" fill="#27ae60" opacity="0.85"/>
-<rect x="4" y="10" width="4" height="12" rx="4" ry="4" fill="#ccc5bb"/>
-<rect x="111" y="10" width="4" height="12" rx="4" ry="4" fill="#27ae60"/>
-<polygon points="63,10 68,16 63,22 58,16" fill="#d4a843" stroke="#fff" stroke-width="1"/>
-<circle cx="51" cy="16" r="5" fill="none" stroke="#27ae60" stroke-width="2"/>
-<circle cx="4" cy="16" r="4" fill="#262a33" stroke="#fff" stroke-width="1"/>
-<text x="3" y="35" font-size="8" fill="#888" font-family="Montserrat,sans-serif">T0</text>
-<text x="114" y="35" font-size="8" fill="#888" font-family="Montserrat,sans-serif" text-anchor="end">39h</text>
-</svg></td>
         </tr></tbody>
         </table>
         </div>
@@ -1532,7 +1459,7 @@ body {
     <div class="section section-closed">
         <div class="section-bar bar-closed">
             <h2>Closed Positions</h2>
-            <span class="section-count">18 positions</span>
+            <span class="section-count">19 positions</span>
         </div>
         <div class="table-wrap">
         <table class="trading-table">
@@ -1570,6 +1497,18 @@ body {
             <td class="hit-cell"><span class="hit-no">&#10005;</span></td><td class="hit-cell"><span class="hit-no">&#10005;</span></td><td class="hit-cell"><span class="hit-no">&#10005;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
             <td><span class="adv-badge adv-ahead">&#9719; Ahead of Market</span></td>
             <td class="cell-sub">monitoring_window_ex</td>
+        </tr>
+        <tr class="closed-row">
+            <td class="cell-ticker">
+                <span class="dot state-closed"></span>
+                <strong>UNG</strong>
+                <div class="cell-sub">natural gas</div>
+            </td>
+            <td style="color:#0d7680;">&#9650; UP</td>
+            <td><span class="ret-pos">+2.29%</span></td>
+            <td class="hit-cell"><span class="hit-no">&#10005;</span></td><td class="hit-cell"><span class="hit-no">&#10005;</span></td><td class="hit-cell"><span class="hit-yes">&#10003;</span></td><td class="hit-cell"><span class="hit-pending">&#8943;</span></td>
+            <td><span class="adv-badge adv-peaked">&#9733; Peaked at +16.9h</span></td>
+            <td class="cell-sub">direction_flip_by_NA</td>
         </tr>
         <tr class="closed-row">
             <td class="cell-ticker">
@@ -1775,6 +1714,31 @@ body {
         <div class="card-grid">
         <div class="cascade-card card-top">
             <div class="cascade-header">
+                <h3>natural gas</h3>
+                <span class="cascade-rate rate-good">100%</span>
+            </div>
+            <div class="cascade-stats">
+                <div class="cs-item">
+                    <span class="cs-val">2</span>
+                    <span class="cs-label">Positions</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">16.9h</span>
+                    <span class="cs-label">Avg Lead</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">+2.29%</span>
+                    <span class="cs-label">Avg Right</span>
+                </div>
+                <div class="cs-item">
+                    <span class="cs-val">-0.00%</span>
+                    <span class="cs-label">Avg Wrong</span>
+                </div>
+            </div>
+            <div class="cascade-tickers">UNG</div>
+        </div>
+        <div class="cascade-card ">
+            <div class="cascade-header">
                 <h3>airlines</h3>
                 <span class="cascade-rate rate-good">100%</span>
             </div>
@@ -1797,31 +1761,6 @@ body {
                 </div>
             </div>
             <div class="cascade-tickers">JETS</div>
-        </div>
-        <div class="cascade-card ">
-            <div class="cascade-header">
-                <h3>natural gas</h3>
-                <span class="cascade-rate rate-good">100%</span>
-            </div>
-            <div class="cascade-stats">
-                <div class="cs-item">
-                    <span class="cs-val">1</span>
-                    <span class="cs-label">Positions</span>
-                </div>
-                <div class="cs-item">
-                    <span class="cs-val">16.9h</span>
-                    <span class="cs-label">Avg Lead</span>
-                </div>
-                <div class="cs-item">
-                    <span class="cs-val">+2.29%</span>
-                    <span class="cs-label">Avg Right</span>
-                </div>
-                <div class="cs-item">
-                    <span class="cs-val">-0.00%</span>
-                    <span class="cs-label">Avg Wrong</span>
-                </div>
-            </div>
-            <div class="cascade-tickers">UNG</div>
         </div>
         <div class="cascade-card ">
             <div class="cascade-header">
@@ -2330,7 +2269,7 @@ body {
         </tr>
         <tr>
             <td><span class="strength-badge" style="background:#888;">Low</span></td>
-            <td>2</td>
+            <td>3</td>
             <td>0%</td><td>--</td><td>--</td><td>--</td>
         </tr></tbody>
             </table>
@@ -2341,11 +2280,11 @@ body {
             <h3>Excursion Analysis</h3>
             <div class="exc-grid">
                 <div class="exc-item exc-fav">
-                    <div class="exc-val">+1.01%</div>
+                    <div class="exc-val">+0.97%</div>
                     <div class="exc-label">Avg Max Favorable</div>
                 </div>
                 <div class="exc-item exc-adv">
-                    <div class="exc-val">-0.84%</div>
+                    <div class="exc-val">-0.81%</div>
                     <div class="exc-label">Avg Max Adverse</div>
                 </div>
             </div>
@@ -2364,6 +2303,20 @@ body {
                     </tr>
                 </thead>
                 <tbody>
+        <tr>
+            <td><strong>Crude oil futures (Brent and WTI as primary tradables)</strong></td>
+            <td>1</td>
+            <td>0</td>
+            <td>--</td><td>--</td><td>--</td><td>--</td>
+            <td>--</td>
+        </tr>
+        <tr>
+            <td><strong>Natural Gas (commodity; benchmarked via hubs such as Henry Hub and traded via futures/derivatives)</strong></td>
+            <td>1</td>
+            <td>1</td>
+            <td>--</td><td>--</td><td>--</td><td>--</td>
+            <td>--</td>
+        </tr>
         <tr>
             <td><strong>Gold (XAU)</strong></td>
             <td>5</td>
@@ -2483,7 +2436,7 @@ body {
     <div class="section">
         <div class="section-bar bar-signals">
             <h2>Recent Signals</h2>
-            <span class="section-count">22 total</span>
+            <span class="section-count">24 total</span>
         </div>
         <div class="table-wrap">
         <table class="trading-table signals-table">
@@ -2498,6 +2451,22 @@ body {
                 </tr>
             </thead>
             <tbody>
+        <tr>
+            <td><strong>NAS-85A2BC4F</strong></td>
+            <td>Crude oil futures (Brent and WTI as primary tradables)</td>
+            <td style="color:#666;">T1</td>
+            <td><span class="strength-badge" style="background:#0d7680;">High</span></td>
+            <td>74.0</td>
+            <td>2026-03-06T12:56</td>
+        </tr>
+        <tr>
+            <td><strong>NAS-BB6B0018</strong></td>
+            <td>Natural Gas (commodity; benchmarked via hubs such as Henry Hub and traded via futures/derivatives)</td>
+            <td style="color:#666;">MIXED</td>
+            <td><span class="strength-badge" style="background:#888;">Low</span></td>
+            <td>46.0</td>
+            <td>2026-03-06T12:56</td>
+        </tr>
         <tr>
             <td><strong>NAS-B37DA510</strong></td>
             <td>Gold (XAU)</td>
@@ -2641,22 +2610,6 @@ body {
             <td><span class="strength-badge" style="background:#0d7680;">High</span></td>
             <td>97.0</td>
             <td>2026-02-27T13:35</td>
-        </tr>
-        <tr>
-            <td><strong>NAS-FCA390A0</strong></td>
-            <td>VanEck Semiconductor ETF (SMH)</td>
-            <td style="color:#666;">UP</td>
-            <td><span class="strength-badge" style="background:#0d7680;">High</span></td>
-            <td>97.0</td>
-            <td>2026-02-27T13:35</td>
-        </tr>
-        <tr>
-            <td><strong>NAS-EC6725E5</strong></td>
-            <td>Crude oil futures (Brent and WTI)</td>
-            <td style="color:#666;">UP</td>
-            <td><span class="strength-badge" style="background:#0d7680;">High</span></td>
-            <td>84.0</td>
-            <td>2026-02-27T12:13</td>
         </tr></tbody>
         </table>
         </div>
@@ -2671,7 +2624,7 @@ body {
     <p class="footer-disclaimer">
         Sentiment Edge Lab is a research tool for benchmarking narrative-driven asset signals.
         No real trades are executed. Paper positions only. Not financial advice.<br>
-        Generated 2026-03-06 12:51:15 UTC
+        Generated 2026-03-06 12:56:23 UTC
     </p>
 </footer>
 

@@ -1,12 +1,12 @@
 {
-  "updated": "2026-03-06T12:51:15.175308+00:00",
+  "updated": "2026-03-06T12:56:23.749306+00:00",
   "summary": {
-    "total_signals": 22,
-    "total_positions": 28,
+    "total_signals": 24,
+    "total_positions": 29,
     "active_positions": 10,
-    "closed_positions": 18,
-    "scoreable_positions": 28,
-    "best_category": "airlines"
+    "closed_positions": 19,
+    "scoreable_positions": 29,
+    "best_category": "natural gas"
   },
   "hit_rates": {
     "6": {
@@ -40,6 +40,17 @@
   },
   "leaderboard": [
     {
+      "category": "natural gas",
+      "positions": 2,
+      "hit_rate_24h": 100.0,
+      "avg_return_when_right": 2.29,
+      "avg_return_when_wrong": 0.0,
+      "avg_lead_time_hours": 16.9,
+      "tickers": [
+        "UNG"
+      ]
+    },
+    {
       "category": "airlines",
       "positions": 3,
       "hit_rate_24h": 100.0,
@@ -48,17 +59,6 @@
       "avg_lead_time_hours": 11.8,
       "tickers": [
         "JETS"
-      ]
-    },
-    {
-      "category": "natural gas",
-      "positions": 1,
-      "hit_rate_24h": 100.0,
-      "avg_return_when_right": 2.29,
-      "avg_return_when_wrong": 0.0,
-      "avg_lead_time_hours": 16.9,
-      "tickers": [
-        "UNG"
       ]
     },
     {
@@ -240,7 +240,7 @@
   ],
   "direct_proxy_stats": {
     "direct_count": 8,
-    "indirect_count": 20,
+    "indirect_count": 21,
     "direct_hit_rate_6h": 66.66666666666666,
     "direct_hit_rate_24h": 60.0,
     "direct_hits_6h": 4,
@@ -248,6 +248,22 @@
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
+    {
+      "ticker": "UNG",
+      "category": "natural gas",
+      "expected_direction": "DOWN",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 12.050000190734863,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "GLD",
       "category": "gold",
@@ -531,7 +547,7 @@
       "entry_price": 11.779999732971191,
       "lead_time_hours": 16.88,
       "advantage_state": "PEAKED",
-      "is_active": 1,
+      "is_active": 0,
       "latest_return_pct": 2.292,
       "latest_state": "CONFIRMED",
       "best_confirmed_horizon": 24,
