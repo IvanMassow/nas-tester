@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-06T17:33:29.183783+00:00",
+  "updated": "2026-03-06T18:33:58.869484+00:00",
   "summary": {
     "total_signals": 24,
     "total_positions": 29,
@@ -10,9 +10,9 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 40.0,
+      "rate": 36.4,
       "hits": 8,
-      "total": 20
+      "total": 22
     },
     "12": {
       "rate": 35.3,
@@ -44,7 +44,7 @@
       "positions": 2,
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 2.29,
-      "avg_return_when_wrong": 0.0,
+      "avg_return_when_wrong": 2.1,
       "avg_lead_time_hours": 16.9,
       "tickers": [
         "UNG"
@@ -88,7 +88,7 @@
       "positions": 3,
       "hit_rate_24h": 50.0,
       "avg_return_when_right": 1.32,
-      "avg_return_when_wrong": 1.24,
+      "avg_return_when_wrong": 1.31,
       "avg_lead_time_hours": 3.2,
       "tickers": [
         "GLD"
@@ -109,7 +109,7 @@
       "category": "silver market",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": 2.69,
+      "avg_return_when_right": 2.67,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 5.7,
       "tickers": [
@@ -241,10 +241,10 @@
   "direct_proxy_stats": {
     "direct_count": 8,
     "indirect_count": 21,
-    "direct_hit_rate_6h": 66.66666666666666,
+    "direct_hit_rate_6h": 57.14285714285714,
     "direct_hit_rate_24h": 60.0,
     "direct_hits_6h": 4,
-    "direct_total_6h": 6,
+    "direct_total_6h": 7,
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
@@ -258,11 +258,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 6.3071,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": 6.3071,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "GLD",
@@ -274,11 +280,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 1.5253,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": 1.5253,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "SLV",
@@ -288,15 +300,15 @@
       "group": "OTHER",
       "entry_price": 74.2699966430664,
       "lead_time_hours": 5.72,
-      "advantage_state": "CONFIRMED",
+      "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": 2.6886,
+      "latest_return_pct": 2.666,
       "latest_state": "CONFIRMED",
       "best_confirmed_horizon": 6,
-      "best_confirmed_return": 2.6886,
+      "best_confirmed_return": 2.666,
       "horizons": {
         "6": {
-          "return_pct": 2.6886,
+          "return_pct": 2.666,
           "score_state": "CONFIRMED",
           "passed": 1
         }
