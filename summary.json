@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-06T22:35:31.913217+00:00",
+  "updated": "2026-03-06T23:35:55.714309+00:00",
   "summary": {
     "total_signals": 24,
     "total_positions": 29,
@@ -15,9 +15,9 @@
       "total": 22
     },
     "12": {
-      "rate": 35.3,
-      "hits": 6,
-      "total": 17
+      "rate": 42.1,
+      "hits": 8,
+      "total": 19
     },
     "24": {
       "rate": 42.9,
@@ -109,7 +109,7 @@
       "category": "silver market",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": 2.67,
+      "avg_return_when_right": 2.46,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 5.7,
       "tickers": [
@@ -120,7 +120,7 @@
       "category": "wheat markets",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": 4.6,
+      "avg_return_when_right": 5.12,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 5.8,
       "tickers": [
@@ -302,13 +302,18 @@
       "lead_time_hours": 5.72,
       "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": 2.666,
+      "latest_return_pct": 2.2486,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 6,
-      "best_confirmed_return": 2.666,
+      "best_confirmed_horizon": 12,
+      "best_confirmed_return": 2.2486,
       "horizons": {
         "6": {
           "return_pct": 2.666,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "12": {
+          "return_pct": 2.2486,
           "score_state": "CONFIRMED",
           "passed": 1
         }
@@ -324,13 +329,18 @@
       "lead_time_hours": 5.8,
       "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": 4.6031,
+      "latest_return_pct": 5.6376,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 6,
-      "best_confirmed_return": 4.6031,
+      "best_confirmed_horizon": 12,
+      "best_confirmed_return": 5.6376,
       "horizons": {
         "6": {
           "return_pct": 4.6031,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "12": {
+          "return_pct": 5.6376,
           "score_state": "CONFIRMED",
           "passed": 1
         }
