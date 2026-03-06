@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-06T11:35:14.970366+00:00",
+  "updated": "2026-03-06T11:45:25.823986+00:00",
   "summary": {
-    "total_signals": 18,
-    "total_positions": 25,
-    "active_positions": 9,
+    "total_signals": 20,
+    "total_positions": 26,
+    "active_positions": 10,
     "closed_positions": 16,
-    "scoreable_positions": 25,
+    "scoreable_positions": 26,
     "best_category": "airlines"
   },
   "hit_rates": {
@@ -92,6 +92,17 @@
       "avg_lead_time_hours": 5.6,
       "tickers": [
         "XLE"
+      ]
+    },
+    {
+      "category": "wheat markets",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "WEAT"
       ]
     },
     {
@@ -218,7 +229,7 @@
   ],
   "direct_proxy_stats": {
     "direct_count": 7,
-    "indirect_count": 18,
+    "indirect_count": 19,
     "direct_hit_rate_6h": 66.66666666666666,
     "direct_hit_rate_24h": 75.0,
     "direct_hits_6h": 4,
@@ -226,6 +237,22 @@
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
+    {
+      "ticker": "WEAT",
+      "category": "wheat markets",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 22.350000381469727,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "EEM",
       "category": "vulnerability",
