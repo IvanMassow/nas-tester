@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-06T01:31:02.563320+00:00",
+  "updated": "2026-03-06T02:31:30.691981+00:00",
   "summary": {
     "total_signals": 18,
     "total_positions": 25,
@@ -15,9 +15,9 @@
       "total": 18
     },
     "12": {
-      "rate": 36.4,
-      "hits": 4,
-      "total": 11
+      "rate": 35.3,
+      "hits": 6,
+      "total": 17
     },
     "24": {
       "rate": 50.0,
@@ -43,7 +43,7 @@
       "category": "airlines",
       "positions": 3,
       "hit_rate_24h": 100.0,
-      "avg_return_when_right": 3.55,
+      "avg_return_when_right": 3.2,
       "avg_return_when_wrong": null,
       "avg_lead_time_hours": 11.8,
       "tickers": [
@@ -99,7 +99,7 @@
       "positions": 2,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.32,
+      "avg_return_when_wrong": 0.35,
       "avg_lead_time_hours": 15.1,
       "tickers": [
         "EEM"
@@ -143,7 +143,7 @@
       "positions": 2,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.66,
+      "avg_return_when_wrong": 0.67,
       "avg_lead_time_hours": null,
       "tickers": [
         "XLE"
@@ -236,13 +236,18 @@
       "lead_time_hours": 1.0,
       "advantage_state": "PEAKED",
       "is_active": 1,
-      "latest_return_pct": -0.3198,
+      "latest_return_pct": -0.3803,
       "latest_state": "TRACKING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
           "return_pct": -0.3198,
+          "score_state": "TRACKING",
+          "passed": 0
+        },
+        "12": {
+          "return_pct": -0.3803,
           "score_state": "TRACKING",
           "passed": 0
         }
@@ -264,6 +269,11 @@
       "best_confirmed_return": null,
       "horizons": {
         "6": {
+          "return_pct": 0.1088,
+          "score_state": "TRACKING",
+          "passed": 0
+        },
+        "12": {
           "return_pct": 0.1088,
           "score_state": "TRACKING",
           "passed": 0
@@ -289,6 +299,11 @@
           "return_pct": 0.0639,
           "score_state": "TRACKING",
           "passed": 0
+        },
+        "12": {
+          "return_pct": 0.0639,
+          "score_state": "TRACKING",
+          "passed": 0
         }
       }
     },
@@ -304,10 +319,15 @@
       "is_active": 1,
       "latest_return_pct": -1.2434,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 6,
+      "best_confirmed_horizon": 12,
       "best_confirmed_return": -1.2434,
       "horizons": {
         "6": {
+          "return_pct": -1.2434,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "12": {
           "return_pct": -1.2434,
           "score_state": "CONFIRMED",
           "passed": 1
@@ -326,10 +346,15 @@
       "is_active": 1,
       "latest_return_pct": -1.4361,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 6,
+      "best_confirmed_horizon": 12,
       "best_confirmed_return": -1.4361,
       "horizons": {
         "6": {
+          "return_pct": -1.4361,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "12": {
           "return_pct": -1.4361,
           "score_state": "CONFIRMED",
           "passed": 1
@@ -346,13 +371,18 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": -0.6595,
+      "latest_return_pct": -0.677,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
           "return_pct": -0.6595,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "12": {
+          "return_pct": -0.677,
           "score_state": "MISS",
           "passed": 0
         }
