@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-06T18:33:58.869484+00:00",
+  "updated": "2026-03-06T19:34:18.421262+00:00",
   "summary": {
     "total_signals": 24,
     "total_positions": 29,
@@ -44,7 +44,7 @@
       "positions": 2,
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 2.29,
-      "avg_return_when_wrong": 2.1,
+      "avg_return_when_wrong": 2.27,
       "avg_lead_time_hours": 16.9,
       "tickers": [
         "UNG"
@@ -88,7 +88,7 @@
       "positions": 3,
       "hit_rate_24h": 50.0,
       "avg_return_when_right": 1.32,
-      "avg_return_when_wrong": 1.31,
+      "avg_return_when_wrong": 1.37,
       "avg_lead_time_hours": 3.2,
       "tickers": [
         "GLD"
@@ -258,13 +258,13 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": 6.3071,
+      "latest_return_pct": 6.805,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
-          "return_pct": 6.3071,
+          "return_pct": 6.805,
           "score_state": "MISS",
           "passed": 0
         }
@@ -280,13 +280,13 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": 1.5253,
+      "latest_return_pct": 1.7913,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
-          "return_pct": 1.5253,
+          "return_pct": 1.7913,
           "score_state": "MISS",
           "passed": 0
         }
@@ -322,7 +322,7 @@
       "group": "OTHER",
       "entry_price": 22.350000381469727,
       "lead_time_hours": 5.8,
-      "advantage_state": "CONFIRMED",
+      "advantage_state": "PEAKED",
       "is_active": 1,
       "latest_return_pct": 4.6031,
       "latest_state": "CONFIRMED",
