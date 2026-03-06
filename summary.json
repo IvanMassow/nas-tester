@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-06T13:57:01.022318+00:00",
+  "updated": "2026-03-06T17:33:29.183783+00:00",
   "summary": {
     "total_signals": 24,
     "total_positions": 29,
@@ -10,9 +10,9 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 33.3,
-      "hits": 6,
-      "total": 18
+      "rate": 40.0,
+      "hits": 8,
+      "total": 20
     },
     "12": {
       "rate": 35.3,
@@ -20,9 +20,9 @@
       "total": 17
     },
     "24": {
-      "rate": 41.7,
-      "hits": 5,
-      "total": 12
+      "rate": 42.9,
+      "hits": 6,
+      "total": 14
     },
     "72": {
       "rate": 50.0,
@@ -30,10 +30,10 @@
       "total": 6
     }
   },
-  "avg_lead_time_hours": 12.3,
+  "avg_lead_time_hours": 11.4,
   "advantage_distribution": {
     "0-2h": 3,
-    "2-6h": 4,
+    "2-6h": 6,
     "6-12h": 1,
     "12-24h": 1,
     "24h+": 4
@@ -95,12 +95,23 @@
       ]
     },
     {
+      "category": "chemicals",
+      "positions": 3,
+      "hit_rate_24h": 50.0,
+      "avg_return_when_right": 1.24,
+      "avg_return_when_wrong": 0.61,
+      "avg_lead_time_hours": 14.8,
+      "tickers": [
+        "XLB"
+      ]
+    },
+    {
       "category": "silver market",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": null,
+      "avg_return_when_right": 2.69,
       "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
+      "avg_lead_time_hours": 5.7,
       "tickers": [
         "SLV"
       ]
@@ -109,9 +120,9 @@
       "category": "wheat markets",
       "positions": 1,
       "hit_rate_24h": null,
-      "avg_return_when_right": null,
+      "avg_return_when_right": 4.6,
       "avg_return_when_wrong": null,
-      "avg_lead_time_hours": null,
+      "avg_lead_time_hours": 5.8,
       "tickers": [
         "WEAT"
       ]
@@ -150,22 +161,11 @@
       ]
     },
     {
-      "category": "chemicals",
-      "positions": 3,
-      "hit_rate_24h": 0.0,
-      "avg_return_when_right": 1.24,
-      "avg_return_when_wrong": 0.61,
-      "avg_lead_time_hours": 14.8,
-      "tickers": [
-        "XLB"
-      ]
-    },
-    {
       "category": "equities",
       "positions": 2,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": 0.67,
+      "avg_return_when_wrong": 0.6,
       "avg_lead_time_hours": null,
       "tickers": [
         "XLE"
@@ -287,14 +287,20 @@
       "tier": "INDIRECT",
       "group": "OTHER",
       "entry_price": 74.2699966430664,
-      "lead_time_hours": null,
-      "advantage_state": "AHEAD",
+      "lead_time_hours": 5.72,
+      "advantage_state": "CONFIRMED",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
-      "best_confirmed_horizon": null,
-      "best_confirmed_return": null,
-      "horizons": {}
+      "latest_return_pct": 2.6886,
+      "latest_state": "CONFIRMED",
+      "best_confirmed_horizon": 6,
+      "best_confirmed_return": 2.6886,
+      "horizons": {
+        "6": {
+          "return_pct": 2.6886,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        }
+      }
     },
     {
       "ticker": "WEAT",
@@ -303,14 +309,20 @@
       "tier": "INDIRECT",
       "group": "OTHER",
       "entry_price": 22.350000381469727,
-      "lead_time_hours": null,
-      "advantage_state": "AHEAD",
+      "lead_time_hours": 5.8,
+      "advantage_state": "CONFIRMED",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
-      "best_confirmed_horizon": null,
-      "best_confirmed_return": null,
-      "horizons": {}
+      "latest_return_pct": 4.6031,
+      "latest_state": "CONFIRMED",
+      "best_confirmed_horizon": 6,
+      "best_confirmed_return": 4.6031,
+      "horizons": {
+        "6": {
+          "return_pct": 4.6031,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        }
+      }
     },
     {
       "ticker": "EEM",
@@ -405,7 +417,7 @@
       "is_active": 1,
       "latest_return_pct": -1.2434,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 12,
+      "best_confirmed_horizon": 24,
       "best_confirmed_return": -1.2434,
       "horizons": {
         "6": {
@@ -414,6 +426,11 @@
           "passed": 1
         },
         "12": {
+          "return_pct": -1.2434,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "24": {
           "return_pct": -1.2434,
           "score_state": "CONFIRMED",
           "passed": 1
@@ -457,7 +474,7 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": -0.677,
+      "latest_return_pct": -0.4572,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
@@ -469,6 +486,11 @@
         },
         "12": {
           "return_pct": -0.677,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "24": {
+          "return_pct": -0.4572,
           "score_state": "MISS",
           "passed": 0
         }
