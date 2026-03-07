@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-07T12:41:48.899421+00:00",
+  "updated": "2026-03-07T12:46:54.796234+00:00",
   "summary": {
-    "total_signals": 28,
-    "total_positions": 31,
-    "active_positions": 9,
+    "total_signals": 29,
+    "total_positions": 32,
+    "active_positions": 10,
     "closed_positions": 22,
-    "scoreable_positions": 31,
+    "scoreable_positions": 32,
     "best_category": "natural gas"
   },
   "hit_rates": {
@@ -125,6 +125,17 @@
       "avg_lead_time_hours": 14.8,
       "tickers": [
         "XLB"
+      ]
+    },
+    {
+      "category": "copper futures",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "COPX"
       ]
     },
     {
@@ -251,7 +262,7 @@
   ],
   "direct_proxy_stats": {
     "direct_count": 8,
-    "indirect_count": 23,
+    "indirect_count": 24,
     "direct_hit_rate_6h": 57.14285714285714,
     "direct_hit_rate_24h": 60.0,
     "direct_hits_6h": 4,
@@ -259,6 +270,22 @@
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
+    {
+      "ticker": "COPX",
+      "category": "copper futures",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 79.94999694824219,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "UNG",
       "category": "natural gas",
