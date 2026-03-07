@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-07T17:59:35.476742+00:00",
+  "updated": "2026-03-07T19:12:58.472227+00:00",
   "summary": {
     "total_signals": 32,
     "total_positions": 34,
@@ -10,9 +10,9 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 34.8,
+      "rate": 30.8,
       "hits": 8,
-      "total": 23
+      "total": 26
     },
     "12": {
       "rate": 38.1,
@@ -44,7 +44,7 @@
       "positions": 3,
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 2.29,
-      "avg_return_when_wrong": 3.15,
+      "avg_return_when_wrong": 2.52,
       "avg_lead_time_hours": 16.9,
       "tickers": [
         "UNG"
@@ -110,7 +110,7 @@
       "positions": 4,
       "hit_rate_24h": 50.0,
       "avg_return_when_right": 1.32,
-      "avg_return_when_wrong": 1.42,
+      "avg_return_when_wrong": 1.18,
       "avg_lead_time_hours": 3.2,
       "tickers": [
         "GLD"
@@ -143,7 +143,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.0,
       "avg_lead_time_hours": null,
       "tickers": [
         "COPX"
@@ -274,10 +274,10 @@
   "direct_proxy_stats": {
     "direct_count": 9,
     "indirect_count": 25,
-    "direct_hit_rate_6h": 57.14285714285714,
+    "direct_hit_rate_6h": 50.0,
     "direct_hit_rate_24h": 60.0,
     "direct_hits_6h": 4,
-    "direct_total_6h": 7,
+    "direct_total_6h": 8,
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
@@ -307,11 +307,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 0.0,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "COPX",
@@ -323,11 +329,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 0.0,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "UNG",
@@ -339,11 +351,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 0.0,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "WEAT",
