@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-06T23:35:55.714309+00:00",
+  "updated": "2026-03-07T00:36:22.856186+00:00",
   "summary": {
     "total_signals": 24,
     "total_positions": 29,
@@ -15,9 +15,9 @@
       "total": 22
     },
     "12": {
-      "rate": 42.1,
+      "rate": 38.1,
       "hits": 8,
-      "total": 19
+      "total": 21
     },
     "24": {
       "rate": 42.9,
@@ -44,7 +44,7 @@
       "positions": 2,
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 2.29,
-      "avg_return_when_wrong": 2.27,
+      "avg_return_when_wrong": 3.15,
       "avg_lead_time_hours": 16.9,
       "tickers": [
         "UNG"
@@ -88,7 +88,7 @@
       "positions": 3,
       "hit_rate_24h": 50.0,
       "avg_return_when_right": 1.32,
-      "avg_return_when_wrong": 1.37,
+      "avg_return_when_wrong": 1.42,
       "avg_lead_time_hours": 3.2,
       "tickers": [
         "GLD"
@@ -258,13 +258,18 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": 6.805,
+      "latest_return_pct": 5.8091,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
           "return_pct": 6.805,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "12": {
+          "return_pct": 5.8091,
           "score_state": "MISS",
           "passed": 0
         }
@@ -280,13 +285,18 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": 1.7913,
+      "latest_return_pct": 1.5833,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
       "horizons": {
         "6": {
           "return_pct": 1.7913,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "12": {
+          "return_pct": 1.5833,
           "score_state": "MISS",
           "passed": 0
         }
