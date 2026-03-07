@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-07T17:33:34.284082+00:00",
+  "updated": "2026-03-07T17:35:15.487106+00:00",
   "summary": {
     "total_signals": 32,
     "total_positions": 34,
@@ -1350,7 +1350,7 @@
       "total_notional": 10000000,
       "total_pnl": 0,
       "total_return_pct": 0.0,
-      "open_trades": 0,
+      "open_trades": 1,
       "closed_trades": 0,
       "win_rate": 0,
       "avg_hold_hours": 0
@@ -1360,7 +1360,20 @@
         "name": "Crude Oil",
         "ticker": "CL=F",
         "is_proxy": false,
-        "current_trade": null,
+        "current_trade": {
+          "trade_id": 1,
+          "direction": "UP",
+          "entry_price": 90.9000015258789,
+          "current_price": 90.9000015258789,
+          "return_pct": 0,
+          "pnl_dollars": 0,
+          "entry_time": "2026-03-07T17:34:55.873868+00:00",
+          "in_blackout": true,
+          "blackout_until": "2026-03-11T17:34:55.873868+00:00",
+          "reinforced_count": 0,
+          "trailing_stop_price": null,
+          "peak_favorable_pct": 0.0
+        },
         "history": {
           "total_trades": 0,
           "wins": 0,
@@ -1507,6 +1520,17 @@
         }
       }
     },
-    "recent_events": []
+    "recent_events": [
+      {
+        "type": "OPEN",
+        "market": "Crude Oil",
+        "ticker": "CL=F",
+        "direction": "UP",
+        "time": "2026-03-07T17:34:55.873868+00:00",
+        "reason": null,
+        "pnl": null,
+        "return_pct": null
+      }
+    ]
   }
 }
