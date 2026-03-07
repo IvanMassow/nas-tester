@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-07T12:46:54.796234+00:00",
+  "updated": "2026-03-07T12:52:01.828393+00:00",
   "summary": {
-    "total_signals": 29,
-    "total_positions": 32,
-    "active_positions": 10,
+    "total_signals": 30,
+    "total_positions": 33,
+    "active_positions": 11,
     "closed_positions": 22,
-    "scoreable_positions": 32,
+    "scoreable_positions": 33,
     "best_category": "natural gas"
   },
   "hit_rates": {
@@ -107,7 +107,7 @@
     },
     {
       "category": "gold",
-      "positions": 3,
+      "positions": 4,
       "hit_rate_24h": 50.0,
       "avg_return_when_right": 1.32,
       "avg_return_when_wrong": 1.42,
@@ -261,7 +261,7 @@
     }
   ],
   "direct_proxy_stats": {
-    "direct_count": 8,
+    "direct_count": 9,
     "indirect_count": 24,
     "direct_hit_rate_6h": 57.14285714285714,
     "direct_hit_rate_24h": 60.0,
@@ -270,6 +270,22 @@
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
+    {
+      "ticker": "GLD",
+      "category": "gold",
+      "expected_direction": "UP",
+      "tier": "DIRECT",
+      "group": "COMMODITIES",
+      "entry_price": 473.510009765625,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "COPX",
       "category": "copper futures",
