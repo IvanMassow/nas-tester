@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-07T11:56:16.106855+00:00",
+  "updated": "2026-03-07T12:41:48.899421+00:00",
   "summary": {
-    "total_signals": 27,
-    "total_positions": 30,
-    "active_positions": 8,
+    "total_signals": 28,
+    "total_positions": 31,
+    "active_positions": 9,
     "closed_positions": 22,
-    "scoreable_positions": 30,
+    "scoreable_positions": 31,
     "best_category": "natural gas"
   },
   "hit_rates": {
@@ -41,7 +41,7 @@
   "leaderboard": [
     {
       "category": "natural gas",
-      "positions": 2,
+      "positions": 3,
       "hit_rate_24h": 100.0,
       "avg_return_when_right": 2.29,
       "avg_return_when_wrong": 3.15,
@@ -251,7 +251,7 @@
   ],
   "direct_proxy_stats": {
     "direct_count": 8,
-    "indirect_count": 22,
+    "indirect_count": 23,
     "direct_hit_rate_6h": 57.14285714285714,
     "direct_hit_rate_24h": 60.0,
     "direct_hits_6h": 4,
@@ -259,6 +259,22 @@
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
+    {
+      "ticker": "UNG",
+      "category": "natural gas",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 12.75,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {}
+    },
     {
       "ticker": "WEAT",
       "category": "global wheat markets",
