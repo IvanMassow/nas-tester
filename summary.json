@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-07T17:35:15.487106+00:00",
+  "updated": "2026-03-07T17:59:35.476742+00:00",
   "summary": {
     "total_signals": 32,
     "total_positions": 34,
@@ -295,12 +295,7 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": [
-        "headline_driven_volatility",
-        "single_source_noise_present",
-        "macro_policy_crosscurrents"
-      ]
+      "horizons": {}
     },
     {
       "ticker": "GLD",
@@ -316,8 +311,7 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": []
+      "horizons": {}
     },
     {
       "ticker": "COPX",
@@ -333,12 +327,7 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": [
-        "Construction Activity",
-        "Electrification",
-        "Manufacturing Demand"
-      ]
+      "horizons": {}
     },
     {
       "ticker": "UNG",
@@ -354,13 +343,7 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": [
-        "Global Natural Gas Markets",
-        "Infrastructure Constraints",
-        "Seasonal Demand",
-        "Energy Markets"
-      ]
+      "horizons": {}
     },
     {
       "ticker": "WEAT",
@@ -382,13 +365,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": [
-        "Agricultural Weather Risks",
-        "Commodity Markets",
-        "Geopolitical Disruptions",
-        "Export Policies"
-      ]
+      }
     },
     {
       "ticker": "UNG",
@@ -415,13 +392,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": [
-        "Geopolitical Developments",
-        "Gas Availability",
-        "Global Natural Gas Markets",
-        "Sentiment Shifts"
-      ]
+      }
     },
     {
       "ticker": "GLD",
@@ -448,12 +419,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": [
-        "Geopolitical",
-        "Monetary",
-        "Macro"
-      ]
+      }
     },
     {
       "ticker": "SLV",
@@ -485,14 +451,7 @@
           "score_state": "CONFIRMED",
           "passed": 1
         }
-      },
-      "driver_clusters": [
-        "Related Metals Markets",
-        "Silver Futures",
-        "Safe Haven Demand",
-        "Industrial Demand",
-        "Solar Manufacturing"
-      ]
+      }
     },
     {
       "ticker": "WEAT",
@@ -524,21 +483,14 @@
           "score_state": "CONFIRMED",
           "passed": 1
         }
-      },
-      "driver_clusters": [
-        "Geopolitical Disruptions To Grain Supply , Iran-linked food-security and trade disruption framing",
-        "Geopolitical Disruptions To Grain Supply , Russia production/export-risk narrative",
-        "Geopolitical Disruptions To Grain Supply , Egypt-linked logistics/procurement frictions",
-        "Geopolitical Disruptions To Grain Supply , Black Sea corridor security risk",
-        "Fertiliser Availability , input supply/pricing context relevant to wheat"
-      ]
+      }
     },
     {
       "ticker": "EEM",
       "category": "vulnerability",
       "expected_direction": "DOWN",
       "tier": "INDIRECT",
-      "group": "MACRO",
+      "group": "OTHER",
       "entry_price": 57.849998474121094,
       "lead_time_hours": 1.0,
       "advantage_state": "PEAKED",
@@ -558,15 +510,14 @@
           "score_state": "TRACKING",
           "passed": 0
         }
-      },
-      "driver_clusters": []
+      }
     },
     {
       "ticker": "TLT",
       "category": "pressure",
       "expected_direction": "UP",
       "tier": "INDIRECT",
-      "group": "MACRO",
+      "group": "OTHER",
       "entry_price": 88.69349670410156,
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
@@ -586,15 +537,14 @@
           "score_state": "TRACKING",
           "passed": 0
         }
-      },
-      "driver_clusters": []
+      }
     },
     {
       "ticker": "TIP",
       "category": "expectations",
       "expected_direction": "UP",
       "tier": "INDIRECT",
-      "group": "MACRO",
+      "group": "OTHER",
       "entry_price": 111.14900207519531,
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
@@ -614,8 +564,7 @@
           "score_state": "TRACKING",
           "passed": 0
         }
-      },
-      "driver_clusters": []
+      }
     },
     {
       "ticker": "XLB",
@@ -647,8 +596,7 @@
           "score_state": "CONFIRMED",
           "passed": 1
         }
-      },
-      "driver_clusters": []
+      }
     },
     {
       "ticker": "JETS",
@@ -675,15 +623,14 @@
           "score_state": "CONFIRMED",
           "passed": 1
         }
-      },
-      "driver_clusters": []
+      }
     },
     {
       "ticker": "XLE",
       "category": "equities",
       "expected_direction": "UP",
       "tier": "INDIRECT",
-      "group": "COMMODITIES",
+      "group": "OTHER",
       "entry_price": 56.8650016784668,
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
@@ -708,8 +655,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": []
+      }
     },
     {
       "ticker": "GLD",
@@ -741,14 +687,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": [
-        "Physical Market",
-        "Flow",
-        "Geopolitical",
-        "Monetary",
-        "Macro"
-      ]
+      }
     },
     {
       "ticker": "COPX",
@@ -780,8 +719,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": []
+      }
     },
     {
       "ticker": "UNG",
@@ -813,21 +751,14 @@
           "score_state": "CONFIRMED",
           "passed": 1
         }
-      },
-      "driver_clusters": [
-        "LNG-linked supply (QatarEnergy / Europe-facing supply-security signalling)",
-        "Geopolitical developments (Russia-linked risk pressure on gas markets)",
-        "Global natural gas markets (Russia\u2013Europe policy uncertainty / market balance context)",
-        "Gas availability (gas-to-power balancing and grid resilience framing)",
-        "Natural gas futures (Iran-linked pricing narrative around Henry Hub)"
-      ]
+      }
     },
     {
       "ticker": "USO",
       "category": "crude oil futures",
       "expected_direction": "UP",
       "tier": "INDIRECT",
-      "group": "COMMODITIES",
+      "group": "OTHER",
       "entry_price": 90.78500366210938,
       "lead_time_hours": 25.41,
       "advantage_state": "PEAKED",
@@ -842,12 +773,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": [
-        "Geopolitical Escalation And Export Restrictions",
-        "Regulatory Climate And Substitution Policy",
-        "Petrochemical And Industrial Demand Linkages"
-      ]
+      }
     },
     {
       "ticker": "GLD",
@@ -879,19 +805,14 @@
           "score_state": "CONFIRMED",
           "passed": 1
         }
-      },
-      "driver_clusters": [
-        "Geopolitical",
-        "Monetary",
-        "Macro"
-      ]
+      }
     },
     {
       "ticker": "EEM",
       "category": "vulnerability",
       "expected_direction": "DOWN",
       "tier": "INDIRECT",
-      "group": "MACRO",
+      "group": "OTHER",
       "entry_price": 61.5,
       "lead_time_hours": 29.19,
       "advantage_state": "PEAKED",
@@ -900,20 +821,14 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": [
-        "Regulatory Climate And Substitution Policy",
-        "Macro Demand And Global Growth Signals",
-        "Geopolitical Escalation And Sanctions",
-        "Shipping Logistics And Chokepoints"
-      ]
+      "horizons": {}
     },
     {
       "ticker": "TLT",
       "category": "pressure",
       "expected_direction": "UP",
       "tier": "INDIRECT",
-      "group": "MACRO",
+      "group": "OTHER",
       "entry_price": 89.61000061035156,
       "lead_time_hours": null,
       "advantage_state": "EXPIRED",
@@ -922,20 +837,14 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": [
-        "Regulatory Climate And Substitution Policy",
-        "Macro Demand And Global Growth Signals",
-        "Geopolitical Escalation And Sanctions",
-        "Shipping Logistics And Chokepoints"
-      ]
+      "horizons": {}
     },
     {
       "ticker": "TIP",
       "category": "expectations",
       "expected_direction": "UP",
       "tier": "INDIRECT",
-      "group": "MACRO",
+      "group": "OTHER",
       "entry_price": 111.56999969482422,
       "lead_time_hours": null,
       "advantage_state": "EXPIRED",
@@ -944,13 +853,7 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": [
-        "Regulatory Climate And Substitution Policy",
-        "Macro Demand And Global Growth Signals",
-        "Geopolitical Escalation And Sanctions",
-        "Shipping Logistics And Chokepoints"
-      ]
+      "horizons": {}
     },
     {
       "ticker": "XLB",
@@ -966,13 +869,7 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": [
-        "Regulatory Climate And Substitution Policy",
-        "Macro Demand And Global Growth Signals",
-        "Geopolitical Escalation And Sanctions",
-        "Shipping Logistics And Chokepoints"
-      ]
+      "horizons": {}
     },
     {
       "ticker": "JETS",
@@ -988,20 +885,14 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": [
-        "Regulatory Climate And Substitution Policy",
-        "Macro Demand And Global Growth Signals",
-        "Geopolitical Escalation And Sanctions",
-        "Shipping Logistics And Chokepoints"
-      ]
+      "horizons": {}
     },
     {
       "ticker": "XLE",
       "category": "equities",
       "expected_direction": "UP",
       "tier": "INDIRECT",
-      "group": "COMMODITIES",
+      "group": "OTHER",
       "entry_price": 57.040000915527344,
       "lead_time_hours": null,
       "advantage_state": "EXPIRED",
@@ -1010,20 +901,14 @@
       "latest_state": "PENDING",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
-      "driver_clusters": [
-        "Regulatory Climate And Substitution Policy",
-        "Macro Demand And Global Growth Signals",
-        "Geopolitical Escalation And Sanctions",
-        "Shipping Logistics And Chokepoints"
-      ]
+      "horizons": {}
     },
     {
       "ticker": "USO",
       "category": "wti crude oil futures and brent crude futures",
       "expected_direction": "DOWN",
       "tier": "INDIRECT",
-      "group": "COMMODITIES",
+      "group": "OTHER",
       "entry_price": 87.19000244140625,
       "lead_time_hours": null,
       "advantage_state": "EXPIRED",
@@ -1038,8 +923,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": []
+      }
     },
     {
       "ticker": "SMH",
@@ -1071,14 +955,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": [
-        "Geopolitics And Policy Impact",
-        "Pricing Dynamics And Inventory Narratives",
-        "Macro And Risk Appetite",
-        "Demand Signals And End Market Pull",
-        "Technology Roadmap And Competitive Innovation"
-      ]
+      }
     },
     {
       "ticker": "EEM",
@@ -1115,14 +992,7 @@
           "score_state": "TRACKING",
           "passed": 0
         }
-      },
-      "driver_clusters": [
-        "TRU-T4",
-        "TRU-T5",
-        "TRU-T7",
-        "TRU-T8",
-        "TRU-T9"
-      ]
+      }
     },
     {
       "ticker": "TLT",
@@ -1159,14 +1029,7 @@
           "score_state": "CONFIRMED",
           "passed": 1
         }
-      },
-      "driver_clusters": [
-        "TRU-T4",
-        "TRU-T5",
-        "TRU-T7",
-        "TRU-T8",
-        "TRU-T9"
-      ]
+      }
     },
     {
       "ticker": "TIP",
@@ -1203,14 +1066,7 @@
           "score_state": "TRACKING",
           "passed": 0
         }
-      },
-      "driver_clusters": [
-        "TRU-T4",
-        "TRU-T5",
-        "TRU-T7",
-        "TRU-T8",
-        "TRU-T9"
-      ]
+      }
     },
     {
       "ticker": "XLB",
@@ -1247,14 +1103,7 @@
           "score_state": "MISS",
           "passed": 0
         }
-      },
-      "driver_clusters": [
-        "TRU-T4",
-        "TRU-T5",
-        "TRU-T7",
-        "TRU-T8",
-        "TRU-T9"
-      ]
+      }
     },
     {
       "ticker": "JETS",
@@ -1291,14 +1140,7 @@
           "score_state": "CONFIRMED",
           "passed": 1
         }
-      },
-      "driver_clusters": [
-        "TRU-T4",
-        "TRU-T5",
-        "TRU-T7",
-        "TRU-T8",
-        "TRU-T9"
-      ]
+      }
     },
     {
       "ticker": "XLE",
@@ -1335,202 +1177,7 @@
           "score_state": "CONFIRMED",
           "passed": 1
         }
-      },
-      "driver_clusters": [
-        "TRU-T4",
-        "TRU-T5",
-        "TRU-T7",
-        "TRU-T8",
-        "TRU-T9"
-      ]
+      }
     }
-  ],
-  "futures": {
-    "portfolio": {
-      "total_notional": 10000000,
-      "total_pnl": 0,
-      "total_return_pct": 0.0,
-      "open_trades": 1,
-      "closed_trades": 0,
-      "win_rate": 0,
-      "avg_hold_hours": 0
-    },
-    "markets": {
-      "crude_oil": {
-        "name": "Crude Oil",
-        "ticker": "CL=F",
-        "is_proxy": false,
-        "current_trade": {
-          "trade_id": 1,
-          "direction": "UP",
-          "entry_price": 90.9000015258789,
-          "current_price": 90.9000015258789,
-          "return_pct": 0,
-          "pnl_dollars": 0,
-          "entry_time": "2026-03-07T17:34:55.873868+00:00",
-          "in_blackout": true,
-          "blackout_until": "2026-03-11T17:34:55.873868+00:00",
-          "reinforced_count": 0,
-          "trailing_stop_price": null,
-          "peak_favorable_pct": 0.0
-        },
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      },
-      "gold": {
-        "name": "Gold",
-        "ticker": "GC=F",
-        "is_proxy": false,
-        "current_trade": null,
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      },
-      "natural_gas": {
-        "name": "Natural Gas",
-        "ticker": "NG=F",
-        "is_proxy": false,
-        "current_trade": null,
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      },
-      "copper": {
-        "name": "Copper",
-        "ticker": "HG=F",
-        "is_proxy": false,
-        "current_trade": null,
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      },
-      "silver": {
-        "name": "Silver",
-        "ticker": "SI=F",
-        "is_proxy": false,
-        "current_trade": null,
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      },
-      "wheat": {
-        "name": "Wheat",
-        "ticker": "ZW=F",
-        "is_proxy": false,
-        "current_trade": null,
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      },
-      "corn": {
-        "name": "Corn",
-        "ticker": "ZC=F",
-        "is_proxy": false,
-        "current_trade": null,
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      },
-      "coffee": {
-        "name": "Coffee",
-        "ticker": "KC=F",
-        "is_proxy": false,
-        "current_trade": null,
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      },
-      "uranium": {
-        "name": "Uranium",
-        "ticker": "URA",
-        "is_proxy": true,
-        "current_trade": null,
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      },
-      "lithium": {
-        "name": "Lithium",
-        "ticker": "LIT",
-        "is_proxy": true,
-        "current_trade": null,
-        "history": {
-          "total_trades": 0,
-          "wins": 0,
-          "losses": 0,
-          "total_pnl": 0,
-          "win_rate": 0,
-          "avg_return_pct": 0,
-          "avg_hold_hours": 0
-        }
-      }
-    },
-    "recent_events": [
-      {
-        "type": "OPEN",
-        "market": "Crude Oil",
-        "ticker": "CL=F",
-        "direction": "UP",
-        "time": "2026-03-07T17:34:55.873868+00:00",
-        "reason": null,
-        "pnl": null,
-        "return_pct": null
-      }
-    ]
-  }
+  ]
 }
