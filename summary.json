@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-07T10:40:31.296755+00:00",
+  "updated": "2026-03-07T11:40:58.754550+00:00",
   "summary": {
     "total_signals": 24,
     "total_positions": 29,
@@ -20,9 +20,9 @@
       "total": 21
     },
     "24": {
-      "rate": 42.9,
-      "hits": 6,
-      "total": 14
+      "rate": 50.0,
+      "hits": 8,
+      "total": 16
     },
     "72": {
       "rate": 50.0,
@@ -48,6 +48,28 @@
       "avg_lead_time_hours": 16.9,
       "tickers": [
         "UNG"
+      ]
+    },
+    {
+      "category": "silver market",
+      "positions": 1,
+      "hit_rate_24h": 100.0,
+      "avg_return_when_right": 2.39,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 5.7,
+      "tickers": [
+        "SLV"
+      ]
+    },
+    {
+      "category": "wheat markets",
+      "positions": 1,
+      "hit_rate_24h": 100.0,
+      "avg_return_when_right": 5.29,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": 5.8,
+      "tickers": [
+        "WEAT"
       ]
     },
     {
@@ -103,28 +125,6 @@
       "avg_lead_time_hours": 14.8,
       "tickers": [
         "XLB"
-      ]
-    },
-    {
-      "category": "silver market",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": 2.46,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 5.7,
-      "tickers": [
-        "SLV"
-      ]
-    },
-    {
-      "category": "wheat markets",
-      "positions": 1,
-      "hit_rate_24h": null,
-      "avg_return_when_right": 5.12,
-      "avg_return_when_wrong": null,
-      "avg_lead_time_hours": 5.8,
-      "tickers": [
-        "WEAT"
       ]
     },
     {
@@ -314,7 +314,7 @@
       "is_active": 1,
       "latest_return_pct": 2.2486,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 12,
+      "best_confirmed_horizon": 24,
       "best_confirmed_return": 2.2486,
       "horizons": {
         "6": {
@@ -323,6 +323,11 @@
           "passed": 1
         },
         "12": {
+          "return_pct": 2.2486,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "24": {
           "return_pct": 2.2486,
           "score_state": "CONFIRMED",
           "passed": 1
@@ -341,7 +346,7 @@
       "is_active": 1,
       "latest_return_pct": 5.6376,
       "latest_state": "CONFIRMED",
-      "best_confirmed_horizon": 12,
+      "best_confirmed_horizon": 24,
       "best_confirmed_return": 5.6376,
       "horizons": {
         "6": {
@@ -350,6 +355,11 @@
           "passed": 1
         },
         "12": {
+          "return_pct": 5.6376,
+          "score_state": "CONFIRMED",
+          "passed": 1
+        },
+        "24": {
           "return_pct": 5.6376,
           "score_state": "CONFIRMED",
           "passed": 1
