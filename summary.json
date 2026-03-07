@@ -1,11 +1,11 @@
 {
-  "updated": "2026-03-07T17:29:09.200607+00:00",
+  "updated": "2026-03-07T17:33:34.284082+00:00",
   "summary": {
-    "total_signals": 31,
-    "total_positions": 33,
-    "active_positions": 11,
+    "total_signals": 32,
+    "total_positions": 34,
+    "active_positions": 12,
     "closed_positions": 22,
-    "scoreable_positions": 33,
+    "scoreable_positions": 34,
     "best_category": "natural gas"
   },
   "hit_rates": {
@@ -125,6 +125,17 @@
       "avg_lead_time_hours": 14.8,
       "tickers": [
         "XLB"
+      ]
+    },
+    {
+      "category": "crude_oil",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "USO"
       ]
     },
     {
@@ -262,7 +273,7 @@
   ],
   "direct_proxy_stats": {
     "direct_count": 9,
-    "indirect_count": 24,
+    "indirect_count": 25,
     "direct_hit_rate_6h": 57.14285714285714,
     "direct_hit_rate_24h": 60.0,
     "direct_hits_6h": 4,
@@ -270,6 +281,27 @@
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
+    {
+      "ticker": "USO",
+      "category": "crude_oil",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 108.7699966430664,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {},
+      "driver_clusters": [
+        "headline_driven_volatility",
+        "single_source_noise_present",
+        "macro_policy_crosscurrents"
+      ]
+    },
     {
       "ticker": "GLD",
       "category": "gold",
