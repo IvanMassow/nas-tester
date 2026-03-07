@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-07T22:17:59.048706+00:00",
+  "updated": "2026-03-07T23:18:27.357426+00:00",
   "summary": {
     "total_signals": 39,
     "total_positions": 35,
@@ -10,14 +10,14 @@
   },
   "hit_rates": {
     "6": {
-      "rate": 30.8,
+      "rate": 29.6,
       "hits": 8,
-      "total": 26
+      "total": 27
     },
     "12": {
-      "rate": 38.1,
+      "rate": 36.4,
       "hits": 8,
-      "total": 21
+      "total": 22
     },
     "24": {
       "rate": 50.0,
@@ -143,7 +143,7 @@
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
-      "avg_return_when_wrong": null,
+      "avg_return_when_wrong": 0.0,
       "avg_lead_time_hours": null,
       "tickers": [
         "USO"
@@ -318,11 +318,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 0.0,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {}
+      "horizons": {
+        "6": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      }
     },
     {
       "ticker": "GLD",
@@ -406,6 +412,11 @@
       "best_confirmed_return": null,
       "horizons": {
         "6": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "12": {
           "return_pct": 0.0,
           "score_state": "MISS",
           "passed": 0
