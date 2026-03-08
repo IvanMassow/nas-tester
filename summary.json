@@ -1,7 +1,7 @@
 {
-  "updated": "2026-03-08T01:09:41.514946+00:00",
+  "updated": "2026-03-08T01:10:48.698166+00:00",
   "summary": {
-    "total_signals": 40,
+    "total_signals": 41,
     "total_positions": 35,
     "active_positions": 13,
     "closed_positions": 22,
@@ -1619,7 +1619,7 @@
           "entry_time": "2026-03-07T20:47:13.630664+00:00",
           "in_blackout": true,
           "blackout_until": "2026-03-11T20:47:13.630664+00:00",
-          "reinforced_count": 1,
+          "reinforced_count": 2,
           "trailing_stop_price": null,
           "peak_favorable_pct": 0.0
         },
@@ -1650,6 +1650,16 @@
       }
     },
     "recent_events": [
+      {
+        "type": "REINFORCE",
+        "market": "Uranium",
+        "ticker": "URA",
+        "direction": "UP",
+        "time": "2026-03-08T01:10:45.319794+00:00",
+        "reason": null,
+        "pnl": null,
+        "return_pct": null
+      },
       {
         "type": "REINFORCE",
         "market": "Corn",
