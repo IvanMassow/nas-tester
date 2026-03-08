@@ -1,10 +1,10 @@
 {
-  "updated": "2026-03-08T08:57:57.128600+00:00",
+  "updated": "2026-03-08T16:40:27.943095+00:00",
   "summary": {
     "total_signals": 44,
     "total_positions": 36,
-    "active_positions": 14,
-    "closed_positions": 22,
+    "active_positions": 7,
+    "closed_positions": 29,
     "scoreable_positions": 36,
     "best_category": "natural gas"
   },
@@ -20,9 +20,9 @@
       "total": 27
     },
     "24": {
-      "rate": 50.0,
+      "rate": 47.1,
       "hits": 8,
-      "total": 16
+      "total": 17
     },
     "72": {
       "rate": 50.0,
@@ -152,7 +152,7 @@
     {
       "category": "crude_oil",
       "positions": 1,
-      "hit_rate_24h": null,
+      "hit_rate_24h": 0.0,
       "avg_return_when_right": null,
       "avg_return_when_wrong": 0.0,
       "avg_lead_time_hours": null,
@@ -388,6 +388,11 @@
           "return_pct": 0.0,
           "score_state": "MISS",
           "passed": 0
+        },
+        "24": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
         }
       },
       "driver_clusters": [
@@ -596,7 +601,7 @@
       "entry_price": 74.2699966430664,
       "lead_time_hours": 5.72,
       "advantage_state": "PEAKED",
-      "is_active": 1,
+      "is_active": 0,
       "latest_return_pct": 2.2486,
       "latest_state": "CONFIRMED",
       "best_confirmed_horizon": 24,
@@ -674,7 +679,7 @@
       "entry_price": 57.849998474121094,
       "lead_time_hours": 1.0,
       "advantage_state": "PEAKED",
-      "is_active": 1,
+      "is_active": 0,
       "latest_return_pct": -0.3803,
       "latest_state": "TRACKING",
       "best_confirmed_horizon": null,
@@ -701,8 +706,8 @@
       "group": "MACRO",
       "entry_price": 88.69349670410156,
       "lead_time_hours": null,
-      "advantage_state": "AHEAD",
-      "is_active": 1,
+      "advantage_state": "EXPIRED",
+      "is_active": 0,
       "latest_return_pct": 0.1088,
       "latest_state": "TRACKING",
       "best_confirmed_horizon": null,
@@ -729,8 +734,8 @@
       "group": "MACRO",
       "entry_price": 111.14900207519531,
       "lead_time_hours": null,
-      "advantage_state": "AHEAD",
-      "is_active": 1,
+      "advantage_state": "EXPIRED",
+      "is_active": 0,
       "latest_return_pct": 0.0639,
       "latest_state": "TRACKING",
       "best_confirmed_horizon": null,
@@ -758,7 +763,7 @@
       "entry_price": 51.470001220703125,
       "lead_time_hours": 0.5,
       "advantage_state": "PEAKED",
-      "is_active": 1,
+      "is_active": 0,
       "latest_return_pct": -1.2434,
       "latest_state": "CONFIRMED",
       "best_confirmed_horizon": 24,
@@ -791,7 +796,7 @@
       "entry_price": 26.459999084472656,
       "lead_time_hours": 0.5,
       "advantage_state": "PEAKED",
-      "is_active": 1,
+      "is_active": 0,
       "latest_return_pct": -1.4361,
       "latest_state": "CONFIRMED",
       "best_confirmed_horizon": 12,
@@ -818,8 +823,8 @@
       "group": "COMMODITIES",
       "entry_price": 56.8650016784668,
       "lead_time_hours": null,
-      "advantage_state": "AHEAD",
-      "is_active": 1,
+      "advantage_state": "EXPIRED",
+      "is_active": 0,
       "latest_return_pct": -0.4572,
       "latest_state": "MISS",
       "best_confirmed_horizon": null,
@@ -851,7 +856,7 @@
       "group": "COMMODITIES",
       "entry_price": 471.79998779296875,
       "lead_time_hours": null,
-      "advantage_state": "AHEAD",
+      "advantage_state": "EXPIRED",
       "is_active": 0,
       "latest_return_pct": -1.2018,
       "latest_state": "MISS",
@@ -890,7 +895,7 @@
       "group": "OTHER",
       "entry_price": 88.16000366210938,
       "lead_time_hours": null,
-      "advantage_state": "AHEAD",
+      "advantage_state": "EXPIRED",
       "is_active": 0,
       "latest_return_pct": -6.647,
       "latest_state": "MISS",
@@ -1845,7 +1850,7 @@
         "close_reason": null,
         "exit_price": null,
         "exit_time": null,
-        "pnl_dollars": null,
+        "pnl_dollars": 0.0,
         "hours": [
           {
             "h": -66.5,
@@ -1950,7 +1955,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 0.0,
+        "current_hour": 7.7,
         "signal_id": "NAS-999216CC"
       },
       {
@@ -2098,7 +2103,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 5.7,
+        "current_hour": 13.5,
         "signal_id": "NAS-BC452AC5"
       },
       {
@@ -2449,7 +2454,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 12.2,
+        "current_hour": 19.9,
         "signal_id": "NAS-841B635E"
       },
       {
@@ -2737,7 +2742,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 12.2,
+        "current_hour": 19.9,
         "signal_id": "NAS-283D5311"
       },
       {
@@ -3025,7 +3030,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 12.2,
+        "current_hour": 19.9,
         "signal_id": "NAS-787EB74E"
       },
       {
@@ -3145,7 +3150,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 12.2,
+        "current_hour": 19.9,
         "signal_id": "NAS-DA2DD6BA"
       },
       {
@@ -3517,7 +3522,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 15.4,
+        "current_hour": 23.1,
         "signal_id": "NAS-6F7CC119"
       }
     ],
