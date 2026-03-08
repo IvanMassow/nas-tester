@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-08T04:13:07.322315+00:00",
+  "updated": "2026-03-08T05:13:12.342957+00:00",
   "summary": {
     "total_signals": 43,
     "total_positions": 36,
@@ -15,9 +15,9 @@
       "total": 28
     },
     "12": {
-      "rate": 32.0,
+      "rate": 30.8,
       "hits": 8,
-      "total": 25
+      "total": 26
     },
     "24": {
       "rate": 50.0,
@@ -369,6 +369,11 @@
       "best_confirmed_return": null,
       "horizons": {
         "6": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
+        },
+        "12": {
           "return_pct": 0.0,
           "score_state": "MISS",
           "passed": 0
@@ -1939,7 +1944,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 1.0,
+        "current_hour": 2.0,
         "signal_id": "NAS-BC452AC5"
       },
       {
@@ -2290,7 +2295,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 7.4,
+        "current_hour": 8.4,
         "signal_id": "NAS-841B635E"
       },
       {
@@ -2578,7 +2583,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 7.4,
+        "current_hour": 8.4,
         "signal_id": "NAS-283D5311"
       },
       {
@@ -2866,7 +2871,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 7.4,
+        "current_hour": 8.4,
         "signal_id": "NAS-787EB74E"
       },
       {
@@ -2986,7 +2991,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 7.4,
+        "current_hour": 8.4,
         "signal_id": "NAS-DA2DD6BA"
       },
       {
@@ -3358,7 +3363,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 10.6,
+        "current_hour": 11.6,
         "signal_id": "NAS-6F7CC119"
       }
     ],
