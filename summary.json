@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-08T02:11:58.792673+00:00",
+  "updated": "2026-03-08T03:11:58.048315+00:00",
   "summary": {
     "total_signals": 42,
     "total_positions": 36,
@@ -2119,7 +2119,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 5.4,
+        "current_hour": 6.4,
         "signal_id": "NAS-841B635E"
       },
       {
@@ -2407,7 +2407,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 5.4,
+        "current_hour": 6.4,
         "signal_id": "NAS-283D5311"
       },
       {
@@ -2695,7 +2695,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 5.4,
+        "current_hour": 6.4,
         "signal_id": "NAS-787EB74E"
       },
       {
@@ -2815,7 +2815,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 5.4,
+        "current_hour": 6.4,
         "signal_id": "NAS-DA2DD6BA"
       },
       {
@@ -3187,7 +3187,7 @@
         "peak_hour": 0,
         "peak_return_pct": 0,
         "min_return_pct": 0,
-        "current_hour": 8.6,
+        "current_hour": 9.6,
         "signal_id": "NAS-6F7CC119"
       }
     ],
