@@ -1,7 +1,7 @@
 {
-  "updated": "2026-03-08T03:11:58.048315+00:00",
+  "updated": "2026-03-08T03:13:04.429919+00:00",
   "summary": {
-    "total_signals": 42,
+    "total_signals": 43,
     "total_positions": 36,
     "active_positions": 14,
     "closed_positions": 22,
@@ -1466,7 +1466,7 @@
       "total_notional": 10000000,
       "total_pnl": 0,
       "total_return_pct": 0.0,
-      "open_trades": 5,
+      "open_trades": 6,
       "closed_trades": 0,
       "win_rate": 0,
       "avg_hold_hours": 0
@@ -1633,7 +1633,20 @@
         "name": "Coffee",
         "ticker": "KC=F",
         "is_proxy": false,
-        "current_trade": null,
+        "current_trade": {
+          "trade_id": 6,
+          "direction": "UP",
+          "entry_price": 297.6000061035156,
+          "current_price": 297.6000061035156,
+          "return_pct": 0,
+          "pnl_dollars": 0,
+          "entry_time": "2026-03-08T03:13:01.259922+00:00",
+          "in_blackout": true,
+          "blackout_until": "2026-03-12T03:13:01.259922+00:00",
+          "reinforced_count": 0,
+          "trailing_stop_price": null,
+          "peak_favorable_pct": 0.0
+        },
         "history": {
           "total_trades": 0,
           "wins": 0,
@@ -1689,6 +1702,16 @@
       }
     },
     "recent_events": [
+      {
+        "type": "OPEN",
+        "market": "Coffee",
+        "ticker": "KC=F",
+        "direction": "UP",
+        "time": "2026-03-08T03:13:01.259922+00:00",
+        "reason": null,
+        "pnl": null,
+        "return_pct": null
+      },
       {
         "type": "REINFORCE",
         "market": "Uranium",
@@ -1771,6 +1794,154 @@
       }
     ],
     "timelines": [
+      {
+        "trade_id": 6,
+        "market": "coffee",
+        "market_name": "Coffee",
+        "ticker": "KC=F",
+        "direction": "UP",
+        "entry_price": 297.6000061035156,
+        "entry_time": "2026-03-08T03:13:01.259922+00:00",
+        "state": "OPEN",
+        "close_reason": null,
+        "exit_price": null,
+        "exit_time": null,
+        "pnl_dollars": null,
+        "hours": [
+          {
+            "h": -65.2,
+            "price": 286.15,
+            "return_pct": -3.847,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -64.2,
+            "price": 288.35,
+            "return_pct": -3.108,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -63.2,
+            "price": 288.45,
+            "return_pct": -3.075,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -62.2,
+            "price": 287.3,
+            "return_pct": -3.461,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -61.2,
+            "price": 287.1,
+            "return_pct": -3.528,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -60.2,
+            "price": 287.25,
+            "return_pct": -3.478,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -59.2,
+            "price": 288.95,
+            "return_pct": -2.907,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -58.2,
+            "price": 292.3,
+            "return_pct": -1.781,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -57.2,
+            "price": 295.4,
+            "return_pct": -0.739,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -41.2,
+            "price": 293.85,
+            "return_pct": -1.26,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -40.2,
+            "price": 294.35,
+            "return_pct": -1.092,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -39.2,
+            "price": 292.9,
+            "return_pct": -1.579,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -38.2,
+            "price": 289.95,
+            "return_pct": -2.571,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -37.2,
+            "price": 291.45,
+            "return_pct": -2.067,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -36.2,
+            "price": 293.6,
+            "return_pct": -1.344,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -35.2,
+            "price": 293.05,
+            "return_pct": -1.529,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -34.2,
+            "price": 293.55,
+            "return_pct": -1.361,
+            "winning": false,
+            "pre_entry": true
+          },
+          {
+            "h": -33.2,
+            "price": 294.15,
+            "return_pct": -1.159,
+            "winning": false,
+            "pre_entry": true
+          }
+        ],
+        "lead_time_hours": null,
+        "peak_hour": 0,
+        "peak_return_pct": 0,
+        "min_return_pct": 0,
+        "current_hour": 0.0,
+        "signal_id": "NAS-BC452AC5"
+      },
       {
         "trade_id": 5,
         "market": "gold",
@@ -3192,6 +3363,381 @@
       }
     ],
     "sentiment_overlays": [
+      {
+        "trade_id": 6,
+        "market": "coffee",
+        "market_name": "Coffee",
+        "direction": "UP",
+        "entry_price": 297.6000061035156,
+        "entry_time": "2026-03-08T03:13:01.259922+00:00",
+        "signal_id": "NAS-BC452AC5",
+        "state": "OPEN",
+        "timeline": [
+          {
+            "h": -24.2,
+            "timestamp": "2026-03-07T03:00:00Z",
+            "dir_score": 10,
+            "velocity": 0,
+            "acceleration": 0,
+            "conviction": 44,
+            "fragility": 64,
+            "fresh_evidence": 0,
+            "contradiction": 0.22,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -23.2,
+            "timestamp": "2026-03-07T04:00:00Z",
+            "dir_score": 10,
+            "velocity": 0,
+            "acceleration": 0,
+            "conviction": 44,
+            "fragility": 64,
+            "fresh_evidence": 0,
+            "contradiction": 0.22,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -22.2,
+            "timestamp": "2026-03-07T05:00:00Z",
+            "dir_score": 11,
+            "velocity": 1,
+            "acceleration": 1,
+            "conviction": 45,
+            "fragility": 63,
+            "fresh_evidence": 0,
+            "contradiction": 0.22,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -21.2,
+            "timestamp": "2026-03-07T06:00:00Z",
+            "dir_score": 11,
+            "velocity": 0,
+            "acceleration": -1,
+            "conviction": 45,
+            "fragility": 63,
+            "fresh_evidence": 0,
+            "contradiction": 0.22,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -20.2,
+            "timestamp": "2026-03-07T07:00:00Z",
+            "dir_score": 12,
+            "velocity": 1,
+            "acceleration": 1,
+            "conviction": 46,
+            "fragility": 62,
+            "fresh_evidence": 0,
+            "contradiction": 0.21,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -19.2,
+            "timestamp": "2026-03-07T08:00:00Z",
+            "dir_score": 12,
+            "velocity": 0,
+            "acceleration": -1,
+            "conviction": 46,
+            "fragility": 62,
+            "fresh_evidence": 0,
+            "contradiction": 0.21,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -18.2,
+            "timestamp": "2026-03-07T09:00:00Z",
+            "dir_score": 13,
+            "velocity": 1,
+            "acceleration": 1,
+            "conviction": 47,
+            "fragility": 61,
+            "fresh_evidence": 0,
+            "contradiction": 0.21,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -17.2,
+            "timestamp": "2026-03-07T10:00:00Z",
+            "dir_score": 13,
+            "velocity": 0,
+            "acceleration": -1,
+            "conviction": 47,
+            "fragility": 61,
+            "fresh_evidence": 0,
+            "contradiction": 0.21,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -16.2,
+            "timestamp": "2026-03-07T11:00:00Z",
+            "dir_score": 14,
+            "velocity": 1,
+            "acceleration": 1,
+            "conviction": 48,
+            "fragility": 60,
+            "fresh_evidence": 0,
+            "contradiction": 0.2,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -15.2,
+            "timestamp": "2026-03-07T12:00:00Z",
+            "dir_score": 14,
+            "velocity": 0,
+            "acceleration": -1,
+            "conviction": 48,
+            "fragility": 60,
+            "fresh_evidence": 0,
+            "contradiction": 0.2,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -14.2,
+            "timestamp": "2026-03-07T13:00:00Z",
+            "dir_score": 16,
+            "velocity": 2,
+            "acceleration": 2,
+            "conviction": 52,
+            "fragility": 58,
+            "fresh_evidence": 1,
+            "contradiction": 0.19,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -13.2,
+            "timestamp": "2026-03-07T14:00:00Z",
+            "dir_score": 18,
+            "velocity": 2,
+            "acceleration": 0,
+            "conviction": 54,
+            "fragility": 57,
+            "fresh_evidence": 1,
+            "contradiction": 0.19,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -12.2,
+            "timestamp": "2026-03-07T15:00:00Z",
+            "dir_score": 20,
+            "velocity": 2,
+            "acceleration": 0,
+            "conviction": 56,
+            "fragility": 56,
+            "fresh_evidence": 1,
+            "contradiction": 0.18,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -11.2,
+            "timestamp": "2026-03-07T16:00:00Z",
+            "dir_score": 22,
+            "velocity": 2,
+            "acceleration": 0,
+            "conviction": 58,
+            "fragility": 55,
+            "fresh_evidence": 1,
+            "contradiction": 0.18,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -10.2,
+            "timestamp": "2026-03-07T17:00:00Z",
+            "dir_score": 30,
+            "velocity": 8,
+            "acceleration": 6,
+            "conviction": 63,
+            "fragility": 54,
+            "fresh_evidence": 2,
+            "contradiction": 0.17,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -9.2,
+            "timestamp": "2026-03-07T18:00:00Z",
+            "dir_score": 32,
+            "velocity": 2,
+            "acceleration": -6,
+            "conviction": 63,
+            "fragility": 54,
+            "fresh_evidence": 1,
+            "contradiction": 0.17,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -8.2,
+            "timestamp": "2026-03-07T19:00:00Z",
+            "dir_score": 34,
+            "velocity": 2,
+            "acceleration": 0,
+            "conviction": 64,
+            "fragility": 54,
+            "fresh_evidence": 1,
+            "contradiction": 0.17,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -7.2,
+            "timestamp": "2026-03-07T20:00:00Z",
+            "dir_score": 36,
+            "velocity": 2,
+            "acceleration": 0,
+            "conviction": 65,
+            "fragility": 53,
+            "fresh_evidence": 1,
+            "contradiction": 0.16,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -6.2,
+            "timestamp": "2026-03-07T21:00:00Z",
+            "dir_score": 38,
+            "velocity": 2,
+            "acceleration": 0,
+            "conviction": 66,
+            "fragility": 53,
+            "fresh_evidence": 1,
+            "contradiction": 0.16,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -5.2,
+            "timestamp": "2026-03-07T22:00:00Z",
+            "dir_score": 48,
+            "velocity": 10,
+            "acceleration": 8,
+            "conviction": 70,
+            "fragility": 52,
+            "fresh_evidence": 2,
+            "contradiction": 0.15,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -4.2,
+            "timestamp": "2026-03-07T23:00:00Z",
+            "dir_score": 46,
+            "velocity": -2,
+            "acceleration": -12,
+            "conviction": 69,
+            "fragility": 53,
+            "fresh_evidence": 1,
+            "contradiction": 0.15,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -3.2,
+            "timestamp": "2026-03-08T00:00:00Z",
+            "dir_score": 44,
+            "velocity": -2,
+            "acceleration": 0,
+            "conviction": 68,
+            "fragility": 54,
+            "fresh_evidence": 1,
+            "contradiction": 0.16,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -2.2,
+            "timestamp": "2026-03-08T01:00:00Z",
+            "dir_score": 42,
+            "velocity": -2,
+            "acceleration": 0,
+            "conviction": 65,
+            "fragility": 56,
+            "fresh_evidence": 0,
+            "contradiction": 0.16,
+            "price": null,
+            "return_pct": null
+          },
+          {
+            "h": -1.2,
+            "timestamp": "2026-03-08T02:00:00Z",
+            "dir_score": 40,
+            "velocity": -2,
+            "acceleration": 0,
+            "conviction": 64,
+            "fragility": 57,
+            "fresh_evidence": 0,
+            "contradiction": 0.17,
+            "price": null,
+            "return_pct": null
+          }
+        ],
+        "sentiment_peak_hour": -5.2,
+        "sentiment_peak_score": 48,
+        "optimal_entry_hour": -10.2,
+        "optimal_entry_reason": "velocity=+8 accel=+6 conv=63 frag=54",
+        "optimal_exit_hour": null,
+        "optimal_exit_reason": null,
+        "price_peak_hour": null,
+        "sentiment_price_lag": null,
+        "beliefs": [
+          {
+            "belief_id": "B-coffee-001",
+            "market": "coffee",
+            "claim": "Coffee futures have an upward bias over the next 6\u201324h as supply-side risk narratives (weather variability / crop disease / origin production uncertainty) remain the dominant fresh driver set.",
+            "probability_pct": 62,
+            "direction": "up",
+            "velocity": "accelerating",
+            "horizon": "24h",
+            "drivers": [
+              "weather",
+              "crop_conditions",
+              "origin_supply"
+            ],
+            "contradicted_by": []
+          },
+          {
+            "belief_id": "B-coffee-002",
+            "market": "coffee",
+            "claim": "Freight/logistics risk remains a secondary bullish tailwind (higher delivered costs / flow frictions), supporting a mild risk-premium in coffee pricing.",
+            "probability_pct": 55,
+            "direction": "up",
+            "velocity": "stable",
+            "horizon": "24h",
+            "drivers": [
+              "shipping_freight"
+            ],
+            "contradicted_by": []
+          },
+          {
+            "belief_id": "B-coffee-003",
+            "market": "coffee",
+            "claim": "Demand-side narrative (retail coffee chain activity / functional beverage growth) leans supportive rather than restrictive, reducing downside follow-through risk in the near term.",
+            "probability_pct": 54,
+            "direction": "up",
+            "velocity": "fading",
+            "horizon": "24h",
+            "drivers": [
+              "consumer_demand_proxy"
+            ],
+            "contradicted_by": []
+          }
+        ]
+      },
       {
         "trade_id": 4,
         "market": "corn",
