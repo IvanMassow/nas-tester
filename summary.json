@@ -1,18 +1,18 @@
 {
-  "updated": "2026-03-08T02:10:51.664735+00:00",
+  "updated": "2026-03-08T02:11:58.792673+00:00",
   "summary": {
-    "total_signals": 41,
-    "total_positions": 35,
-    "active_positions": 13,
+    "total_signals": 42,
+    "total_positions": 36,
+    "active_positions": 14,
     "closed_positions": 22,
-    "scoreable_positions": 35,
+    "scoreable_positions": 36,
     "best_category": "natural gas"
   },
   "hit_rates": {
     "6": {
-      "rate": 29.6,
+      "rate": 28.6,
       "hits": 8,
-      "total": 27
+      "total": 28
     },
     "12": {
       "rate": 32.0,
@@ -128,11 +128,22 @@
       ]
     },
     {
-      "category": "corn",
+      "category": "lithium",
       "positions": 1,
       "hit_rate_24h": null,
       "avg_return_when_right": null,
       "avg_return_when_wrong": null,
+      "avg_lead_time_hours": null,
+      "tickers": [
+        "LIT"
+      ]
+    },
+    {
+      "category": "corn",
+      "positions": 1,
+      "hit_rate_24h": null,
+      "avg_return_when_right": null,
+      "avg_return_when_wrong": 0.0,
       "avg_lead_time_hours": null,
       "tickers": [
         "CORN"
@@ -284,7 +295,7 @@
   ],
   "direct_proxy_stats": {
     "direct_count": 9,
-    "indirect_count": 26,
+    "indirect_count": 27,
     "direct_hit_rate_6h": 50.0,
     "direct_hit_rate_24h": 60.0,
     "direct_hits_6h": 4,
@@ -292,6 +303,28 @@
     "avg_direct_lead_hours": 8.8
   },
   "positions": [
+    {
+      "ticker": "LIT",
+      "category": "lithium",
+      "expected_direction": "UP",
+      "tier": "INDIRECT",
+      "group": "OTHER",
+      "entry_price": 68.97000122070312,
+      "lead_time_hours": null,
+      "advantage_state": "AHEAD",
+      "is_active": 1,
+      "latest_return_pct": null,
+      "latest_state": "PENDING",
+      "best_confirmed_horizon": null,
+      "best_confirmed_return": null,
+      "horizons": {},
+      "driver_clusters": [
+        "stale_context_overhang",
+        "data_sparsity",
+        "narrative_whipsaw",
+        "recency_flip_risk"
+      ]
+    },
     {
       "ticker": "CORN",
       "category": "corn",
@@ -302,11 +335,17 @@
       "lead_time_hours": null,
       "advantage_state": "AHEAD",
       "is_active": 1,
-      "latest_return_pct": null,
-      "latest_state": "PENDING",
+      "latest_return_pct": 0.0,
+      "latest_state": "MISS",
       "best_confirmed_horizon": null,
       "best_confirmed_return": null,
-      "horizons": {},
+      "horizons": {
+        "6": {
+          "return_pct": 0.0,
+          "score_state": "MISS",
+          "passed": 0
+        }
+      },
       "driver_clusters": [
         "stale_context_overhang",
         "policy_headline_whipsaw",
